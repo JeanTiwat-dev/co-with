@@ -7,16 +7,17 @@ import {
   ScrollView,
   Image,
   Dimensions,
-  useWindowDimensions
+  useWindowDimensions,
+  ViewPropTypes,
 } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 
 function HomePage() {
   const isCarousel = useRef();
-  const {width} = useWindowDimensions();
+  const { width } = useWindowDimensions();
   let s = Dimensions.get("window").width + 80;
   let i = Math.round(s * 0.7);
-  const [index, setIndex] = useState(0)
+  const [index, setIndex] = useState(0);
   const data = [
     {
       title: "Aenean leo",
@@ -45,13 +46,21 @@ function HomePage() {
     );
   };
 
+  function Features(props) {
+    return (
+    <View>
+        
+    </View>
+    );
+  }
+
   return (
     <ScrollView>
       {/* header */}
       <View style={styles.header1}>
         <View style={{ justifyContent: "center" }}>
-          <Text style={{fontSize : 15}} >Welcome</Text>
-          <Text style={{fontSize : 23}} >name surname</Text>
+          <Text style={{ fontSize: 15 }}>Welcome</Text>
+          <Text style={{ fontSize: 23 }}>name surname</Text>
         </View>
         <Image
           style={{ width: 50, height: 50, borderRadius: 999 }}
@@ -60,7 +69,7 @@ function HomePage() {
       </View>
 
       {/* Corousel */}
-      <View style={{marginTop : 25}} >
+      <View style={{ marginTop: 25 }}>
         <Carousel
           layout="default"
           layoutCardOffset={`9`}
@@ -68,36 +77,32 @@ function HomePage() {
           data={data}
           renderItem={CarouselCardItem}
           sliderWidth={width}
-          itemWidth={width-80}
+          itemWidth={width - 80}
           inactiveSlideShift={0}
           onSnapToItem={(index) => setIndex(index)}
           useScrollView={true}
         />
         {/* index page */}
         <Pagination
-        dotsLength={data.length}
-        activeDotIndex={index}
-        carouselRef={isCarousel}
-        dotStyle={{
-          width: 5,
-          height: 5,
-          borderRadius: 5,
-          marginHorizontal: 0,
-          backgroundColor: 'rgba(0, 0, 0, 0.92)'
-        }}
-        inactiveDotOpacity={0.4}
-        inactiveDotScale={0.6}
-        tappableDots={true}
-      />
+          dotsLength={data.length}
+          activeDotIndex={index}
+          carouselRef={isCarousel}
+          dotStyle={{
+            width: 5,
+            height: 5,
+            borderRadius: 5,
+            marginHorizontal: 0,
+            backgroundColor: "rgba(0, 0, 0, 0.92)",
+          }}
+          inactiveDotOpacity={0.4}
+          inactiveDotScale={0.6}
+          tappableDots={true}
+        />
       </View>
 
       <View style={styles.header1}>
-        <Text style={{fontSize : 20 }}>
-        Features
-        </Text>
-        <View>
-
-        </View>
+        <Text style={{ fontSize: 20 }}>Features</Text>
+        <Features />
       </View>
     </ScrollView>
   );
