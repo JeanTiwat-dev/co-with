@@ -31,6 +31,13 @@ function TabNavigation() {
             tabBarIcon: ({ color, size }) => {
                 return <Ionicons name="home" size={size} color="black" />;
             },
+            headerStyle: {
+                backgroundColor: '#f4511e',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
             }}
         />
         <TabBar.Screen
@@ -40,6 +47,13 @@ function TabNavigation() {
             tabBarIcon: ({ color, size }) => {
                 return <FontAwesome name="user" size={size} color="black" />;
             },
+            headerStyle: {
+                backgroundColor: '#eeb711',
+              },
+              headerTintColor: '#fff',
+              headerTitleStyle: {
+                fontWeight: 'bold',
+              },
             }}
         />
         </TabBar.Navigator>
