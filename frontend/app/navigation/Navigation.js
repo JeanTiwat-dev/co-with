@@ -6,66 +6,114 @@ import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import HomePage from "../screen/HomePage";
 import Notification from "../screen/Notification";
 import Profile from "../screen/Profile";
+import Preformcovid from "../screen/PreFormCovid";
 
-const ChatNavigator = createNativeStackNavigator();
+const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
 
+function HomeStack() {
+  return (
+    <HomeNav.Navigator initialRouteName="Home">
+      <HomeNav.Screen
+        name="Home"
+        component={HomePage}
+        options={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Home",
+        }}
+      />
+      <HomeNav.Screen
+        name="FormCovid19"
+        component={Preformcovid}
+        options={{
+          headerBackTitleVisible : false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Report Covid-19",
+        }}
+      />
+    </HomeNav.Navigator>
+  );
+}
+
 function TabNavigation() {
-    return (
-        <TabBar.Navigator screenOptions={{
-            tabBarStyle : { paddingTop: 10 }
-        }}>
-        <TabBar.Screen
-            name="Notification"
-            component={Notification}
-            options={{
-            tabBarIcon: ({ color, size }) => {
-                return <Ionicons name="notifications" size={size} color="black" />;
-            },
-            }}
-        />
-        <TabBar.Screen
-            name="HomePage"
-            component={HomePage}
-            options={{
-            tabBarIcon: ({ color, size }) => {
-                return <Ionicons name="home" size={size} color="black" />;
-            },
-            headerStyle: {
-                backgroundColor: '#f4511e',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
-        />
-        <TabBar.Screen
-            name="Profile"
-            component={Profile}
-            options={{
-            tabBarIcon: ({ color, size }) => {
-                return <FontAwesome name="user" size={size} color="black" />;
-            },
-            headerStyle: {
-                backgroundColor: '#eeb711',
-              },
-              headerTintColor: '#fff',
-              headerTitleStyle: {
-                fontWeight: 'bold',
-              },
-            }}
-        />
-        </TabBar.Navigator>
-    );
-    }
+  return (
+    <TabBar.Navigator
+      initialRouteName="HomePage"
+      screenOptions={{
+        tabBarStyle: { paddingTop: 10 },
+      }}
+    >
+      <TabBar.Screen
+        name="Notification"
+        component={Notification}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name="notifications" size={size} color="black" />;
+          },
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+      <TabBar.Screen
+        name="HomePage"
+        component={HomeStack}
+        options={{
+          headerShown: false,
+          tabBarIcon: ({ color, size }) => {
+            return <Ionicons name="home" size={size} color="black" />;
+          },
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+      <TabBar.Screen
+        name="Profile"
+        component={Profile}
+        options={{
+          tabBarIcon: ({ color, size }) => {
+            return <FontAwesome name="user" size={size} color="black" />;
+          },
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+        }}
+      />
+    </TabBar.Navigator>
+  );
+}
 
 function Navigation() {
-    return (
-        <NavigationContainer>
-        <TabNavigation />
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <TabNavigation />
+    </NavigationContainer>
+  );
 }
 
 export default Navigation;
