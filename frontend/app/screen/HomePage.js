@@ -8,11 +8,13 @@ import {
   Image,
   Dimensions,
   useWindowDimensions,
-  ViewPropTypes,
+  TouchableOpacity,
 } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
+import { useNavigation } from "@react-navigation/native";
 
 function HomePage() {
+  const router = useNavigation();
   const isCarousel = useRef();
   const { width } = useWindowDimensions();
   let s = Dimensions.get("window").width + 80;
@@ -47,10 +49,28 @@ function HomePage() {
   };
 
   function Features(props) {
+    let img = props.image;
     return (
-    <View>
-        
-    </View>
+      <TouchableOpacity
+        onPress={() => {
+          router.navigate('FormCovid19');
+        }}
+        style={{
+          backgroundColor: props.color,
+          width: "45%",
+          marginHorizontal: "2.5%",
+          borderRadius: 15,
+          marginVertical: 10,
+        }}
+      >
+        <View style={{ padding: 15, alignItems: "center" }}>
+          <Image
+            style={{ width: 80, height: 80, marginBottom: 15 }}
+            source={props.image}
+          />
+          <Text style={{ fontWeight: "bold" }}>{props.txt}</Text>
+        </View>
+      </TouchableOpacity>
     );
   }
 
@@ -72,7 +92,7 @@ function HomePage() {
       <View style={{ marginTop: 25 }}>
         <Carousel
           layout="default"
-          layoutCardOffset={`9`}
+          layoutCardOffset={9}
           ref={isCarousel}
           data={data}
           renderItem={CarouselCardItem}
@@ -100,9 +120,30 @@ function HomePage() {
         />
       </View>
 
-      <View style={styles.header1}>
-        <Text style={{ fontSize: 20 }}>Features</Text>
-        <Features />
+      <Text style={{ fontSize: 20, paddingHorizontal: 25, fontWeight: "bold" }}>
+        Features
+      </Text>
+      <View style={styles.header2}>
+        <Features
+          image={require("../assets/mask.png")}
+          txt={"Report Covid-19 Infection"}
+          color={"orange"}
+        />
+        <Features
+          image={require("../assets/dashboard.png")}
+          txt={"DashBoard"}
+          color={"#6E83B7"}
+        />
+        <Features
+          image={require("../assets/contacts.png")}
+          txt={"Contacts"}
+          color={"#6E83B7"}
+        />
+        <Features
+          image={require("../assets/journalism.png")}
+          txt={"News"}
+          color={"orange"}
+        />
       </View>
     </ScrollView>
   );
@@ -112,6 +153,15 @@ const styles = StyleSheet.create({
   header1: {
     flexDirection: "row",
     justifyContent: "space-between",
+    paddingHorizontal: 25,
+    width: "100%",
+    marginTop: 20,
+  },
+  header2: {
+    flexDirection: "row",
+    flex: 1,
+    flexWrap: "wrap",
+    // justifyContent: "space-between",
     paddingHorizontal: 25,
     width: "100%",
     marginTop: 20,
