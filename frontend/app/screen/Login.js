@@ -84,6 +84,7 @@ const Login = () => {
                             justifyContent: "center",
                             alignItems: "center",
                             borderRadius: 10,
+                            
                         }}
                         onPress={() => handleLogin()}
                     >
