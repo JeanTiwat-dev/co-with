@@ -53,7 +53,7 @@ function HomePage() {
     return (
       <TouchableOpacity
         onPress={() => {
-          router.navigate('FormCovid19');
+          props.router();
         }}
         style={{
           backgroundColor: props.color,
@@ -127,22 +127,34 @@ function HomePage() {
         <Features
           image={require("../assets/mask.png")}
           txt={"Report Covid-19 Infection"}
-          color={"orange"}
+          color={"#FFB13C"}
+          router={() => {
+            router.navigate("FormCovid19");
+          }}
         />
         <Features
           image={require("../assets/dashboard.png")}
           txt={"DashBoard"}
           color={"#6E83B7"}
+          router={() => {
+            router.navigate("DashBoard");
+          }}
         />
         <Features
           image={require("../assets/contacts.png")}
           txt={"Contacts"}
           color={"#6E83B7"}
+          router={() => {
+            router.navigate("FormCovid19");
+          }}
         />
         <Features
           image={require("../assets/journalism.png")}
           txt={"News"}
-          color={"orange"}
+          color={"#FFB13C"}
+          router={() => {
+            router.navigate("FormCovid19");
+          }}
         />
       </View>
     </ScrollView>
