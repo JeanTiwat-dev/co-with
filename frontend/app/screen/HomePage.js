@@ -145,7 +145,7 @@ function HomePage() {
           txt={"Contacts"}
           color={"#6E83B7"}
           router={() => {
-            router.navigate("FormCovid19");
+            router.navigate("Contact");
           }}
         />
         <Features
