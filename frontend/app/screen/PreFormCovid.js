@@ -53,7 +53,7 @@ function Preformcovid() {
         <View style={{ marginTop: 30, alignItems: "center" }}>
           <TouchableOpacity
             style={{
-              backgroundColor: "orange",
+              backgroundColor: "#FFB13C",
               width: 150,
               height: 60,
               justifyContent: "center",

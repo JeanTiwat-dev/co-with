@@ -7,44 +7,81 @@ import HomePage from "../screen/HomePage";
 import Notification from "../screen/Notification";
 import Profile from "../screen/Profile";
 import Preformcovid from "../screen/PreFormCovid";
+import DashBoard from "../screen/DashBoard";
+import Login from "../screen/Login";
+import Loading from "../screen/Loading";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
+const PageLogin = createNativeStackNavigator();
 
 function HomeStack() {
-    return (
-        <HomeNav.Navigator initialRouteName="Home">
-            <HomeNav.Screen
-                name="Home"
-                component={HomePage}
-                options={{
-                    headerStyle: {
-                        backgroundColor: "#f4511e",
-                    },
-                    headerTintColor: "#fff",
-                    headerTitleStyle: {
-                        fontWeight: "bold",
-                    },
-                    title: "Home",
-                }}
-            />
-            <HomeNav.Screen
-                name="FormCovid19"
-                component={Preformcovid}
-                options={{
-                    headerBackTitleVisible: false,
-                    headerStyle: {
-                        backgroundColor: "#f4511e",
-                    },
-                    headerTintColor: "#fff",
-                    headerTitleStyle: {
-                        fontWeight: "bold",
-                    },
-                    title: "Report Covid-19",
-                }}
-            />
-        </HomeNav.Navigator>
-    );
+  return (
+    <HomeNav.Navigator initialRouteName="Home">
+      <HomeNav.Screen
+        name="Home"
+        component={HomePage}
+        options={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Home",
+        }}
+      />
+      <HomeNav.Screen
+        name="FormCovid19"
+        component={Preformcovid}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Report Covid-19",
+        }}
+      />
+      <HomeNav.Screen
+        name="DashBoard"
+        component={DashBoard}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Dashboard",
+        }}
+      />
+    </HomeNav.Navigator>
+  );
+}
+
+function LoginStack() {
+  return (
+    <PageLogin.Navigator initialRouteName="LoadingLogin">
+      <PageLogin.Screen
+        name="Login"
+        component={Login}
+        options={{ headerShown: false }}
+      />
+      <PageLogin.Screen
+        name="LoadingLogin"
+        component={Loading}
+        options={{ headerShown: false }}
+      />
+      <PageLogin.Screen name="TabHome" component={TabNavigation}/>
+    </PageLogin.Navigator>
+  );
 }
 
 function TabNavigation() {
@@ -98,11 +135,11 @@ function TabNavigation() {
 }
 
 function Navigation() {
-    return (
-        <NavigationContainer>
-            <TabNavigation />
-        </NavigationContainer>
-    );
+  return (
+    <NavigationContainer>
+      <LoginStack/>
+    </NavigationContainer>
+  );
 }
 
 export default Navigation;
