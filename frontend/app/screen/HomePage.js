@@ -13,6 +13,32 @@ import {
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
 
+function Features(props) {
+  let img = props.image;
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        props.router();
+      }}
+      style={{
+        backgroundColor: props.color,
+        width: "45%",
+        marginHorizontal: "2.5%",
+        borderRadius: 15,
+        marginVertical: 10,
+      }}
+    >
+      <View style={{ padding: 15, alignItems: "center" }}>
+        <Image
+          style={{ width: 80, height: 80, marginBottom: 15 }}
+          source={props.image}
+        />
+        <Text style={{ fontWeight: "bold" }}>{props.txt}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
 function HomePage() {
   const router = useNavigation();
   const isCarousel = useRef();
@@ -48,31 +74,7 @@ function HomePage() {
     );
   };
 
-  function Features(props) {
-    let img = props.image;
-    return (
-      <TouchableOpacity
-        onPress={() => {
-          props.router();
-        }}
-        style={{
-          backgroundColor: props.color,
-          width: "45%",
-          marginHorizontal: "2.5%",
-          borderRadius: 15,
-          marginVertical: 10,
-        }}
-      >
-        <View style={{ padding: 15, alignItems: "center" }}>
-          <Image
-            style={{ width: 80, height: 80, marginBottom: 15 }}
-            source={props.image}
-          />
-          <Text style={{ fontWeight: "bold" }}>{props.txt}</Text>
-        </View>
-      </TouchableOpacity>
-    );
-  }
+  
 
   return (
     <ScrollView>
@@ -153,7 +155,7 @@ function HomePage() {
           txt={"News"}
           color={"#FFB13C"}
           router={() => {
-            router.navigate("FormCovid19");
+            router.navigate("News");
           }}
         />
       </View>

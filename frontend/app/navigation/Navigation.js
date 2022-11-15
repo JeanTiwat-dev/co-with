@@ -11,6 +11,8 @@ import DashBoard from "../screen/DashBoard";
 import Login from "../screen/Login";
 import Loading from "../screen/Loading";
 import Contact from "../screen/Contact";
+import NewsPage from "../screen/NewsPage";
+import NewsDetail from "../screen/NewsDetail";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -77,6 +79,36 @@ function HomeStack() {
           },
           title: "Contacts",
         }}
+      />
+      <HomeNav.Screen
+        name="News"
+        component={NewsPage}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "News",
+        }}
+      />
+      <HomeNav.Screen
+        name="NewsDetail"
+        component={NewsDetail}
+        options={({route})=>({
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: route.params.data.title,
+        })}
       />
     </HomeNav.Navigator>
   );
