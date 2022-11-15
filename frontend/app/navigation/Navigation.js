@@ -13,6 +13,7 @@ import Loading from "../screen/Loading";
 import Contact from "../screen/Contact";
 import NewsPage from "../screen/NewsPage";
 import NewsDetail from "../screen/NewsDetail";
+import FormCovid from "../screen/FormCovid";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -38,6 +39,21 @@ function HomeStack() {
       <HomeNav.Screen
         name="FormCovid19"
         component={Preformcovid}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Report Covid-19",
+        }}
+      />
+      <HomeNav.Screen
+        name="FormCovid"
+        component={FormCovid}
         options={{
           headerBackTitleVisible: false,
           headerStyle: {

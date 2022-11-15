@@ -7,9 +7,12 @@ import {
   ScrollView,
   TouchableOpacity,
 } from "react-native";
+import { useNavigation } from "@react-navigation/native";
+
 
 function Preformcovid() {
   const { height, width } = useWindowDimensions();
+  const router = useNavigation();
   console.log(height);
   return (
     <ScrollView contentContainerStyle={{ height: "100%" }}>
@@ -59,6 +62,9 @@ function Preformcovid() {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 10,
+            }}
+            onPress={()=>{
+              router.navigate('FormCovid')
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>START</Text>
