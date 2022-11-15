@@ -10,6 +10,7 @@ import Preformcovid from "../screen/PreFormCovid";
 import DashBoard from "../screen/DashBoard";
 import Login from "../screen/Login";
 import Loading from "../screen/Loading";
+import Contact from "../screen/Contact";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -60,6 +61,21 @@ function HomeStack() {
             fontWeight: "bold",
           },
           title: "Dashboard",
+        }}
+      />
+      <HomeNav.Screen
+        name="Contact"
+        component={Contact}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Contacts",
         }}
       />
     </HomeNav.Navigator>
@@ -148,7 +164,8 @@ function TabNavigation() {
 function Navigation() {
   return (
     <NavigationContainer>
-      <LoginStack/>
+      {/* <LoginStack/> */}
+      <TabNavigation/>
     </NavigationContainer>
   );
 }
