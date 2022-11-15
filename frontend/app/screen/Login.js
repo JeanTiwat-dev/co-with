@@ -12,11 +12,13 @@ import {
 import { useState } from "react";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
+import { useNavigation } from "@react-navigation/native";
 
 const Login = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const { height, width } = useWindowDimensions();
+    const router = useNavigation();
     const handleLogin = async() => {
         // console.log(email, password);
         await axios.post("http://192.168.1.38:8080/login", {
@@ -25,6 +27,7 @@ const Login = () => {
         }).then((res) => {
             if (res.data.length != 0) {
                 AsyncStorage.setItem("@user", JSON.stringify(res.data));
+                router.replace("TabHome");
                 alert("Login Success 🎉");
             } else {
                 alert("Login Failed 😢");
