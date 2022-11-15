@@ -22,8 +22,8 @@ const styles = StyleSheet.create({
         shadowRadius: 2,
         // marginHorizontal: 4,
         marginVertical: 6,
-        width : 150,
-        height: 140,
+        width : 165,
+        height: 150,
         flex: 1,
         // flexWrap : 'wrap'
         // overflow : 'hidden',
