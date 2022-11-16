@@ -11,7 +11,7 @@ function DashBoard() {
   const { width } = useWindowDimensions();
 
   return (
-    <ScrollView style={{ paddingHorizontal: 25 }}>
+    <ScrollView style={{ width: width, paddingHorizontal: 25 }}>
       {/* content 1 */}
       <View style={styles.content1}>
         <Text
