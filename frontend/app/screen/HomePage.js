@@ -26,6 +26,14 @@ function Features(props) {
         marginHorizontal: "2.5%",
         borderRadius: 15,
         marginVertical: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: -2,
+            height: 2,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+        elevation: 5,
       }}
     >
       <View style={{ padding: 15, alignItems: "center" }}>

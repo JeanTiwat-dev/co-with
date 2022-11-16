@@ -9,7 +9,6 @@ import {
 } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
-
 function Preformcovid() {
   const { height, width } = useWindowDimensions();
   const router = useNavigation();
@@ -18,7 +17,7 @@ function Preformcovid() {
     <ScrollView contentContainerStyle={{ height: "100%" }}>
       <View style={[styles.covidcontainer, { width: width }]}>
         <Image
-          style={{ width: 250, height: 250 }}
+          style={{ width: 250, height: 250, marginBottom: 70 }}
           source={require("../assets/virus.png")}
         />
       </View>
@@ -29,8 +28,8 @@ function Preformcovid() {
           backgroundColor: "white",
           borderTopLeftRadius: 50,
           borderTopRightRadius: 50,
-          height : "45%",
-          width : width
+          height: "45%",
+          width: width,
         }}
       >
         <View style={{ marginTop: 70 }}>
@@ -62,9 +61,17 @@ function Preformcovid() {
               justifyContent: "center",
               alignItems: "center",
               borderRadius: 10,
+              shadowColor: "#000",
+              shadowOffset: {
+                width: -2,
+                height: 2,
+              },
+              shadowOpacity: 0.2,
+              shadowRadius: 3,
+              elevation: 5,
             }}
-            onPress={()=>{
-              router.navigate('FormCovid')
+            onPress={() => {
+              router.navigate("FormCovid");
             }}
           >
             <Text style={{ fontSize: 20, fontWeight: "bold" }}>START</Text>
@@ -80,6 +87,7 @@ const styles = StyleSheet.create({
     justifyContent: "center",
     alignItems: "center",
     height: 450,
+
     // borderBottomLeftRadius: 200,
     // borderBottomRightRadius: 200,
   },
