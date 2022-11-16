@@ -13,6 +13,40 @@ import {
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
 
+function Features(props) {
+  let img = props.image;
+  return (
+    <TouchableOpacity
+      onPress={() => {
+        props.router();
+      }}
+      style={{
+        backgroundColor: props.color,
+        width: "45%",
+        marginHorizontal: "2.5%",
+        borderRadius: 15,
+        marginVertical: 10,
+        shadowColor: "#000",
+        shadowOffset: {
+            width: -2,
+            height: 2,
+        },
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
+        elevation: 5,
+      }}
+    >
+      <View style={{ padding: 15, alignItems: "center" }}>
+        <Image
+          style={{ width: 80, height: 80, marginBottom: 15 }}
+          source={props.image}
+        />
+        <Text style={{ fontWeight: "bold" }}>{props.txt}</Text>
+      </View>
+    </TouchableOpacity>
+  );
+}
+
 function HomePage() {
   const router = useNavigation();
   const isCarousel = useRef();

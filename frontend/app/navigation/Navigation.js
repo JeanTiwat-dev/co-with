@@ -10,6 +10,10 @@ import Preformcovid from "../screen/PreFormCovid";
 import DashBoard from "../screen/DashBoard";
 import Login from "../screen/Login";
 import Loading from "../screen/Loading";
+import Contact from "../screen/Contact";
+import NewsPage from "../screen/NewsPage";
+import NewsDetail from "../screen/NewsDetail";
+import FormCovid from "../screen/FormCovid";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -48,6 +52,21 @@ function HomeStack() {
         }}
       />
       <HomeNav.Screen
+        name="FormCovid"
+        component={FormCovid}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Report Covid-19",
+        }}
+      />
+      <HomeNav.Screen
         name="DashBoard"
         component={DashBoard}
         options={{
@@ -61,6 +80,51 @@ function HomeStack() {
           },
           title: "Dashboard",
         }}
+      />
+      <HomeNav.Screen
+        name="Contact"
+        component={Contact}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Contacts",
+        }}
+      />
+      <HomeNav.Screen
+        name="News"
+        component={NewsPage}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "News",
+        }}
+      />
+      <HomeNav.Screen
+        name="NewsDetail"
+        component={NewsDetail}
+        options={({route})=>({
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: route.params.data.title,
+        })}
       />
     </HomeNav.Navigator>
   );

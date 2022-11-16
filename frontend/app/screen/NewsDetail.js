@@ -1,14 +1,17 @@
+import { useState } from "react";
 import {View, Text, StyleSheet, ScrollView, Image} from "react-native";
 
 
-const NewsDetail = () => {
+const NewsDetail = ({route}) => {
+    console.log(route);
     // const news = props.news;
+    const [news, setNews] = useState(route.params.data);
     return (
         <ScrollView>
-            <Image source={{ uri : 'https://prod.static9.net.au/_/media/2020/01/22/12/27/9-news-australia-national.jpg' }} style={styles.image} />
+            <Image source={{ uri : news.uri }} style={styles.image} />
             <View style={styles.container}>
-                <Text style={styles.title}>header</Text>
-                <Text style={styles.content}>In justo lorem, tempor a feugiat vel, lacinia non urna. Integer suscipit urna quis congue aliquet. Vestibulum blandit semper vehicula. Nam viverra ipsum ut tempor rutrum. Donec a suscipit purus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Sed malesuada dignissim massa, id dignissim ipsum suscipit quis.</Text>
+                <Text style={styles.title}>{news.title}</Text>
+                <Text style={styles.content}>{news.content}</Text>
             </View>
         </ScrollView>
     );
