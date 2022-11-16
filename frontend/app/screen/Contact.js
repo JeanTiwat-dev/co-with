@@ -10,13 +10,26 @@ import {
   Modal,
   Pressable,
 } from "react-native";
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect} from "react";
+import axios from "axios";
+import path from "../../path";
 
 
 function Contact() {
 
   const { width } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
+  const [contact, setContact] = useState([]);
+  const [allContact, setAllContact] = useState([]);
+  const getContacts = async () => {
+    await axios.get(`${path}/getContacts`)
+      .then((res) => {
+        setAllContact(res.data);
+      }).catch((err) => { console.log(err) });
+  };
+  useEffect(() => {
+    getContacts();
+  },[]);
 
   function CardContact(props) {
     return (
@@ -51,7 +64,7 @@ function Contact() {
   }
 
   return (
-    <ScrollView style={{ width: width, paddingHorizontal: 25}}>
+    <ScrollView style={{ width: width, paddingHorizontal: 25 }}>
       <View style={{ paddingVertical: 30 }}>
         <Text style={{ fontSize: 28, fontWeight: 'bold' }}>Contact</Text>
         {/* search */}
@@ -74,7 +87,7 @@ function Contact() {
             elevation: 5,
           }}
           placeholder={"Search"}
-          returnKeyType= 'search'
+          returnKeyType='search'
         ></TextInput>
       </View>
       {/* cardcontact */}
@@ -88,14 +101,25 @@ function Contact() {
         }}
       >
         {/* card */}
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
+        {allContact&&allContact.map((item, index) => {
+          // console.log(`${path}${item.img}`);
+          return (
+            <CardContact
+              key={index}
+              color="#607EAA"
+              image={{uri: `${path}${item.img}`}}
+              txt={item.name}
+            />
+          );
+        })}
+        {/* <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' /> */}
       </View>
-        {/* modal */}
+      {/* modal */}
       <View style={styles.centeredView}>
         <Modal
           animationType="fade"
@@ -108,9 +132,9 @@ function Contact() {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Image style={{ width: 150, height: 150, marginBottom: 25 }} source={require('../assets/logohugg_mini.png')}/>
-              <Text style={{fontSize: 25, marginBottom: 10}}>Name Surname</Text>
-              <Text style={{fontSize: 14}}>ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์</Text>
+              <Image style={{ width: 150, height: 150, marginBottom: 25 }} source={require('../assets/logohugg_mini.png')} />
+              <Text style={{ fontSize: 25, marginBottom: 10 }}>Name Surname</Text>
+              <Text style={{ fontSize: 14 }}>ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์</Text>
               {/* button */}
               <View
                 style={{
@@ -164,20 +188,20 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#FFB13C",
-              width: 120,
-              height: 50,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 10,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: -2,
-                height: 2,
-              },
-              shadowOpacity: 0.2,
-              shadowRadius: 3,
-              elevation: 5,
-              marginTop: 25,
+    width: 120,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 25,
   },
   textStyle: {
     fontSize: 18,
