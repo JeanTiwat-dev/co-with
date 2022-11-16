@@ -30,7 +30,6 @@ const styles = StyleSheet.create({
     content : {
         marginTop : 20,
         fontSize : 18
-
     }
 })
 export default NewsDetail;
