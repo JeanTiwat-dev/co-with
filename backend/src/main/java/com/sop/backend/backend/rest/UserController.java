@@ -18,7 +18,6 @@ public class UserController {
 
     @Autowired
     private RabbitTemplate rabbitTemplate;
-    private List<String> listLogin = new ArrayList();
     @RequestMapping(value = "/getUser", method = RequestMethod.GET)
     public ResponseEntity<?> getUser(){
         try{

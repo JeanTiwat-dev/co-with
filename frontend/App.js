@@ -6,10 +6,13 @@ import EditProfile from './app/screen/EditProfile';
 import Login from './app/screen/Login';
 import Loading from './app/screen/Loading';
 import PreLogin from './app/screen/PreLogin';
+import Contact from './app/screen/Contact';
 export default function App() {
   return (
     // <Navigation/>
-    <PreLogin/>
+    // <PreLogin/>
+    // <Loading/>
+    <Contact/>
   );
 }
 
