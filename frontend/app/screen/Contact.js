@@ -10,13 +10,31 @@ import {
   Modal,
   Pressable,
 } from "react-native";
-import { useRef, useState } from "react";
-
+import { useRef, useState, useEffect } from "react";
+import axios from "axios";
+import path from "../../path";
 
 function Contact() {
-
   const { width } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
+  const [contact, setContact] = useState([]);
+  const [allContact, setAllContact] = useState([]);
+  const [search, setSearch] = useState([]);
+  const [backup, setBackup] = useState([]);
+  const getContacts = async () => {
+    await axios
+      .get(`${path}/getContacts`)
+      .then((res) => {
+        setAllContact(res.data);
+        setBackup(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    getContacts();
+  }, []);
 
   function CardContact(props) {
     return (
@@ -26,6 +44,7 @@ function Contact() {
           width: "45%",
           height: 200,
           marginHorizontal: "2.5%",
+          paddingHorizontal: 20,
           borderRadius: 15,
           marginVertical: 10,
           shadowColor: "#000",
@@ -37,11 +56,19 @@ function Contact() {
           shadowRadius: 3,
           elevation: 5,
         }}
-        onPress={() => setModalVisible(!modalVisible)}
+        onPress={() => {
+          setContact(props.value);
+          setModalVisible(!modalVisible);
+        }}
       >
         <View style={{ paddingVertical: 20, alignItems: "center" }}>
           <Image
-            style={{ width: 100, height: 100, marginBottom: 15, borderRadius: 999 }}
+            style={{
+              width: 100,
+              height: 100,
+              marginBottom: 15,
+              borderRadius: 999,
+            }}
             source={props.image}
           />
           <Text style={{ fontWeight: "bold" }}>{props.txt}</Text>
@@ -51,9 +78,9 @@ function Contact() {
   }
 
   return (
-    <ScrollView style={{ width: width, paddingHorizontal: 25}}>
+    <ScrollView style={{ width: width, paddingHorizontal: 25 }}>
       <View style={{ paddingVertical: 30 }}>
-        <Text style={{ fontSize: 28, fontWeight: 'bold' }}>Contact</Text>
+        <Text style={{ fontSize: 28, fontWeight: "bold" }}>Contact</Text>
         {/* search */}
         <TextInput
           style={{
@@ -74,7 +101,11 @@ function Contact() {
             elevation: 5,
           }}
           placeholder={"Search"}
-          returnKeyType= 'search'
+          returnKeyType="search"
+          onChangeText={(txtname)=>{
+            const fillter = backup.filter((data)=> data.name.indexOf(txtname) + 1)
+            setAllContact(fillter);
+          }}
         ></TextInput>
       </View>
       {/* cardcontact */}
@@ -88,14 +119,27 @@ function Contact() {
         }}
       >
         {/* card */}
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname'/>
+        {allContact &&
+          allContact.map((item, index) => {
+            console.log(`${path}${item.img}`);
+            return (
+              <CardContact
+                key={index}
+                color="#607EAA"
+                image={{ uri: `${path}${item.img}` }}
+                txt={item.name}
+                value={item}
+              />
+            );
+          })}
+        {/* <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
+        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' /> */}
       </View>
-        {/* modal */}
+      {/* modal */}
       <View style={styles.centeredView}>
         <Modal
           animationType="fade"
@@ -108,9 +152,16 @@ function Contact() {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <Image style={{ width: 150, height: 150, marginBottom: 25 }} source={require('../assets/logohugg_mini.png')}/>
-              <Text style={{fontSize: 25, marginBottom: 10}}>Name Surname</Text>
-              <Text style={{fontSize: 14}}>ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์</Text>
+              <Image
+                style={{ width: 150, height: 150, marginBottom: 25 , borderRadius: 999 }}
+                source={{uri: `${path}${contact.img}`}}
+              />
+              <Text style={{ fontSize: 25, marginBottom: 10 }}>
+                {contact.name}
+              </Text>
+              <Text style={{ fontSize: 14 }}>
+                ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์
+              </Text>
               {/* button */}
               <View
                 style={{
@@ -144,7 +195,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "center",
     alignItems: "center",
-    backgroundColor: 'rgba(52, 52, 52, 0.8)',
+    backgroundColor: "rgba(52, 52, 52, 0.8)",
   },
   modalView: {
     margin: 20,
@@ -164,25 +215,25 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#FFB13C",
-              width: 120,
-              height: 50,
-              justifyContent: "center",
-              alignItems: "center",
-              borderRadius: 10,
-              shadowColor: "#000",
-              shadowOffset: {
-                width: -2,
-                height: 2,
-              },
-              shadowOpacity: 0.2,
-              shadowRadius: 3,
-              elevation: 5,
-              marginTop: 25,
+    width: 120,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 25,
   },
   textStyle: {
     fontSize: 18,
-    fontWeight: 'bold',
-  }
+    fontWeight: "bold",
+  },
 });
 
 export default Contact;

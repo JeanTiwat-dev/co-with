@@ -68,13 +68,15 @@ const NewsPage = ({ navigation }) => {
   const [index, setIndex] = useState(0);
   const CarouselCardItem = ({ item, index }) => {
     return (
-      <View style={styles.container} key={index}>
+      <TouchableOpacity style={styles.container} key={index} onPress={()=>{
+        router.navigate('NewsDetail', {data: item});
+      }}>
         <Image source={{ uri: item.uri }} style={styles.imageCarousel} />
         <Text style={styles.header}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.body}>
           {item.content}
         </Text>
-      </View>
+      </TouchableOpacity>
     );
   };
   return (

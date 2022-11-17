@@ -1,5 +1,5 @@
 import { Zocial } from "@expo/vector-icons";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import {
   StyleSheet,
   Text,
@@ -12,6 +12,10 @@ import {
 } from "react-native";
 import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
+import axios from "axios";
+import path from "../../path";
+import AsyncStorage from "@react-native-async-storage/async-storage";
+
 
 function Features(props) {
   let img = props.image;
@@ -28,8 +32,8 @@ function Features(props) {
         marginVertical: 10,
         shadowColor: "#000",
         shadowOffset: {
-            width: -2,
-            height: 2,
+          width: -2,
+          height: 2,
         },
         shadowOpacity: 0.2,
         shadowRadius: 3,
@@ -47,13 +51,15 @@ function Features(props) {
   );
 }
 
-function HomePage() {
+function HomePage({ route }) {
+  // console.log(route);
   const router = useNavigation();
   const isCarousel = useRef();
   const { width } = useWindowDimensions();
   let s = Dimensions.get("window").width + 80;
   let i = Math.round(s * 0.7);
   const [index, setIndex] = useState(0);
+  const [user, setUser] = useState([]);
   const data = [
     {
       title: "Aenean leo",
@@ -72,6 +78,26 @@ function HomePage() {
     },
   ];
 
+  async function Getuser() {
+    const datauser = await AsyncStorage.getItem("@user");
+    // console.log(JSON.parse(datauser)._id);
+    if (datauser) {
+      await axios
+        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .then((res) => {
+          // console.log(res.data);
+          setUser(res.data[0]);
+        })
+        .catch((er) => {
+          console.log(er);
+        });
+    }
+  }
+
+  useEffect(() => {
+    Getuser();
+  }, []);
+
   const CarouselCardItem = ({ item, index }) => {
     return (
       <View style={styles.container} key={index}>
@@ -82,15 +108,13 @@ function HomePage() {
     );
   };
 
-  
-
   return (
     <ScrollView>
       {/* header */}
       <View style={styles.header1}>
         <View style={{ justifyContent: "center" }}>
           <Text style={{ fontSize: 15 }}>Welcome</Text>
-          <Text style={{ fontSize: 23 }}>name surname</Text>
+          <Text style={{ fontSize: 23 }}>{user.firstname + " " + user.lastname}</Text>
         </View>
         <Image
           style={{ width: 50, height: 50, borderRadius: 999 }}

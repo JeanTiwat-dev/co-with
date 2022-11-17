@@ -1,0 +1,44 @@
+[
+    {
+        "name": "ศ.ดร. สุขสันต์ พาณิชพาพิบูล",
+        "email": "sooksanit.kmitl.ac.th",
+        "tel": "02-723-4978",
+        "facebook": "https://www.facebook.com/sooksanit.p",
+        "img": "/image/img_aj/Suksan.jpeg"
+    },
+    {
+        "name": "ศ.ดร.ศุภมิตร จิตตะยโศธร",
+        "email": "Suphamit@it.kmitl.ac.th",
+        "tel": "02-723-4979",
+        "facebook": "https://www.facebook.com/suphamit.jittayosothorn",
+        "img": "/image/img_aj/Suphamit.jpeg"
+    },
+    {
+        "name": "รศ.ดร. นพพร โชติกกำธร",
+        "email": "nopporn@it.kmitl.ac.th",
+        "tel": "02-723-4963",
+        "facebook": "https://www.facebook.com/nopporn.chotikakamthorn",
+        "img": "/image/img_aj/Nopporn.jpeg"
+    },
+    {
+        "name": "รศ.ดร. จันทร์บูรณ์ สถิตวิริยวงศ์",
+        "email": "chanboon@it.kmitl.ac.th",
+        "tel": "02-723-4971",
+        "facebook": "https://www.facebook.com/chanboon.s",
+        "img": "/image/img_aj/Chanboon.jpeg"
+    },
+    {
+        "name": "รศ.ดร. วรพจน์ กรีสุระเดช",
+        "email": "worapoj@it.kmitl.ac.th",
+        "tel": "02-723-4972",
+        "facebook": "https://www.facebook.com/worapoj.kreerudet",
+        "img": "/image/img_aj/Worapoj.jpeg"
+    },
+    {
+        "name": "รศ.ดร. อาริต ธรรมโน",
+        "email": "arit@it.kmitl.ac.th",
+        "tel": "02-723-4973",
+        "facebook": "https://www.facebook.com/arit.thornon",
+        "img": "/image/img_aj/Arit.jpeg"
+    }
+]

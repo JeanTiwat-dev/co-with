@@ -13,6 +13,7 @@ import { useState } from "react";
 import axios from "axios";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { useNavigation } from "@react-navigation/native";
+import path from "../../path";
 
 const Login = () => {
     const [email, setEmail] = useState("");
@@ -21,7 +22,7 @@ const Login = () => {
     const router = useNavigation();
     const handleLogin = async() => {
         // console.log(email, password);
-        await axios.post("http://192.168.1.38:8080/login", {
+        await axios.post(`${path}/login`, {
             email: email,
             password: password
         }).then((res) => {
