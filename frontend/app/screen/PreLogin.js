@@ -1,3 +1,4 @@
+import { useNavigation } from "@react-navigation/native";
 import {
     StyleSheet,
     Text,
@@ -9,6 +10,7 @@ import {
 } from "react-native";
 
 const PreLogin = () => {
+    const router = useNavigation();
     return (
         <View style={{flex: 1, backgroundColor: "#476E9E"}}>
             <View style={{alignItems: "center", justifyContent: "center"}}>
@@ -28,7 +30,7 @@ const PreLogin = () => {
                             alignItems: "center",
                             borderRadius: 10,
                         }}
-                        onPress={() => handleLogin()}
+                        onPress={() => router.replace('Login')}
                     >
                         <Text style={{ fontSize: 20, fontWeight: "bold" }}>LOGIN</Text>
                     </TouchableOpacity>
