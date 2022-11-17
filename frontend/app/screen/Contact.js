@@ -102,7 +102,7 @@ function Contact() {
       >
         {/* card */}
         {allContact&&allContact.map((item, index) => {
-          // console.log(`${path}${item.img}`);
+          console.log(`${path}${item.img}`);
           return (
             <CardContact
               key={index}

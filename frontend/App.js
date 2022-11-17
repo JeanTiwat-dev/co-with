@@ -9,10 +9,10 @@ import PreLogin from './app/screen/PreLogin';
 import Contact from './app/screen/Contact';
 export default function App() {
   return (
-    // <Navigation/>
+    <Navigation/>
     // <PreLogin/>
     // <Loading/>
-    <Contact/>
+    // <Contact/>
   );
 }
 
