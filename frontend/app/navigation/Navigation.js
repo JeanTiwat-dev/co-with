@@ -143,14 +143,14 @@ function LoginStack() {
         component={Loading}
         options={{ headerShown: false }}
       />
-      <PageLogin.Screen name="TabHome" component={TabNavigation}/>
+      <PageLogin.Screen name="TabHome" component={TabNavigation} options={{headerShown: false}}/>
     </PageLogin.Navigator>
   );
 }
 
 function TabNavigation() {
     return (
-        <TabBar.Navigator screenOptions={{
+        <TabBar.Navigator initialRouteName="HomePage" screenOptions={{
             tabBarStyle: { paddingTop: 10 }
         }}>
             <TabBar.Screen
