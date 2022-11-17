@@ -11,10 +11,16 @@ import {
   Pressable,
 } from "react-native";
 import { useRef, useState, useEffect } from "react";
+import { useToast } from "react-native-toast-notifications";
+import Toast from "react-native-toast-notifications";
+import * as Clipboard from 'expo-clipboard';
 import axios from "axios";
 import path from "../../path";
 
+
 function Contact() {
+  const toastRef = useRef();
+  const toast = useToast();
   const { width } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
   const [contact, setContact] = useState([]);
@@ -32,10 +38,21 @@ function Contact() {
         console.log(err);
       });
   };
+  
   useEffect(() => {
     getContacts();
   }, []);
+  const functionCombined = () => {
+    Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
+    toast.show("Copied to clipboard", {
+      type: "success",
+      placement: "bottom",
+      duration: 2000,
+      // offsetTop: 300,
+    });
+  }
 
+  
   function CardContact(props) {
     return (
       <TouchableOpacity
@@ -102,11 +119,11 @@ function Contact() {
           }}
           placeholder={"Search"}
           returnKeyType="search"
-          onChangeText={(txtname)=>{
-            const fillter = backup.filter((data)=> data.name.indexOf(txtname) + 1)
+          onChangeText={(txtname) => {
+            const fillter = backup.filter((data) => data.firstname.indexOf(txtname) + 1)
             setAllContact(fillter);
           }}
-        ></TextInput>
+        />
       </View>
       {/* cardcontact */}
       <View
@@ -121,23 +138,17 @@ function Contact() {
         {/* card */}
         {allContact &&
           allContact.map((item, index) => {
-            console.log(`${path}${item.img}`);
+            // console.log(`${path}${item.img}`);
             return (
               <CardContact
                 key={index}
                 color="#607EAA"
                 image={{ uri: `${path}${item.img}` }}
-                txt={item.name}
+                txt={item.firstname + "\n" + item.lastname}
                 value={item}
               />
             );
           })}
-        {/* <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' />
-        <CardContact color="#607EAA" image={require("../assets/logohugg_mini.png")} txt='name surname' /> */}
       </View>
       {/* modal */}
       <View style={styles.centeredView}>
@@ -153,15 +164,37 @@ function Contact() {
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
               <Image
-                style={{ width: 150, height: 150, marginBottom: 25 , borderRadius: 999 }}
-                source={{uri: `${path}${contact.img}`}}
+                style={{ width: 150, height: 150, borderRadius: 999 }}
+                source={{ uri: `${path}${contact.img}` }}
               />
               <Text style={{ fontSize: 25, marginBottom: 10 }}>
                 {contact.name}
               </Text>
-              <Text style={{ fontSize: 14 }}>
-                ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์ช่องทางการติดต่อของอาจารย์
+              <TouchableOpacity style={styles.input}
+              onPress={() => functionCombined()}>
+                <Text>
+                  {contact.firstname + " " + contact.lastname}
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.input}
+              onPress={() => Clipboard.setStringAsync(`${contact.email}`)}>
+              <Text>
+                {contact.email}
               </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.input}
+              onPress={() => Clipboard.setStringAsync(`${contact.tel}`)}>
+              <Text
+              >
+                {contact.tel}
+              </Text>
+              </TouchableOpacity>
+              <TouchableOpacity style={styles.input} 
+              onPress={() => Clipboard.setStringAsync(`${contact.facebook}`)}>
+              <Text>
+                {contact.facebook}
+              </Text>
+              </TouchableOpacity>
               {/* button */}
               <View
                 style={{
@@ -184,6 +217,7 @@ function Contact() {
               </View>
             </View>
           </View>
+          <Toast ref={toastRef}/>
         </Modal>
       </View>
     </ScrollView>
@@ -202,7 +236,7 @@ const styles = StyleSheet.create({
     backgroundColor: "white",
     borderRadius: 20,
     padding: 35,
-    width: "70%",
+    width: "90%",
     alignItems: "center",
     shadowColor: "#000",
     shadowOffset: {
@@ -233,6 +267,22 @@ const styles = StyleSheet.create({
   textStyle: {
     fontSize: 18,
     fontWeight: "bold",
+  },
+  input: {
+    fontSize: 16,
+    width: "100%",
+    borderRadius: 10,
+    marginTop: 15,
+    padding: 15,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    backgroundColor: "white",
   },
 });
 
