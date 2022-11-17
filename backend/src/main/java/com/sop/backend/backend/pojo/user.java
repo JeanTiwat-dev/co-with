@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Data
 @Document("User")
-public class user  implements Serializable {
+public class user implements Serializable {
     @Id
     private String _id;
     private String email;
