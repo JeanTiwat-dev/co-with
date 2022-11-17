@@ -11,7 +11,8 @@ import java.io.Serializable;
 public class ContactsAJ implements Serializable {
     @Id
     private String _id;
-    private String name;
+    private String firstname;
+    private String lastname;
     private String email;
     private String tel;
     private String facebook;
@@ -20,9 +21,10 @@ public class ContactsAJ implements Serializable {
     public ContactsAJ() {
     }
 
-    public ContactsAJ(String _id, String name, String email, String tel, String facebook, String img) {
+    public ContactsAJ(String _id, String firstname, String lastname, String email, String tel, String facebook, String img) {
         this._id = _id;
-        this.name = name;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.tel = tel;
         this.facebook = facebook;
