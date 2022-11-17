@@ -14,6 +14,7 @@ import Contact from "../screen/Contact";
 import NewsPage from "../screen/NewsPage";
 import NewsDetail from "../screen/NewsDetail";
 import FormCovid from "../screen/FormCovid";
+import PreLogin from "../screen/PreLogin";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -143,7 +144,12 @@ function LoginStack() {
         component={Loading}
         options={{ headerShown: false }}
       />
-      <PageLogin.Screen name="TabHome" component={TabNavigation}/>
+      <PageLogin.Screen
+        name="PreLogin"
+        component={PreLogin}
+        options={{ headerShown: false }}
+      />
+      <PageLogin.Screen name="TabHome" component={TabNavigation} options={{headerShown: false}}/>
     </PageLogin.Navigator>
   );
 }
@@ -212,8 +218,8 @@ function TabNavigation() {
 function Navigation() {
   return (
     <NavigationContainer>
-      {/* <LoginStack/> */}
-      <TabNavigation/>
+      <LoginStack/>
+      {/* <TabNavigation/> */}
     </NavigationContainer>
   );
 }

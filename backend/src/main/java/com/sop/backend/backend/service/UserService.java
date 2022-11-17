@@ -4,11 +4,8 @@ import com.sop.backend.backend.pojo.user;
 import com.sop.backend.backend.repository.UserRepository;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 @Service
@@ -30,5 +27,10 @@ public class UserService {
         System.out.println(User.getPassword());
         System.out.println(User.getEmail());
         return userRepository.findByEmail(User.getEmail(), User.getPassword()) ;
+    }
+
+    @RabbitListener(queues = "GetUserId")
+    public List<user> retrieveUserId(user User) {
+        return userRepository.findByid(User.get_id()) ;
     }
 }

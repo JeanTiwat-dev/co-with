@@ -45,9 +45,9 @@ function Form() {
     });
   };
 
-  const onCancel = () => {
-    setShowDatePicker(false);
-  };
+    const onCancel = () => {
+        setShowDatePicker(false);
+    };
 
   const onConfirm = (output) => {
     setDate(output.dateString);
