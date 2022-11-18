@@ -12,7 +12,7 @@ import { useNavigation } from "@react-navigation/native";
 function Preformcovid() {
   const { height, width } = useWindowDimensions();
   const router = useNavigation();
-  console.log(height);
+  // console.log(height);
   return (
     <ScrollView contentContainerStyle={{ height: "100%" }}>
       <View style={[styles.covidcontainer, { width: width }]}>
