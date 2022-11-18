@@ -15,6 +15,9 @@ import NewsPage from "../screen/NewsPage";
 import NewsDetail from "../screen/NewsDetail";
 import FormCovid from "../screen/FormCovid";
 import PreLogin from "../screen/PreLogin";
+import SubmitForm from "../screen/SubmitForm";
+import EditNews from "../screen/EditNews";
+import EditNewsDetails from "../screen/EditNewsDetails";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -68,6 +71,21 @@ function HomeStack() {
         }}
       />
       <HomeNav.Screen
+        name="SubmitForm"
+        component={SubmitForm}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Form Submitted",
+        }}
+      />
+      <HomeNav.Screen
         name="DashBoard"
         component={DashBoard}
         options={{
@@ -115,6 +133,36 @@ function HomeStack() {
       <HomeNav.Screen
         name="NewsDetail"
         component={NewsDetail}
+        options={({route})=>({
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: route.params.data.title,
+        })}
+      />
+      <HomeNav.Screen
+        name="EditNews"
+        component={EditNews}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Edit News",
+        }}
+      />
+      <HomeNav.Screen
+        name="EditNewsDetails"
+        component={EditNewsDetails}
         options={({route})=>({
           headerBackTitleVisible: false,
           headerStyle: {
@@ -218,8 +266,8 @@ function TabNavigation() {
 function Navigation() {
   return (
     <NavigationContainer>
-      <LoginStack/>
-      {/* <TabNavigation/> */}
+      {/* <LoginStack/> */}
+      <TabNavigation/>
     </NavigationContainer>
   );
 }

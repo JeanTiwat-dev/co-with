@@ -67,7 +67,7 @@ const EditNews = () => {
         <View style={styles.newsContainer}>
           {data.map((data) => (
             <TouchableOpacity key={data.id} onPress={()=>{
-              router.navigate('NewsDetail', {data: data});
+              router.navigate('EditNewsDetails', {data: data});
             }}>
               <Card>
                 <View style={styles.imageContainer}>

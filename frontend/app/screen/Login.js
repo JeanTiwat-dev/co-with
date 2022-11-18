@@ -65,6 +65,7 @@ const Login = () => {
                     <TextInput style={styles.input}
                         placeholder="covidman@it.kmitl.ac.th"
                         onChangeText={text => setEmail(text)}
+                        keyboardType="email-address"
                     />
                 </View>
                 <View style={{ marginTop: 20, paddingHorizontal: 50}}>

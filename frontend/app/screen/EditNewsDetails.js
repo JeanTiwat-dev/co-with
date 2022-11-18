@@ -3,17 +3,12 @@ import { Ionicons } from "@expo/vector-icons";
 import EditNews from "./EditNews";
 import { useState } from "react";
 
-const EditNewsDetails = () => {
-  const [data, setData] = useState({
-    id: 1,
-    title: "news1",
-    content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Suspendisse fringilla eros volutpat nisl semper, vitae tempor diam vulputate. Pellentesque a lobortis libero. Vivamus mauris arcu, ultrices sed condimentum et, iaculis sit amet enim. Fusce porta lacinia libero, eu dignissim neque pulvinar id. Ut et dignissim mauris. Proin fermentum et sem eget tristique. Donec imperdiet nulla iaculis enim finibus malesuada. Duis vel risus nisl. Nulla tristique mi in orci auctor, nec dignissim ligula euismod. In varius eu nulla vel commodo. Maecenas sodales mi sit amet tortor euismod, vel porta nulla dapibus. Nunc semper sollicitudin mi id porta.",
-    uri: "https://www.it.kmitl.ac.th/wp-content/themes/itkmitl2017wp/img/ogimage.png",
-  })
-  const [topic, setTopic] = useState('');
-  const [content, setContent] = useState('');
-  const [imageUri, setImageUri] = useState('');
+const EditNewsDetails = ({route}) => {
+  console.log(route);
+  const [data, setData] = useState(route.params.data);
+  const [topic, setTopic] = useState(route.params.data.title);
+  const [content, setContent] = useState(route.params.data.content);
+  const [imageUri, setImageUri] = useState(route.params.data.uri);
   return (
     <ScrollView>
       <View style={styles.container}>

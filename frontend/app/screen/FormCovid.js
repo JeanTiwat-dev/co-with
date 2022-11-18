@@ -32,6 +32,7 @@ function Form() {
   const [studentId, setStudentId] = useState('');
   const [studentName, setStudentName] = useState('');
   const [imageStudentId, setImageStudentId] = useState('');
+  const [imageCovid, setImageCovid]= useState('');
   const [date, setDate] = useState('');
   const [quarantine, setQuarantine] = useState('');
   const openDatePicker = () => {
@@ -55,6 +56,10 @@ function Form() {
     console.log(output.date);
     console.log(output.dateString);
   };
+
+  const SubmitFormHandler = () => {
+    router.navigate('SubmitForm');
+  }
 
   return (
     <View>
@@ -115,6 +120,12 @@ function Form() {
         <Text style={styles.header}>
           ภาพหลักฐานแสดงการติดโควิดหรือการกักตัว
         </Text>
+        {imageCovid !== '' && <View style={styles.card}>
+          <View style={styles.cardContent}>
+            <Text style={styles.imageHeader}>รูปของคุณ</Text>
+            <Image source={{ uri: imageCovid }} resizeMode='cover' style={styles.uploadImage}/>
+          </View>
+        </View>}
         <TouchableOpacity style={styles.upload} onPress={handleChoosePhoto}>
           <Ionicons
             name="cloud-upload-outline"
@@ -134,7 +145,7 @@ function Form() {
           ></Ionicons>
           <Text>เลือกวันที่</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submit}>
+        <TouchableOpacity style={styles.submit} onPress={SubmitFormHandler}>
           <Ionicons
             name="send-outline"
             size={20}
