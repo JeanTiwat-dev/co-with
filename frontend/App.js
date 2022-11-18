@@ -7,12 +7,13 @@ import Login from './app/screen/Login';
 import Loading from './app/screen/Loading';
 import PreLogin from './app/screen/PreLogin';
 import Contact from './app/screen/Contact';
+import { ToastProvider } from 'react-native-toast-notifications'
 export default function App() {
   return (
-    <Navigation/>
-    // <PreLogin/>
-    // <Loading/>
-    // <Contact/>
+    <ToastProvider>
+      <Navigation/>
+    </ToastProvider>
+    // <Login/>
   );
 }
 
