@@ -14,7 +14,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
-import { launchImageLibrary } from "react-native-image-picker";
+import {launchImageLibrary} from 'react-native-image-picker';
 import { useNavigation } from "@react-navigation/native";
 
 function Form() {
@@ -35,16 +35,20 @@ function Form() {
   const [imageCovid, setImageCovid]= useState('');
   const [date, setDate] = useState('');
   const [quarantine, setQuarantine] = useState('');
+  const [photo, setPhoto] = useState(null);
   const openDatePicker = () => {
     setShowDatePicker(true);
   };
   const handleChoosePhoto = () => {
-    launchImageLibrary({ noData: true }, (response) => {
-      if (response) {
-        setPhoto(response);
-      }
+    const options = {
+      noData: true,
+    };
+    launchImageLibrary(options, response => {
+      console.log("response", response)
     });
   };
+
+  
 
     const onCancel = () => {
         setShowDatePicker(false);
