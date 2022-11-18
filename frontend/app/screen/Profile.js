@@ -10,12 +10,14 @@ import {
   Pressable,
 } from "react-native";
 import { useEffect, useRef, useState } from "react";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import { ScrollView } from "react-native-gesture-handler";
 import axios from "axios";
 import path from "../../path";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Feather, AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
+import * as ImagePicker from "expo-image-picker";
 
 function Profile() {
   const { width, height } = useWindowDimensions();
@@ -24,6 +26,27 @@ function Profile() {
   const [editVisible, setEditVisible] = useState(false);
   const [edit, setEdit] = useState(false);
   const router = useNavigation();
+  const [image, setImage] = useState(null);
+  //   const [imageUser, setUserImage] = useState(imguser);
+  //   const imguser = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setImage(result.uri);
+      //   setUserImage({ uri: result.uri });
+      console.log(image);
+    }
+  };
+
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
     // console.log(JSON.parse(datauser)._id);
@@ -45,9 +68,12 @@ function Profile() {
   }, []);
 
   return (
-    <ScrollView style={{
+    <ScrollView
+      style={{
         backgroundColor: "#1E4E89",
-      }}>
+      }}
+      contentContainerStyle={{ justifyContent: "center", flex: 1 }}
+    >
       <View
         style={{
           backgroundColor: "#1E4E89",
@@ -60,10 +86,18 @@ function Profile() {
           justifyContent: "center",
         }}
       >
-        <Image
-          style={{ width: 170, height: 170 }}
-          source={require("../assets/user.png")}
-        />
+        {!image && (
+          <Image
+            style={{ width: 170, height: 170, borderRadius: 999 }}
+            source={require("../assets/user.png")}
+          />
+        )}
+        {image && (
+          <Image
+            source={{ uri: image }}
+            style={{ width: 170, height: 170, borderRadius: 999 }}
+          />
+        )}
         <View
           style={{
             backgroundColor: "#FFFFFF",
@@ -86,6 +120,17 @@ function Profile() {
           <TextInput editable={editVisible} style={styles.inputprofile}>
             {user.email}
           </TextInput>
+          {/* img */}
+          {editVisible && (
+            <TouchableOpacity style={styles.upload} onPress={pickImage}>
+              <Ionicons
+                name="cloud-upload-outline"
+                size={20}
+                style={{ marginRight: 10 }}
+              ></Ionicons>
+              <Text>อัพโหลดรูปภาพ</Text>
+            </TouchableOpacity>
+          )}
 
           {/* button */}
           <View
@@ -122,15 +167,26 @@ function Profile() {
             )}
             {/* Confirm */}
             {editVisible && (
-              <TouchableOpacity
-                style={[styles.logout2]}
-                onPress={() => {
-                  setEditVisible(!editVisible);
-                }}
-              >
-                {/* <AntDesign name="logout" size={20} color="black" /> */}
-                <Text style={{ fontWeight: "bold" }}>Confirm</Text>
-              </TouchableOpacity>
+              <View style={{ flexDirection: "row", alignItems: "center" }}>
+                {/* cancel */}
+                <TouchableOpacity
+                  style={[styles.logout2, {borderWidth: 1, borderColor: '#FF9F29', backgroundColor: '#EDEDED'}]}
+                  onPress={() => {
+                    setEditVisible(!editVisible);
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold", }}>cancel</Text>
+                </TouchableOpacity>
+                {/* confirm */}
+                <TouchableOpacity
+                  style={[styles.logout2, {marginLeft: 20, backgroundColor: "#FF9F29",}]}
+                  onPress={() => {
+                    setEditVisible(!editVisible);
+                  }}
+                >
+                  <Text style={{ fontWeight: "bold" }}>Confirm</Text>
+                </TouchableOpacity>
+              </View>
             )}
           </View>
         </View>
@@ -235,6 +291,25 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     padding: 20,
   },
+  upload: {
+    padding: 10,
+    backgroundColor: "#rgb(119,203,229)",
+    alignItems: "center",
+    marginBottom: 10,
+    marginTop: 10,
+    width: "75%",
+    // flex: 1,
+    flexDirection: "row",
+    justifyContent: "center",
+    borderRadius: 10,
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+  },
   logout: {
     backgroundColor: "#EF4444",
     width: 120,
@@ -255,10 +330,10 @@ const styles = StyleSheet.create({
     flexDirection: "row",
   },
   logout2: {
-    backgroundColor: "#FF9F29",
-    width: 120,
+    width: 100,
     height: 50,
     // marginLeft: 20,
+    // marginTop: 20,
     justifyContent: "center",
     alignItems: "center",
     borderRadius: 10,
