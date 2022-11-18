@@ -1,14 +1,16 @@
 import { useState } from "react";
 import {View, Text, StyleSheet, ScrollView, Image} from "react-native";
+import path from "../../path";
 
 
 const NewsDetail = ({route}) => {
-    console.log(route);
+    
     // const news = props.news;
     const [news, setNews] = useState(route.params.data);
+    console.log(news.image);
     return (
         <ScrollView>
-            <Image source={{ uri : news.uri }} style={styles.image} />
+            <Image source={{ uri : `${path}${news.image}` }} style={styles.image} />
             <View style={styles.container}>
                 <Text style={styles.title}>{news.title}</Text>
                 <Text style={styles.content}>{news.content}</Text>
