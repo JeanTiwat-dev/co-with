@@ -14,6 +14,10 @@ import Contact from "../screen/Contact";
 import NewsPage from "../screen/NewsPage";
 import NewsDetail from "../screen/NewsDetail";
 import FormCovid from "../screen/FormCovid";
+import PreLogin from "../screen/PreLogin";
+import SubmitForm from "../screen/SubmitForm";
+import EditNews from "../screen/EditNews";
+import EditNewsDetails from "../screen/EditNewsDetails";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -64,6 +68,21 @@ function HomeStack() {
             fontWeight: "bold",
           },
           title: "Report Covid-19",
+        }}
+      />
+      <HomeNav.Screen
+        name="SubmitForm"
+        component={SubmitForm}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Form Submitted",
         }}
       />
       <HomeNav.Screen
@@ -126,6 +145,36 @@ function HomeStack() {
           title: route.params.data.title,
         })}
       />
+      <HomeNav.Screen
+        name="EditNews"
+        component={EditNews}
+        options={{
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Edit News",
+        }}
+      />
+      <HomeNav.Screen
+        name="EditNewsDetails"
+        component={EditNewsDetails}
+        options={({route})=>({
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: route.params.data.title,
+        })}
+      />
     </HomeNav.Navigator>
   );
 }
@@ -143,7 +192,12 @@ function LoginStack() {
         component={Loading}
         options={{ headerShown: false }}
       />
-      <PageLogin.Screen name="TabHome" component={TabNavigation}/>
+      <PageLogin.Screen
+        name="PreLogin"
+        component={PreLogin}
+        options={{ headerShown: false }}
+      />
+      <PageLogin.Screen name="TabHome" component={TabNavigation} options={{headerShown: false}}/>
     </PageLogin.Navigator>
   );
 }

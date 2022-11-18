@@ -10,4 +10,7 @@ import java.util.List;
 public interface UserRepository extends MongoRepository<user, String>{
     @Query(value = "{email: '?0', password :  '?1'}")
     public List<user> findByEmail(String email, String password);
+
+    @Query( "{_id: '?0'}")
+    public List<user> findByid(String id);
 }

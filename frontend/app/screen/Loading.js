@@ -10,7 +10,7 @@ const Loading = () => {
         try {
             const datauser = await AsyncStorage.getItem("@user");
             if (!datauser) {
-                router.replace("Login");
+                router.replace("PreLogin");
             } else {
                 router.replace("TabHome");
             }
