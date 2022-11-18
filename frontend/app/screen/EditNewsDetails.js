@@ -8,7 +8,7 @@ const EditNewsDetails = ({route}) => {
   const [data, setData] = useState(route.params.data);
   const [topic, setTopic] = useState(route.params.data.title);
   const [content, setContent] = useState(route.params.data.content);
-  const [imageUri, setImageUri] = useState(route.params.data.uri);
+  const [imageUri, setImageUri] = useState(route.params.data.image);
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -18,7 +18,7 @@ const EditNewsDetails = ({route}) => {
         <Text style={styles.header}>เนื้อหา</Text>
         <TextInput style={styles.textarea} value={content} onChangeText={setContent} multiline={true}
           numberOfLines={4}></TextInput>
-          {imageUri !== '' && <View style={styles.card}>
+          {imageUri && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
             <Image source={{ uri: imageUri }} resizeMode='cover' style={styles.uploadImage}/>
