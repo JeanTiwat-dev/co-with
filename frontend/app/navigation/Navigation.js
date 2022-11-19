@@ -266,8 +266,8 @@ function TabNavigation() {
 function Navigation() {
   return (
     <NavigationContainer>
-      {/* <LoginStack/> */}
-      <TabNavigation/>
+      <LoginStack/>
+      {/* <TabNavigation/> */}
     </NavigationContainer>
   );
 }
