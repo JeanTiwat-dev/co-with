@@ -57,6 +57,10 @@ function Form() {
     console.log(output.dateString);
   };
 
+  const SubmitFormHandler = () => {
+    router.navigate('SubmitForm');
+  }
+
   return (
     <View>
       <ScrollView style={styles.container}>
@@ -141,7 +145,7 @@ function Form() {
           ></Ionicons>
           <Text>เลือกวันที่</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submit}>
+        <TouchableOpacity style={styles.submit} onPress={SubmitFormHandler}>
           <Ionicons
             name="send-outline"
             size={20}

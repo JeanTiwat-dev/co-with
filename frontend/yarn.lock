@@ -3505,7 +3505,7 @@ expo-checkbox@~2.1.0:
 
 expo-clipboard@~3.0.1:
   version "3.0.1"
-  resolved "https://registry.yarnpkg.com/expo-clipboard/-/expo-clipboard-3.0.1.tgz#c3a46b08bb376bc5b4a5ed75631e56f5e1075db8"
+  resolved "https://registry.npmjs.org/expo-clipboard/-/expo-clipboard-3.0.1.tgz"
   integrity sha512-y3gooHxfXpdlslS8GLTrXdWKGCr5hXLI+Y49PolbjUqBVh819+Z/T8bdskUf5YNxu/Bb0HG1yuHpHPe8XyvxSA==
 
 expo-constants@~13.1.1:
@@ -6241,7 +6241,7 @@ react-native-snap-carousel@^3.9.1:
 
 react-native-toast-notifications@^3.3.1:
   version "3.3.1"
-  resolved "https://registry.yarnpkg.com/react-native-toast-notifications/-/react-native-toast-notifications-3.3.1.tgz#c3d6f3b63a4df81c2912560d27878ea056672981"
+  resolved "https://registry.npmjs.org/react-native-toast-notifications/-/react-native-toast-notifications-3.3.1.tgz"
   integrity sha512-yc1Q2nOdIYvAf0GAIlmg8q42hiwpEHnLxkxJ6P+tN6jpcKZ1qzMXlgnmNdyF9cm9VOyHQexEP8952IKNAv1Olw==
 
 react-native-vector-icons@^8.1.0:
