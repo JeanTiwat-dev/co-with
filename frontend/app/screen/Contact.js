@@ -29,7 +29,7 @@ function Contact() {
   const [backup, setBackup] = useState([]);
   const getContacts = async () => {
     await axios
-      .get(`${path}/getContacts`)
+      .get(`${path}/getUser`)
       .then((res) => {
         setAllContact(res.data);
         setBackup(res.data);
@@ -120,7 +120,11 @@ function Contact() {
           placeholder={"Search"}
           returnKeyType="search"
           onChangeText={(txtname) => {
-            const fillter = backup.filter((data) => data.firstname.indexOf(txtname) + 1)
+            const fillter = backup.filter((data) => {
+              if (data.firstname.indexOf(txtname) + 1 > 0 || data.lastname.indexOf(txtname) + 1 > 0) {
+                return data;
+              }
+            })
             setAllContact(fillter);
           }}
         />
