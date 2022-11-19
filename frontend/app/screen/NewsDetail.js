@@ -4,7 +4,7 @@ import path from "../../path";
 
 
 const NewsDetail = ({route}) => {
-    
+    // console.log(route);
     // const news = props.news;
     const [news, setNews] = useState(route.params.data);
     console.log(news.image);

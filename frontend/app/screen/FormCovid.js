@@ -14,7 +14,7 @@ import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
-import { launchImageLibrary } from "react-native-image-picker";
+import * as ImagePicker from 'expo-image-picker';
 import { useNavigation } from "@react-navigation/native";
 
 function Form() {
@@ -31,20 +31,53 @@ function Form() {
   const [check3, setCheck3] = useState(false);
   const [studentId, setStudentId] = useState('');
   const [studentName, setStudentName] = useState('');
-  const [imageStudentId, setImageStudentId] = useState('');
-  const [imageCovid, setImageCovid]= useState('');
+  const [imageStudentId, setImageStudentId] = useState(null);
+  const [imageCovid, setImageCovid]= useState(null);
   const [date, setDate] = useState('');
   const [quarantine, setQuarantine] = useState('');
+  const [photo, setPhoto] = useState(null);
+  const [image, setImage] = useState(null);
+
+  const pickImage = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setImageStudentId(result.uri);
+      console.log(image);
+    } else {
+      setImageStudentId('');
+    }
+  };
+
+  const pickImageCovid = async () => {
+    let result = await ImagePicker.launchImageLibraryAsync({
+      mediaTypes: ImagePicker.MediaTypeOptions.All,
+      allowsEditing: true,
+      aspect: [4, 3],
+      quality: 1,
+    });
+
+    console.log(result);
+
+    if (!result.canceled) {
+      setImageCovid('');
+      setImageCovid(result.uri);
+      // console.log(image);
+    }
+  };
+
   const openDatePicker = () => {
     setShowDatePicker(true);
   };
-  const handleChoosePhoto = () => {
-    launchImageLibrary({ noData: true }, (response) => {
-      if (response) {
-        setPhoto(response);
-      }
-    });
-  };
+
+  
 
     const onCancel = () => {
         setShowDatePicker(false);
@@ -74,13 +107,13 @@ function Form() {
         <Text style={styles.header}>
           หลักฐานยืนยันตัวตน เช่น บัตรประจำตัวนักศึกษา บัตรประชาชน
         </Text>
-        {imageStudentId !== '' && <View style={styles.card}>
+        {imageStudentId && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
             <Image source={{ uri: imageStudentId }} resizeMode='cover' style={styles.uploadImage}/>
           </View>
         </View>}
-        <TouchableOpacity style={styles.upload} onPress={handleChoosePhoto}>
+        <TouchableOpacity style={styles.upload} onPress={() => {pickImage()}}>
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -120,13 +153,13 @@ function Form() {
         <Text style={styles.header}>
           ภาพหลักฐานแสดงการติดโควิดหรือการกักตัว
         </Text>
-        {imageCovid !== '' && <View style={styles.card}>
+        {imageCovid && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
             <Image source={{ uri: imageCovid }} resizeMode='cover' style={styles.uploadImage}/>
           </View>
         </View>}
-        <TouchableOpacity style={styles.upload} onPress={handleChoosePhoto}>
+        <TouchableOpacity style={styles.upload} onPress={() => {pickImageCovid()}}>
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -145,7 +178,7 @@ function Form() {
           ></Ionicons>
           <Text>เลือกวันที่</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submit} onPress={SubmitFormHandler}>
+        <TouchableOpacity style={styles.submit} onPress={() => {SubmitFormHandler}}>
           <Ionicons
             name="send-outline"
             size={20}
