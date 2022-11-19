@@ -56,6 +56,9 @@ function Profile() {
         .then((res) => {
           // console.log(res.data);
           setUser(res.data[0]);
+          // if (res.data[0].img != null) {
+          //   setImage(res.data[0].img);
+          // }
         })
         .catch((er) => {
           console.log(er);
@@ -89,7 +92,7 @@ function Profile() {
         {!image && (
           <Image
             style={{ width: 170, height: 170, borderRadius: 999 }}
-            source={require("../assets/user.png")}
+            source={{ uri: `${path}${user.img}` }}
           />
         )}
         {image && (
