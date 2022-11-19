@@ -11,18 +11,25 @@ import java.io.Serializable;
 public class user implements Serializable {
     @Id
     private String _id;
+    private String firstname;
+    private String lastname;
     private String email;
     private String password;
     private String img;
-    private String firstname;
-    private String lastname;
+    private String role;
+    private String tel;
+    private String facebook;
+
     public user() {}
-    public user(String _id, String email, String password, String img, String firstname, String lastname) {
+    public user(String _id, String firstname, String lastname, String email, String password, String img, String role, String tel, String facebook) {
         this._id = _id;
+        this.firstname = firstname;
+        this.lastname = lastname;
         this.email = email;
         this.password = password;
         this.img = img;
-        this.firstname = firstname;
-        this.lastname = lastname;
+        this.role = role;
+        this.tel = tel;
+        this.facebook = facebook;
     }
 }
