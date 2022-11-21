@@ -113,16 +113,40 @@ function Profile() {
             paddingVertical: 30,
           }}
         >
-          {/* user info */}
-          <TextInput editable={editVisible} style={styles.inputprofile}>
-            {user.firstname}
-          </TextInput>
-          <TextInput editable={editVisible} style={styles.inputprofile}>
-            {user.lastname}
-          </TextInput>
-          <TextInput editable={editVisible} style={styles.inputprofile}>
-            {user.email}
-          </TextInput>
+          {/* user info professor*/}
+          {(user.role == "professor") && (
+            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.firstname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.lastname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.email}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.tel}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.facebook}
+              </TextInput>
+            </View>
+          )}
+          {/* user info student*/}
+          {user.role == "student" && (
+            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.firstname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.lastname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.email}
+              </TextInput>
+            </View>
+          )}
           {/* img */}
           {editVisible && (
             <TouchableOpacity style={styles.upload} onPress={pickImage}>
@@ -161,8 +185,8 @@ function Profile() {
                     setModalVisible(!modalVisible);
                   }}
                 >
-                  <AntDesign name="logout" size={20} color="black" />
-                  <Text style={{ fontWeight: "bold", marginLeft: 10 }}>
+                  <AntDesign name="logout" size={20} color="white" />
+                  <Text style={{ fontWeight: "bold", marginLeft: 10, color: 'white' }}>
                     LOGOUT
                   </Text>
                 </TouchableOpacity>
@@ -173,16 +197,26 @@ function Profile() {
               <View style={{ flexDirection: "row", alignItems: "center" }}>
                 {/* cancel */}
                 <TouchableOpacity
-                  style={[styles.logout2, {borderWidth: 1, borderColor: '#FF9F29', backgroundColor: '#EDEDED'}]}
+                  style={[
+                    styles.logout2,
+                    {
+                      borderWidth: 1,
+                      borderColor: "#FF9F29",
+                      backgroundColor: "#EDEDED",
+                    },
+                  ]}
                   onPress={() => {
                     setEditVisible(!editVisible);
                   }}
                 >
-                  <Text style={{ fontWeight: "bold", }}>cancel</Text>
+                  <Text style={{ fontWeight: "bold" }}>cancel</Text>
                 </TouchableOpacity>
                 {/* confirm */}
                 <TouchableOpacity
-                  style={[styles.logout2, {marginLeft: 20, backgroundColor: "#FF9F29",}]}
+                  style={[
+                    styles.logout2,
+                    { marginLeft: 20, backgroundColor: "#FF9F29" },
+                  ]}
                   onPress={() => {
                     setEditVisible(!editVisible);
                   }}
@@ -207,7 +241,7 @@ function Profile() {
           >
             <View style={styles.centeredView}>
               <View style={styles.modalView}>
-                <AntDesign name="warning" size={60} color="#EF4444" />
+                <AntDesign name="warning" size={60} color="tomato" />
                 <Text style={{ fontSize: 18, marginTop: 25 }}>
                   Press the "Logout" to log out!
                 </Text>
@@ -228,12 +262,12 @@ function Profile() {
                         backgroundColor: "#EDEDED",
                         marginRight: 15,
                         borderWidth: 1,
-                        borderColor: "#EF4444",
+                        borderColor: "tomato",
                       },
                     ]}
                     onPress={() => setModalVisible(!modalVisible)}
                   >
-                    <Text style={[styles.textStyle, { color: "#EF4444" }]}>
+                    <Text style={[styles.textStyle, { color: "tomato" }]}>
                       Back
                     </Text>
                   </Pressable>
@@ -242,7 +276,7 @@ function Profile() {
                     style={[
                       styles.button,
                       // styles.buttonClose,
-                      { backgroundColor: "#EF4444" },
+                      { backgroundColor: "tomato" },
                     ]}
                     onPress={async () => {
                       setModalVisible(false);
@@ -314,7 +348,7 @@ const styles = StyleSheet.create({
     elevation: 5,
   },
   logout: {
-    backgroundColor: "#EF4444",
+    backgroundColor: "tomato",
     width: 120,
     height: 50,
     marginLeft: 20,
@@ -387,6 +421,7 @@ const styles = StyleSheet.create({
   textStyle: {
     // fontSize: 18,
     fontWeight: "bold",
+    color: 'white'
   },
 });
 
