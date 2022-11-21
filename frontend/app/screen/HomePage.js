@@ -60,6 +60,7 @@ function HomePage({ route }) {
   const [index, setIndex] = useState(0);
   const [user, setUser] = useState([]);
   const [annouce, setAnnouce] = useState([]);
+  // const [image, setImage] = useState(null);
 
   // console.log(user);
   async function Getuser() {
@@ -69,8 +70,11 @@ function HomePage({ route }) {
       await axios
         .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
         .then((res) => {
-          // console.log(res.data);
+          // console.log(res.data[0].img);
           setUser(res.data[0]);
+          // if (res.data[0].img != null) {
+          //   setImage(res.data[0].img);
+          // }
         })
         .catch((er) => {
           console.log(er);
@@ -105,9 +109,11 @@ function HomePage({ route }) {
 
   const CarouselCardItem = ({ item, index }) => {
     return (
-      <TouchableOpacity onPress={()=>{
-        router.navigate('NewsDetail', {data: item});
-      }}>
+      <TouchableOpacity
+        onPress={() => {
+          router.navigate("NewsDetail", { data: item });
+        }}
+      >
         <View style={styles.container} key={index}>
           <Image
             source={{ uri: `${path}${item.image}` }}
@@ -130,9 +136,10 @@ function HomePage({ route }) {
             {user.firstname + " " + user.lastname}
           </Text>
         </View>
+        {/* user img */}
         <Image
           style={{ width: 50, height: 50, borderRadius: 999 }}
-          source={require("../assets/user.png")}
+          source={{ uri: `${path}${user.img}` }}
         />
       </View>
 
