@@ -5,12 +5,56 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/repository/InfectedRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/InfectedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/UploadImageController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/InfectedService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/admin.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/fiily.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/jean.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/mind.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/phol.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Infected.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/InfectedRepository.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/InfectedController.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/InfectedService.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/static/image/img_aj/admin.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../backend.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../backend.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/static/image/img_aj/pr.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_aj/admin1.jpeg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../co-with" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/ATK.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/KMCH.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/accidents.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/covidit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/sop/backend/backend/BackendApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/sop/backend/backend/BackendApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/DashBoard.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/DashBoard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/PreFormCovid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/PreFormCovid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
