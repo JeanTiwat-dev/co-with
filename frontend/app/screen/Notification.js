@@ -19,19 +19,39 @@ import { useNavigation } from "@react-navigation/native";
 
 function Notification() {
   const { width } = useWindowDimensions();
-  const [modalVisible, setModalVisible] = useState(false);
+  const [modalVisible, setModalVisible] = useState(true);
 
   function Boxnotification(props) {
-    return(
-        <TouchableOpacity
-          style={styles.boxnoti}
-          onPress={() => {
-            setModalVisible(!modalVisible);
+    return (
+      <TouchableOpacity
+        style={styles.boxnoti}
+        onPress={() => {
+          setModalVisible(!modalVisible);
+        }}
+      >
+        <View
+          style={{
+            flex: 1,
+            flexDirection: "row",
+            alignItems: "center",
+            justifyContent: "space-between",
           }}
         >
-            <Text>มีเด็กเหี้ยติดโควิด</Text>
-        </TouchableOpacity>
-    )
+          <Image
+            style={{ width: 50, height: 50, marginRight: 20 }}
+            source={require("../assets/virus.png")}
+          />
+          <View style={{ flex: 1 }}>
+            <Text style={{ fontSize: 18, fontWeight: "500" }}>
+              Student infection!!
+            </Text>
+            <Text style={{ fontSize: 16, marginTop: 5 }}>
+              The subject that you teach has a student infected{" "}
+            </Text>
+          </View>
+        </View>
+      </TouchableOpacity>
+    );
   }
 
   return (
@@ -62,7 +82,8 @@ function Notification() {
       <View
         style={{ alignItems: "center", justifyContent: "center", width: width }}
       >
-        <Boxnotification/>
+        <Boxnotification />
+        <Boxnotification />
       </View>
       <View>
         {/* model */}
@@ -77,10 +98,22 @@ function Notification() {
         >
           <View style={styles.centeredView}>
             <View style={styles.modalView}>
-              <AntDesign name="warning" size={60} color="tomato" />
-              <Text style={{ fontSize: 18, marginTop: 25 }}>
-                Press the "Logout" to log out!
-              </Text>
+              <Image
+                style={{ width: 100, height: 100 }}
+                source={require("../assets/mask.png")}
+              />
+              <View>
+                <Text style={{ fontSize: 22, marginTop: 25, fontWeight: '500' }}>นักศึกษาติดเชื้อ Covid-19</Text>
+                <Text style={{ fontSize: 18, marginTop: 10 }}>
+                  ชื่อ: นายคัมภีร์ ไบเบิล 
+                </Text>
+                <Text style={{ fontSize: 18 }}>รหัสนักศึกษา: 63070111</Text>
+                <Text style={{ fontSize: 18,  }}>
+                  ลงทะเบียนเรียนรายวิชา:
+                </Text>
+                <Text style={{ fontSize: 18 }}>mobile app</Text>
+                <Text style={{ fontSize: 18 }}>รหัสวิชา: 090675</Text>
+              </View>
               {/* button */}
               <View
                 style={{
@@ -95,15 +128,25 @@ function Notification() {
                     styles.button,
                     // styles.buttonClose,
                     {
-                      backgroundColor: "#EDEDED",
-                      marginRight: 15,
-                      borderWidth: 1,
-                      borderColor: "tomato",
+                      backgroundColor: "tomato",
+                      //   marginRight: 15,
+                      shadowColor: "#000",
+                      shadowOffset: {
+                        width: -2,
+                        height: 2,
+                      },
+                      shadowOpacity: 0.2,
+                      shadowRadius: 3,
+                      elevation: 5,
+                      //   borderWidth: 1,
+                      //   borderColor: "tomato",
                     },
                   ]}
                   onPress={() => setModalVisible(!modalVisible)}
                 >
-                  <Text style={[styles.textStyle, { color: "tomato" }]}>
+                  <Text
+                    style={{ color: "white", fontSize: 18, fontWeight: "500" }}
+                  >
                     Back
                   </Text>
                 </Pressable>
@@ -123,7 +166,14 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 15,
     marginBottom: 15,
-    padding: 20
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    padding: 20,
   },
   centeredView: {
     flex: 1,

@@ -23,6 +23,12 @@
       <sourceFolder url="file://$MODULE_DIR$/backend/src/test/java" isTestSource="true" />
       <excludeFolder url="file://$MODULE_DIR$/backend/target" />
     </content>
+    <content url="file://$MODULE_DIR$/backend">
+      <sourceFolder url="file://$MODULE_DIR$/backend/src/main/java" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/src/main/resources" type="java-resource" />
+      <sourceFolder url="file://$MODULE_DIR$/backend/src/test/java" isTestSource="true" />
+      <excludeFolder url="file://$MODULE_DIR$/backend/target" />
+    </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter-amqp:2.7.5" level="project" />

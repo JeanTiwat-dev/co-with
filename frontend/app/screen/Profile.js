@@ -46,7 +46,8 @@ function Profile() {
       console.log(image);
     }
   };
-
+  console.log(user)
+  console.log(`${path}${user.img}`)
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
     // console.log(JSON.parse(datauser)._id);
@@ -144,6 +145,40 @@ function Profile() {
               </TextInput>
               <TextInput editable={editVisible} style={styles.inputprofile}>
                 {user.email}
+              </TextInput>
+            </View>
+          )}
+          {/* user info admin*/}
+          {user.role == "admin" && (
+            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.firstname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.lastname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.email}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.tel}
+              </TextInput>
+            </View>
+          )}
+          {/* user info PR*/}
+          {user.role == "PR" && (
+            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.firstname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.lastname}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.email}
+              </TextInput>
+              <TextInput editable={editVisible} style={styles.inputprofile}>
+                {user.tel}
               </TextInput>
             </View>
           )}
