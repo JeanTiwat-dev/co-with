@@ -28,14 +28,16 @@ const NewsPage = ({ navigation }) => {
   const [backup, setBackup] = useState([]);
   const CarouselCardItem = ({ item, index }) => {
     return (
-      <TouchableOpacity style={styles.container} key={index} onPress={()=>{
+      <TouchableOpacity style={{padding : 10}} key={index} onPress={()=>{
         router.navigate('NewsDetail', {data: item});
       }}>
+        <View style={styles.container}>
         <Image source={{uri : `${path}${item.image}`}} style={styles.imageCarousel} />
         <Text style={styles.header} numberOfLines={2}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.body}>
           {item.content}
         </Text>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -65,7 +67,7 @@ const NewsPage = ({ navigation }) => {
   }
   return (
     <ScrollView style={styles.scrollview}>
-      <Text style={styles.topic}>ประชาสัมพันธ์</Text>
+      <Text style={styles.topic}>Announcement</Text>
       <View style={{ marginTop: 25 }}>
         <Carousel
           layout="default"
@@ -125,9 +127,10 @@ const styles = StyleSheet.create({
     // paddingHorizontal : 40,
   },
   topic: {
-    fontSize: 35,
+    fontSize: 28,
     paddingHorizontal: 40,
     marginTop: 20,
+    fontWeight : 'bold'
   },
   newsContainer: {
     flex: 1,
@@ -142,6 +145,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: "40%",
+    
   },
   newsContent: {
     paddingHorizontal: 10,
@@ -163,10 +167,27 @@ const styles = StyleSheet.create({
   imageCarousel: {
     width: "100%",
     height: 100,
+    borderTopLeftRadius :8,
+    borderTopRightRadius : 8,
   },
   newsTitle: {
     fontWeight: "bold",
   },
+  container : {
+    backgroundColor : 'white',
+    // paddingBottom : 20,
+    // padding : 10,
+    borderRadius : 10,
+    // overflow : 'hidden',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
+    paddingBottom: 20
+  }
 });
 
 export default NewsPage;
