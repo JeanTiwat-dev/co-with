@@ -7,6 +7,7 @@ import {
   Image,
   useWindowDimensions,
   Dimensions,
+  Pressable
 } from "react-native";
 import React, { useRef, useState, useEffect } from "react";
 import NewsDetail from "./NewsDetail";
@@ -15,6 +16,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import path from "../../path";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 
 const NewsPage = ({ navigation }) => {
@@ -67,7 +69,51 @@ const NewsPage = ({ navigation }) => {
   }
   return (
     <ScrollView style={styles.scrollview}>
+      <View style={styles.topiccontainer}>
       <Text style={styles.topic}>Announcement</Text>
+      <View
+                style={{
+                  // flexDirection: "row",
+                  // width: "100%",
+                  // justifyContent: "center",
+                }}
+              >
+                {/* back */}
+                <Pressable
+                  style={[
+                    styles.buttoncreate,
+                    // styles.buttonClose,
+                    // { marginLeft: 5, marginRight: 5 },
+                  ]}
+                >
+                  <Ionicons
+            name="add-outline"
+            size={20}
+          ></Ionicons>
+                </Pressable>
+              </View>
+              <View
+                style={{
+                  // flexDirection: "row",
+                  // width: "100%",
+                  // justifyContent: "center",
+                }}
+              >
+                {/* back */}
+                <Pressable
+                  style={[
+                    styles.buttonedit,
+                    // styles.buttonClose,
+                    // { marginLeft: 5, marginRight: 5 },
+                  ]}
+                >
+                  <Ionicons
+            name="create-outline"
+            size={20}
+          ></Ionicons>
+                </Pressable>
+              </View>
+      </View>
       <View style={{ marginTop: 25 }}>
         <Carousel
           layout="default"
@@ -126,9 +172,53 @@ const styles = StyleSheet.create({
     // width : '100%',
     // paddingHorizontal : 40,
   },
+  topiccontainer : {
+    flex : 1,
+    flexDirection : 'row',
+    flexWrap : 'wrap',
+    justifyContent : 'space-between',
+    paddingHorizontal : 40,
+    alignContent: 'center',
+    marginTop: 20
+  },
+  buttoncreate: {
+    backgroundColor: "#16A34A",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 10,
+    marginLeft: 10
+  },
+  buttonedit: {
+    backgroundColor: "#FBBF24",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 10,
+    paddingLeft: 3
+  },
   topic: {
-    fontSize: 28,
-    paddingHorizontal: 40,
+    fontSize: 25,
     marginTop: 20,
     fontWeight : 'bold'
   },
