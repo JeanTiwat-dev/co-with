@@ -46,7 +46,8 @@ function Profile() {
       console.log(image);
     }
   };
-
+  console.log(user)
+  console.log(`${path}${user.img}`)
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
     // console.log(JSON.parse(datauser)._id);

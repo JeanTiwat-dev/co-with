@@ -27,7 +27,7 @@ function DashBoard() {
         <View style={{padding: 20, flexDirection: 'row', justifyContent: 'space-between'}}>
           <Image source={require('../assets/coronavirus.png')} style={{ height: 100, width: 100 }} />
           <View style={{width: '70%', height: '90%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 28, fontWeight: 'bold'}}>XX คน</Text>
+            <Text style={{fontSize: 28, fontWeight: 'bold'}}>2 คน</Text>
           </View>
         </View>
       </View>
@@ -41,7 +41,7 @@ function DashBoard() {
             จำนวนผู้ติดเชื้อวันนี้
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 25, fontWeight: 'bold'}}>XX คน</Text>
+            <Text style={{fontSize: 25, fontWeight: 'bold'}}>1 คน</Text>
           </View>
         </View>
         {/* box 2 */}
@@ -52,7 +52,7 @@ function DashBoard() {
             ยอดหายป่วยวันนี้
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 25, fontWeight: 'bold'}}>XX คน</Text>
+            <Text style={{fontSize: 25, fontWeight: 'bold'}}>1 คน</Text>
           </View>
         </View>
       </View>
@@ -65,7 +65,7 @@ function DashBoard() {
         </Text>
         <View style={{padding: 20, flexDirection: 'row', justifyContent: 'space-between', width: '100%', height: '100%'}}>
           <View style={{width: '40%', height: '90%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 28, fontWeight: 'bold'}}>XX คน</Text>
+            <Text style={{fontSize: 28, fontWeight: 'bold'}}>1 คน</Text>
           </View>
           <Image source={require('../assets/logohugg_mini.png')} style={{ height: 110, width: 180}} />
         </View>

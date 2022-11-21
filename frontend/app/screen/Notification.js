@@ -83,6 +83,7 @@ function Notification() {
         style={{ alignItems: "center", justifyContent: "center", width: width }}
       >
         <Boxnotification />
+        <Boxnotification />
       </View>
       <View>
         {/* model */}
