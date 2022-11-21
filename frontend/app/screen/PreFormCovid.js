@@ -15,7 +15,7 @@ function Preformcovid() {
   // console.log(height);
   return (
     <ScrollView contentContainerStyle={{ height: "100%" }}>
-      <View style={[styles.covidcontainer, { width: width }]}>
+      <View style={[styles.covidcontainer, { width: width , height : height-width}]}>
         <Image
           style={{ width: 250, height: 250, marginBottom: 70 }}
           source={require("../assets/virus.png")}
@@ -86,7 +86,7 @@ const styles = StyleSheet.create({
     backgroundColor: "#476E9E",
     justifyContent: "center",
     alignItems: "center",
-    height: 450,
+    // height: 450,
 
     // borderBottomLeftRadius: 200,
     // borderBottomRightRadius: 200,

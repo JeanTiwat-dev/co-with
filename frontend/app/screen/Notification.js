@@ -123,7 +123,14 @@ const styles = StyleSheet.create({
     height: 100,
     borderRadius: 15,
     marginBottom: 15,
-    padding: 20
+    shadowOffset: {
+        width: -2,
+        height: 2,
+      },
+      shadowOpacity: 0.2,
+      shadowRadius: 3,
+      elevation: 5,
+      padding: 20,
   },
   centeredView: {
     flex: 1,
@@ -155,6 +162,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     borderRadius: 10,
     marginTop: 25,
+    
   },
 });
 
