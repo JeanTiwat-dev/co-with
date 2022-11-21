@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_stu/fiily.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_stu/jean.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_stu/mind.png" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_stu/phol.png" beforeDir="false" />
-=======
-    <list default="true" id="eb9abcf5-8bf6-4a6f-b159-31cf5c7b49f8" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
->>>>>>> af9cd954e4be81776dc5e4c10c390992f5192f4e
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,25 +21,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-<<<<<<< HEAD
   <component name="ProjectId" id="2HgUgf5YpW3IpriBMoHzIV2t4Dr" />
-=======
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="Use Maven wrapper" />
-        <option name="useMavenConfig" value="true" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProjectId" id="2HfFPZnFUVKOb5IQ8AMMBhXCtUs" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
->>>>>>> af9cd954e4be81776dc5e4c10c390992f5192f4e
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
     &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
@@ -77,42 +58,19 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/fahfiily/Documents/code/co-with/backend",
-    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
-  }
-}]]></component>
-  <component name="RunManager">
-    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
-      <module name="backend" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sop.backend.backend.BackendApplication" />
->>>>>>> af9cd954e4be81776dc5e4c10c390992f5192f4e
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-<<<<<<< HEAD
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.BackendApplication" />
       </list>
     </recent_temporary>
-=======
->>>>>>> af9cd954e4be81776dc5e4c10c390992f5192f4e
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-<<<<<<< HEAD
       <changelist id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="" />
       <created>1668706332914</created>
       <option name="number" value="Default" />
@@ -121,15 +79,6 @@
       <workItem from="1668706334272" duration="2597000" />
       <workItem from="1668786809108" duration="1997000" />
       <workItem from="1668851827690" duration="3045000" />
-=======
-      <changelist id="eb9abcf5-8bf6-4a6f-b159-31cf5c7b49f8" name="Changes" comment="" />
-      <created>1668668207823</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1668668207823</updated>
-      <workItem from="1668668209171" duration="12957000" />
-      <workItem from="1669003751409" duration="296000" />
->>>>>>> af9cd954e4be81776dc5e4c10c390992f5192f4e
     </task>
     <servers />
   </component>
