@@ -143,15 +143,17 @@ function Contact() {
         {allContact &&
           allContact.map((item, index) => {
             // console.log(`${path}${item.img}`);
-            return (
-              <CardContact
-                key={index}
-                color="#607EAA"
-                image={{ uri: `${path}${item.img}` }}
-                txt={item.firstname + "\n" + item.lastname}
-                value={item}
-              />
-            );
+            if(item.role == "professor"){
+              return (
+                <CardContact
+                  key={index}
+                  color="#607EAA"
+                  image={{ uri: `${path}${item.img}` }}
+                  txt={item.firstname + "\n" + item.lastname}
+                  value={item}
+                />
+              );
+            }
           })}
       </View>
       {/* modal */}
