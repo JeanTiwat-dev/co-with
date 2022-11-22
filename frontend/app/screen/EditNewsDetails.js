@@ -2,6 +2,7 @@ import { View, Text, StyleSheet, TouchableOpacity, TextInput, Image, ScrollView 
 import { Ionicons } from "@expo/vector-icons";
 import EditNews from "./EditNews";
 import { useState } from "react";
+import path from "../../path";
 
 const EditNewsDetails = ({route}) => {
   console.log(route);
@@ -12,7 +13,7 @@ const EditNewsDetails = ({route}) => {
   return (
     <ScrollView>
       <View style={styles.container}>
-        <Text style={styles.topic}>แก้ไขข่าว</Text>
+        <Text style={styles.topic}>Edit News Details</Text>
         <Text style={styles.header}>หัวข้อข่าว</Text>
         <TextInput style={styles.input} value={topic} onChangeText={setTopic}></TextInput>
         <Text style={styles.header}>เนื้อหา</Text>
@@ -21,7 +22,7 @@ const EditNewsDetails = ({route}) => {
           {imageUri && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
-            <Image source={{ uri: imageUri }} resizeMode='cover' style={styles.uploadImage}/>
+            <Image source={{ uri: `${path}${imageUri}` }} resizeMode='cover' style={styles.uploadImage}/>
           </View>
         </View>}
         <TouchableOpacity style={styles.upload}>
@@ -51,8 +52,9 @@ const styles = StyleSheet.create({
     paddingHorizontal: 40,
   },
   topic: {
-    fontSize: 35,
+    fontSize: 28,
     marginTop: 30,
+    fontWeight: 'bold'
   },
   imageHeader : {
     fontSize: 20,

@@ -108,8 +108,10 @@ function HomePage({ route }) {
   };
 
   const CarouselCardItem = ({ item, index }) => {
+    console.log(`${path}${item.image}`)
     return (
       <TouchableOpacity
+      style={{padding: 10}}
         onPress={() => {
           router.navigate("NewsDetail", { data: item });
         }}
@@ -137,10 +139,16 @@ function HomePage({ route }) {
           </Text>
         </View>
         {/* user img */}
-        <Image
-          style={{ width: 50, height: 50, borderRadius: 999 }}
-          source={{ uri: `${path}${user.img}` }}
-        />
+        <TouchableOpacity
+          onPress={() => {
+            router.navigate("Profile");
+          }}
+        >
+          <Image
+            style={{ width: 50, height: 50, borderRadius: 999 }}
+            source={{ uri: `${path}${user.img}` }}
+          />
+        </TouchableOpacity>
       </View>
 
       {/* Corousel */}
@@ -249,10 +257,13 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation: 7,
+    // overflow: 'hidden'
   },
   image: {
     width: "100%",
     height: 120,
+    borderTopRightRadius: 8,
+    borderTopLeftRadius: 8,
   },
   header: {
     color: "#222",

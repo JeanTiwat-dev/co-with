@@ -7,6 +7,7 @@ import {
   Image,
   useWindowDimensions,
   Dimensions,
+  Pressable
 } from "react-native";
 import React, { useRef, useState, useEffect } from "react";
 import NewsDetail from "./NewsDetail";
@@ -15,6 +16,7 @@ import Carousel, { Pagination } from "react-native-snap-carousel";
 import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import path from "../../path";
+import { Ionicons, FontAwesome } from "@expo/vector-icons";
 
 
 const NewsPage = ({ navigation }) => {
@@ -28,14 +30,16 @@ const NewsPage = ({ navigation }) => {
   const [backup, setBackup] = useState([]);
   const CarouselCardItem = ({ item, index }) => {
     return (
-      <TouchableOpacity style={styles.container} key={index} onPress={()=>{
+      <TouchableOpacity style={{padding : 10}} key={index} onPress={()=>{
         router.navigate('NewsDetail', {data: item});
       }}>
+        <View style={styles.container}>
         <Image source={{uri : `${path}${item.image}`}} style={styles.imageCarousel} />
         <Text style={styles.header} numberOfLines={2}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.body}>
           {item.content}
         </Text>
+        </View>
       </TouchableOpacity>
     );
   };
@@ -65,7 +69,57 @@ const NewsPage = ({ navigation }) => {
   }
   return (
     <ScrollView style={styles.scrollview}>
-      <Text style={styles.topic}>ประชาสัมพันธ์</Text>
+      <View style={styles.topiccontainer}>
+      <Text style={styles.topic}>Announcement</Text>
+      <View
+                style={{
+                  // flexDirection: "row",
+                  // width: "100%",
+                  // justifyContent: "center",
+                }}
+              >
+                {/* back */}
+                <Pressable
+                  style={[
+                    styles.buttoncreate,
+                    // styles.buttonClose,
+                    // { marginLeft: 5, marginRight: 5 },
+                  ]}
+                  onPress={() => {
+                    router.navigate("UploadNews");
+                  }}
+                >
+                  <Ionicons
+            name="add-outline"
+            size={20}
+          ></Ionicons>
+                </Pressable>
+              </View>
+              <View
+                style={{
+                  // flexDirection: "row",
+                  // width: "100%",
+                  // justifyContent: "center",
+                }}
+              >
+                {/* back */}
+                <Pressable
+                  style={[
+                    styles.buttonedit,
+                    // styles.buttonClose,
+                    // { marginLeft: 5, marginRight: 5 },
+                  ]}
+                  onPress={() => {
+                    router.navigate("EditNews");
+                  }}
+                >
+                  <Ionicons
+            name="create-outline"
+            size={20}
+          ></Ionicons>
+                </Pressable>
+              </View>
+      </View>
       <View style={{ marginTop: 25 }}>
         <Carousel
           layout="default"
@@ -124,10 +178,55 @@ const styles = StyleSheet.create({
     // width : '100%',
     // paddingHorizontal : 40,
   },
+  topiccontainer : {
+    flex : 1,
+    flexDirection : 'row',
+    flexWrap : 'wrap',
+    justifyContent : 'space-between',
+    paddingHorizontal : 40,
+    alignContent: 'center',
+    marginTop: 20
+  },
+  buttoncreate: {
+    backgroundColor: "#16A34A",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 10,
+    marginLeft: 10
+  },
+  buttonedit: {
+    backgroundColor: "#FBBF24",
+    width: 50,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: -2,
+      height: 2,
+    },
+    shadowOpacity: 0.2,
+    shadowRadius: 3,
+    elevation: 5,
+    marginTop: 10,
+    paddingLeft: 3
+  },
   topic: {
-    fontSize: 35,
-    paddingHorizontal: 40,
+    fontSize: 25,
     marginTop: 20,
+    fontWeight : 'bold'
   },
   newsContainer: {
     flex: 1,
@@ -142,6 +241,7 @@ const styles = StyleSheet.create({
   },
   imageContainer: {
     height: "40%",
+    
   },
   newsContent: {
     paddingHorizontal: 10,
@@ -163,10 +263,27 @@ const styles = StyleSheet.create({
   imageCarousel: {
     width: "100%",
     height: 100,
+    borderTopLeftRadius :8,
+    borderTopRightRadius : 8,
   },
   newsTitle: {
     fontWeight: "bold",
   },
+  container : {
+    backgroundColor : 'white',
+    // paddingBottom : 20,
+    // padding : 10,
+    borderRadius : 10,
+    // overflow : 'hidden',
+    shadowOffset: {
+      width: 0,
+      height: 3,
+    },
+    shadowOpacity: 0.29,
+    shadowRadius: 4.65,
+    elevation: 7,
+    paddingBottom: 20
+  }
 });
 
 export default NewsPage;
