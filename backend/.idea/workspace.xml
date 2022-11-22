@@ -5,7 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="">
+<<<<<<< HEAD
+      <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/co-with.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/repository/CourseRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CourseController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/CourseService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/dummy.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/InfectedController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/InfectedController.java" afterDir="false" />
@@ -15,11 +30,27 @@
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/InfectedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/InfectedController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/InfectedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/InfectedService.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+>>>>>>> b2e6b96b1d22eaca6ea4f5a4b67a7cca1d73683d
+>>>>>>> d726084f136f268c2b0592f92a7dae71d968a30d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+        <option value="Interface" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -28,28 +59,37 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HgUgf5YpW3IpriBMoHzIV2t4Dr" />
+<<<<<<< HEAD
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+=======
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> b2e6b96b1d22eaca6ea4f5a4b67a7cca1d73683d
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jeantiwat/Documents/Developer/VsCode/React/co-with/backend/src/main/resources/static/image/img_aj&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jeantiwat/Documents/Developer/VsCode/React/co-with/backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "project.structure.last.edited": "Project",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/resources/static/image/img_aj" />
@@ -92,11 +132,17 @@
       <workItem from="1668851827690" duration="3045000" />
       <workItem from="1669034611294" duration="973000" />
 <<<<<<< HEAD
+<<<<<<< HEAD
       <workItem from="1669035592337" duration="600000" />
       <workItem from="1669117556491" duration="10516000" />
 =======
       <workItem from="1669035592337" duration="1198000" />
 >>>>>>> b2e6b96b1d22eaca6ea4f5a4b67a7cca1d73683d
+=======
+      <workItem from="1669035592337" duration="1796000" />
+      <workItem from="1669105247554" duration="44000" />
+      <workItem from="1669122928316" duration="4865000" />
+>>>>>>> d726084f136f268c2b0592f92a7dae71d968a30d
     </task>
     <servers />
   </component>
