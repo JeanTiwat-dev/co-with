@@ -19,7 +19,7 @@ import { useNavigation } from "@react-navigation/native";
 
 function Notification() {
   const { width } = useWindowDimensions();
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
 
   function Boxnotification(props) {
     return (

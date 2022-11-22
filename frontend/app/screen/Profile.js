@@ -27,6 +27,12 @@ function Profile() {
   const [edit, setEdit] = useState(false);
   const router = useNavigation();
   const [image, setImage] = useState(null);
+  const [objectImage, setObjectImage] = useState(null);
+  const [firstname, setFirstname] = useState();
+  const [lastname, setLastname] = useState();
+  const [email, setEmail] = useState();
+  const [tel, setTel] = useState();
+  const [facebook, setFacebook] = useState();
   //   const [imageUser, setUserImage] = useState(imguser);
   //   const imguser = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
@@ -43,11 +49,12 @@ function Profile() {
     if (!result.canceled) {
       setImage(result.uri);
       //   setUserImage({ uri: result.uri });
-      console.log(image);
+      // console.log(image);
+      setObjectImage(result)
     }
   };
-  console.log(user)
-  console.log(`${path}${user.img}`)
+  // console.log(user)
+  // console.log(`${path}${user.img}`)
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
     // console.log(JSON.parse(datauser)._id);
@@ -57,6 +64,12 @@ function Profile() {
         .then((res) => {
           // console.log(res.data);
           setUser(res.data[0]);
+          setFirstname(res.data[0].firstname);
+          setLastname(res.data[0].lastname);
+          setEmail(res.data[0].email);
+          setTel(res.data[0].tel);
+          setFacebook(res.data[0].facebook);
+
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }
@@ -66,10 +79,50 @@ function Profile() {
         });
     }
   }
-
   useEffect(() => {
     Getuser();
   }, []);
+
+  async function Updateprofile() {
+    // if (user.role == "admin") {
+    //   console.log(firstname, lastname, email, tel);
+    // }
+    await axios.post(`${path}/updateprofile`, {
+      _id : user._id,
+      firstname : firstname,
+      lastname : lastname,
+      email : email,
+      tel : tel,
+      facebook : facebook
+    })
+    .then((response) =>{
+      if(response.data == true){
+        if(image != null){
+          const data = new FormData();
+          const newImageUri = "file:///" + objectImage.uri.split("file:/").join("");
+          data.append("imageProfile", {
+            uri : newImageUri,
+            type : "image",
+            name : newImageUri.split("/").pop()
+          })
+          data.append("_id", user._id);
+          axios.post(`${path}/updateImageProfile`, data, {headers : {'Content-Type' : 'multipart/form-data'}})
+          .then((response) =>{
+            if(response.data == true){
+              Getuser();
+            }
+          })
+          .catch((err) =>{
+            console.log(err)
+          })
+        }
+        // console.log(1)
+      }
+    })
+    .catch((err) =>{
+      console.log(err)
+    })
+  }
 
   return (
     <ScrollView
@@ -115,73 +168,109 @@ function Profile() {
           }}
         >
           {/* user info professor*/}
-          {(user.role == "professor") && (
-            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.firstname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.lastname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.email}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.tel}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.facebook}
-              </TextInput>
+          {user.role == "professor" && (
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setFirstname(value)}
+              />
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setLastname(value)}
+              />
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setEmail(value)}
+              />
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setTel(value)}
+              />
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setFacebook(value)}
+              />
             </View>
           )}
           {/* user info student*/}
           {user.role == "student" && (
-            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setFirstname(value)}
+              >
                 {user.firstname}
               </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setLastname(value)}
+              >
                 {user.lastname}
               </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
+              <TextInput
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setEmail(value)}
+              >
                 {user.email}
               </TextInput>
             </View>
           )}
-          {/* user info admin*/}
-          {user.role == "admin" && (
-            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.firstname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.lastname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.email}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.tel}
-              </TextInput>
+          {/* user info admin and Pr*/}
+          {(user.role == "admin" || user.role == "PR") && (
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TextInput
+                defaultValue={firstname}
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setFirstname(value)}
+              />
+              <TextInput
+                defaultValue={lastname}
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setLastname(value)}
+              />
+              <TextInput
+                defaultValue={email}
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setEmail(value)}
+              />
+              <TextInput
+                defaultValue={tel}
+                editable={editVisible}
+                style={styles.inputprofile}
+                onChangeText={(value) => setTel(value)}
+              />
             </View>
           )}
-          {/* user info PR*/}
-          {user.role == "PR" && (
-            <View style={{width: '100%', justifyContent: 'center', alignItems: 'center'}}>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.firstname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.lastname}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.email}
-              </TextInput>
-              <TextInput editable={editVisible} style={styles.inputprofile}>
-                {user.tel}
-              </TextInput>
-            </View>
-          )}
+
           {/* img */}
           {editVisible && (
             <TouchableOpacity style={styles.upload} onPress={pickImage}>
@@ -221,7 +310,13 @@ function Profile() {
                   }}
                 >
                   <AntDesign name="logout" size={20} color="white" />
-                  <Text style={{ fontWeight: "bold", marginLeft: 10, color: 'white' }}>
+                  <Text
+                    style={{
+                      fontWeight: "bold",
+                      marginLeft: 10,
+                      color: "white",
+                    }}
+                  >
                     LOGOUT
                   </Text>
                 </TouchableOpacity>
@@ -242,6 +337,7 @@ function Profile() {
                   ]}
                   onPress={() => {
                     setEditVisible(!editVisible);
+                    setImage(null);
                   }}
                 >
                   <Text style={{ fontWeight: "bold" }}>cancel</Text>
@@ -254,6 +350,7 @@ function Profile() {
                   ]}
                   onPress={() => {
                     setEditVisible(!editVisible);
+                    Updateprofile();
                   }}
                 >
                   <Text style={{ fontWeight: "bold" }}>Confirm</Text>
@@ -456,7 +553,7 @@ const styles = StyleSheet.create({
   textStyle: {
     // fontSize: 18,
     fontWeight: "bold",
-    color: 'white'
+    color: "white",
   },
 });
 
