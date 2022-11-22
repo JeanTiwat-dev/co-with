@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/../.idea/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/co-with.iml" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/../.idea/modules.xml" afterDir="false" />
@@ -17,6 +18,14 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/CovidFormController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+>>>>>>> b2e6b96b1d22eaca6ea4f5a4b67a7cca1d73683d
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,9 +47,13 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2HgUgf5YpW3IpriBMoHzIV2t4Dr" />
+<<<<<<< HEAD
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
+=======
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+>>>>>>> b2e6b96b1d22eaca6ea4f5a4b67a7cca1d73683d
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />

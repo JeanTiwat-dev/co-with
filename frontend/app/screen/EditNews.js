@@ -24,7 +24,7 @@ const EditNews = () => {
         .get(`${path}/getNews`)
         .then((res) => {
           setData(res.data);
-          setBackup(res.data);
+          // setBackup(res.data);
         })
         .catch((err) => {
           console.log(err);
@@ -36,7 +36,7 @@ const EditNews = () => {
     }, []);
       
     return (    <ScrollView style={styles.scrollview}>
-        <Text style={styles.topic}>แก้ไขข่าว</Text>
+        <Text style={styles.topic}>Edit News</Text>
         <View style={styles.newsContainer}>
           {data.map((data) => (
             <TouchableOpacity key={data._id} onPress={()=>{
@@ -44,7 +44,7 @@ const EditNews = () => {
             }}>
               <Card>
                 <View style={styles.imageContainer}>
-                  <Image style={styles.newsImage} source={{ uri: data.uri }} />
+                  <Image style={styles.newsImage} source={{ uri: `${path}${data.image}` }} />
                 </View>
                 <View style={styles.newsContent}>
                   <Text style={styles.newsTitle} numberOfLines={1}>{data.title}</Text>
@@ -65,9 +65,10 @@ const styles = StyleSheet.create({
       // paddingHorizontal : 40,
     },
     topic: {
-      fontSize: 35,
+      fontSize: 28,
       paddingHorizontal: 40,
       marginTop: 30,
+      fontWeight: 'bold'
     },
     newsContainer: {
       flex: 1,
