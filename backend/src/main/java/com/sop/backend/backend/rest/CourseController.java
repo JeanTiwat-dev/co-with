@@ -10,19 +10,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-//@RestController
+@RestController
 public class CourseController {
-//    @Autowired
-//    private RabbitTemplate rabbitTemplate;
-//
-//    @RequestMapping(value = "/getCourse", method = RequestMethod.GET)
-//    public ResponseEntity<?> getCourse() {
-//        try {
-//            Object allCourses = rabbitTemplate.convertSendAndReceive("Course", "getCourse", "");
-//            return ResponseEntity.ok((List<Course>) allCourses);
-//        }
-//        catch (Exception e){
-//            return null;
-//        }
-//    }
+    @Autowired
+    private RabbitTemplate rabbitTemplate;
+
+    @RequestMapping(value = "/getCourse", method = RequestMethod.GET)
+    public ResponseEntity<?> getCourse() {
+        try {
+            Object allCourses = rabbitTemplate.convertSendAndReceive("Course", "getCourse", "");
+            return ResponseEntity.ok((List<Course>) allCourses);
+        }
+        catch (Exception e){
+            return null;
+        }
+    }
 }
