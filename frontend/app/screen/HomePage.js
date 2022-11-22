@@ -108,6 +108,7 @@ function HomePage({ route }) {
   };
 
   const CarouselCardItem = ({ item, index }) => {
+    console.log(`${path}${item.image}`)
     return (
       <TouchableOpacity
       style={{padding: 10}}
