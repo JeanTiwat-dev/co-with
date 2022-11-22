@@ -17,14 +17,15 @@ import java.nio.file.StandardCopyOption;
 public class CovidFormController {
     @RequestMapping(value = "/addForm", method = RequestMethod.POST)
     public String addForm(@RequestParam("file")MultipartFile file) throws IOException {
-//        System.out.println(file.getOriginalFilename());
-//        System.out.println(file.getName());
-//        System.out.println(file.getContentType());
-//        System.out.println(file.getSize());
-        String Path_Directory = new ClassPathResource("static/image").getFile().getAbsolutePath();
+        System.out.println(file.getOriginalFilename());
+        System.out.println(file.getName());
+        System.out.println(file.getContentType());
+        System.out.println(file.getSize());
+        String Path_Directory = new ClassPathResource("static/image/Infected").getFile().getAbsolutePath();
 //        String Path_Directory = "/Users/tathus/Downloads/backend/src/main/resources/static/image";
         System.out.println(Path_Directory);
         Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+
         return "Success";
     }
 }
