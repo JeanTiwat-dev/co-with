@@ -13,4 +13,8 @@ public interface UserRepository extends MongoRepository<user, String>{
 
     @Query( "{_id: '?0'}")
     public List<user> findByid(String id);
+
+    @Query( "{_id: '?0'}")
+    public user findByUserid(String id);
+
 }
