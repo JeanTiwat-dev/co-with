@@ -18,6 +18,7 @@ import PreLogin from "../screen/PreLogin";
 import SubmitForm from "../screen/SubmitForm";
 import EditNews from "../screen/EditNews";
 import EditNewsDetails from "../screen/EditNewsDetails";
+import UploadNews from "../screen/UploadNews";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -172,7 +173,22 @@ function HomeStack() {
           headerTitleStyle: {
             fontWeight: "bold",
           },
-          title: route.params.data.title,
+          title: "Edit News Details",
+        })}
+      />
+      <HomeNav.Screen
+        name="UploadNews"
+        component={UploadNews}
+        options={({route})=>({
+          headerBackTitleVisible: false,
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "Upload News",
         })}
       />
     </HomeNav.Navigator>

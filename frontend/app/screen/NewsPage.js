@@ -85,6 +85,9 @@ const NewsPage = ({ navigation }) => {
                     // styles.buttonClose,
                     // { marginLeft: 5, marginRight: 5 },
                   ]}
+                  onPress={() => {
+                    router.navigate("UploadNews");
+                  }}
                 >
                   <Ionicons
             name="add-outline"
@@ -106,6 +109,9 @@ const NewsPage = ({ navigation }) => {
                     // styles.buttonClose,
                     // { marginLeft: 5, marginRight: 5 },
                   ]}
+                  onPress={() => {
+                    router.navigate("EditNews");
+                  }}
                 >
                   <Ionicons
             name="create-outline"
