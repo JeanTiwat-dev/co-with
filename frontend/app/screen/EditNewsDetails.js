@@ -26,6 +26,18 @@ const EditNewsDetails = ({ route }) => {
   const [title, setTitie] = useState();
   const [contentNew, setContentNew] = useState();
   const [objectImage, setObjectImage] = useState(null);
+  const deleteHandler = async () => {
+    await axios.post(`${path}/deleteNews`, {
+      _id : data._id
+    }).then(res => {
+      if(res.data == true){
+        router.goBack();
+      }
+      console.log('delete')
+    }).catch(err => {
+      console.log(err.response);
+    });
+  }
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -138,6 +150,14 @@ const EditNewsDetails = ({ route }) => {
           ></Ionicons>
           <Text>อัพโหลดรูปภาพ</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.delete} onPress={deleteHandler}>
+          <Ionicons
+            name="trash-outline"
+            size={20}
+            style={{ marginRight: 10 }}
+          ></Ionicons>
+          <Text>ลบข่าว</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.submit} onPress={()=>{
           Editnews();
         }}>
@@ -177,6 +197,17 @@ const styles = StyleSheet.create({
   upload: {
     padding: 10,
     backgroundColor: "#rgb(119,203,229)",
+    alignItems: "center",
+    marginTop: 40,
+    flexDirection: "row",
+    justifyContent: "center",
+    borderRadius: 10,
+    width: 300,
+    alignSelf: "center",
+  },
+  delete: {
+    padding: 10,
+    backgroundColor: "#EC5656",
     alignItems: "center",
     marginTop: 40,
     flexDirection: "row",
