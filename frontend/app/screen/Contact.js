@@ -48,7 +48,6 @@ function Contact() {
       type: "success",
       placement: "bottom",
       duration: 2000,
-      // offsetTop: 300,
     });
   }
 

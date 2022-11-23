@@ -17,9 +17,10 @@ import { useNavigation } from "@react-navigation/native";
 import axios from "axios";
 import path from "../../path";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 
-const NewsPage = ({ navigation }) => {
+const NewsPage = ({ route }) => {
   const router = useNavigation();
   const [data, setData] = useState([]);
   const isCarousel = useRef();
@@ -28,6 +29,7 @@ const NewsPage = ({ navigation }) => {
   let i = Math.round(s * 0.7);
   const [index, setIndex] = useState(0);
   const [backup, setBackup] = useState([]);
+  const [user, setUser] = useState([]);
   const CarouselCardItem = ({ item, index }) => {
     return (
       <TouchableOpacity style={{padding : 10}} key={index} onPress={()=>{
@@ -54,9 +56,32 @@ const NewsPage = ({ navigation }) => {
         console.log(err);
       });
   };
+  async function Getuser() {
+    const datauser = await AsyncStorage.getItem("@user");
+    // console.log(JSON.parse(datauser)._id);
+    if (datauser) {
+      await axios
+        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .then((res) => {
+          // console.log(res.data[0].img);
+          setUser(res.data[0]);
+          // if (res.data[0].img != null) {
+          //   setImage(res.data[0].img);
+          // }
+        })
+        .catch((er) => {
+          console.log(er);
+        });
+    }
+  }
 
   useEffect(() => {
+    Getuser();
     getNews();
+    const willFocusSubscription = router.addListener("focus", () => {
+      getNews();
+    });
+    return willFocusSubscription;
   }, []);
   const functionCombined = () => {
     Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
@@ -66,11 +91,12 @@ const NewsPage = ({ navigation }) => {
       duration: 2000,
       // offsetTop: 300,
     });
-  }
+  };
   return (
     <ScrollView style={styles.scrollview}>
       <View style={styles.topiccontainer}>
       <Text style={styles.topic}>Announcement</Text>
+      {(user.role === "PR" || user.role === "admin") &&
       <View
                 style={{
                   // flexDirection: "row",
@@ -78,7 +104,6 @@ const NewsPage = ({ navigation }) => {
                   // justifyContent: "center",
                 }}
               >
-                {/* back */}
                 <Pressable
                   style={[
                     styles.buttoncreate,
@@ -94,7 +119,8 @@ const NewsPage = ({ navigation }) => {
             size={20}
           ></Ionicons>
                 </Pressable>
-              </View>
+              </View>}
+              {(user.role === "PR" || user.role === "admin") && 
               <View
                 style={{
                   // flexDirection: "row",
@@ -102,7 +128,6 @@ const NewsPage = ({ navigation }) => {
                   // justifyContent: "center",
                 }}
               >
-                {/* back */}
                 <Pressable
                   style={[
                     styles.buttonedit,
@@ -118,7 +143,8 @@ const NewsPage = ({ navigation }) => {
             size={20}
           ></Ionicons>
                 </Pressable>
-              </View>
+              </View>}
+      
       </View>
       <View style={{ marginTop: 25 }}>
         <Carousel
