@@ -28,6 +28,7 @@ public class NewsService {
     @RabbitListener(queues = "AddNews")
     public void createNews(News news){
         newsRepository.save(news);
+    }
 //        return infected;
     @RabbitListener(queues = "EditNews")
     public void retrieveEditNews(News news) {
@@ -38,4 +39,4 @@ public class NewsService {
     public void retrieveEditImageNews(News news) {
         newsRepository.save(news) ;
     }
-}
+};
