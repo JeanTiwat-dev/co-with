@@ -33,6 +33,11 @@ const EditNews = () => {
   
     useEffect(() => {
       getNews();
+      const willFocusSubscription = router.addListener("focus", () => {
+        getNews();
+      });
+  
+      return willFocusSubscription;
     }, []);
       
     return (    <ScrollView style={styles.scrollview}>

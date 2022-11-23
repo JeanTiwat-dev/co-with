@@ -57,6 +57,11 @@ const NewsPage = ({ navigation }) => {
 
   useEffect(() => {
     getNews();
+    const willFocusSubscription = router.addListener("focus", () => {
+      getNews();
+    });
+
+    return willFocusSubscription;
   }, []);
   const functionCombined = () => {
     Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
