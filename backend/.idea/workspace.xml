@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="0cbaf497-6cc8-4e63-9590-ca9f00810e79" name="Changes" comment="" />
+    <list default="true" id="8ae16f51-0f53-4c8e-a6fd-c781a0a94fb3" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,55 +20,17 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="MarkdownSettingsMigration">
-    <option name="stateVersion" value="1" />
-  </component>
-  <component name="ProjectId" id="2HttcxwCgNVT2rdoITOGN4ce37C" />
-  <component name="ProjectLevelVcsManager">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-  </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fahfiily/Documents/code/co-with/backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;b43fdd98b1fd705ae4c3a10cf25aad8a&quot;
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75"
   }
 }]]></component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="" />
-      <created>1669116290332</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1668706332914</updated>
-      <workItem from="1668706334272" duration="2597000" />
-      <workItem from="1668786809108" duration="1997000" />
-      <workItem from="1668851827690" duration="3045000" />
-      <workItem from="1669034611294" duration="973000" />
-      <workItem from="1669035592337" duration="1198000" />
-      <workItem from="1669100412246" duration="65000" />
-      <workItem from="1669118326262" duration="76000" />
-      <workItem from="1669118413930" duration="9807000" />
-    </task>
     <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -73,8 +42,5 @@
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
