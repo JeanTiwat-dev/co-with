@@ -1,5 +1,6 @@
 package com.sop.backend.backend.service;
 
+import com.sop.backend.backend.pojo.Infected;
 import com.sop.backend.backend.pojo.News;
 import com.sop.backend.backend.pojo.user;
 import com.sop.backend.backend.repository.NewsRepository;
@@ -24,6 +25,11 @@ public class NewsService {
         return newsRepository.findAll();
     }
 
+    @RabbitListener(queues = "AddNews")
+    public void createNews(News news){
+        newsRepository.save(news);
+//        return infected;
+    }
     @RabbitListener(queues = "EditNews")
     public void retrieveEditNews(News news) {
         newsRepository.save(news) ;

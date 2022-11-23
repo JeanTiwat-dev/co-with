@@ -11,16 +11,18 @@ import {
 } from "react-native";
 import CheckBox from "expo-checkbox";
 import DateTimePicker from "@react-native-community/datetimepicker";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 import path from "../../path";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
 function Form() {
   const router = useNavigation();
+  const [user, setUser] = useState([]);
   const [showDatePicker, setShowDatePicker] = useState(false);
   const [imageUri, setImageUri] = useState('https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png');
   const [reason, setReason] = useState([
@@ -43,6 +45,28 @@ function Form() {
   const [fileNameVerified, setFileNameVerified] = useState('');
   const [fileStudentId, setFileStudentId] = useState(null);
   const [fileVerified, setFileVerified] = useState(null);
+
+  async function Getuser() {
+    const datauser = await AsyncStorage.getItem("@user");
+    // console.log(JSON.parse(datauser)._id);
+    if (datauser) {
+      await axios
+        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .then((res) => {
+          // console.log(res.data[0].img);
+          setUser(res.data[0]);
+          // if (res.data[0].img != null) {
+          //   setImage(res.data[0].img);
+          // }
+        })
+        .catch((er) => {
+          console.log(er);
+        });
+    }
+  }
+  useEffect(() => {
+    Getuser();
+  }, []);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({

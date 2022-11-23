@@ -8,7 +8,9 @@ import java.io.Serializable;
 
 @Data
 @Document("Infected")
-public class Infected implements Serializable {
+public class
+
+Infected implements Serializable {
     @Id
     private String _id;
     private String studentId;

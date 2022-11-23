@@ -1,5 +1,6 @@
 package com.sop.backend.backend.rest;
 
+import com.sop.backend.backend.pojo.Infected;
 import com.sop.backend.backend.pojo.News;
 import com.sop.backend.backend.pojo.user;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
@@ -31,6 +32,29 @@ public class NewsController {
         }
     }
 
+    @RequestMapping(value = "/addNews", method = RequestMethod.POST)
+    public ResponseEntity<?> addNews(@RequestBody News news){
+        rabbitTemplate.convertAndSend("News", "addnews", news);
+        System.out.println(news);
+        return ResponseEntity.ok(news);
+    }
+
+    @RequestMapping(value = "/uploadImageNews", method = RequestMethod.POST)
+    public boolean uploadStudentCard(@RequestParam("file") MultipartFile file) throws IOException {
+        System.out.println(file.getOriginalFilename());
+        System.out.println(file.getName());
+        System.out.println(file.getContentType());
+        System.out.println(file.getSize());
+        try{
+            String Path_Directory = new ClassPathResource("static/image/news").getFile().getAbsolutePath();
+//        String Path_Directory = "/Users/tathus/Downloads/backend/src/main/resources/static/image";
+            System.out.println(Path_Directory);
+            Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+            return true;
+        } catch (Exception e){
+            return false;
+        }
+    };
     @RequestMapping(value = "/editnews", method = RequestMethod.POST)
     public boolean EditNews(@RequestBody News news){
 //        System.out.println(news);

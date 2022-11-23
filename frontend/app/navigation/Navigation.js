@@ -19,6 +19,7 @@ import SubmitForm from "../screen/SubmitForm";
 import EditNews from "../screen/EditNews";
 import EditNewsDetails from "../screen/EditNewsDetails";
 import UploadNews from "../screen/UploadNews";
+import SubmitNews from "../screen/SubmitNews";
 
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
@@ -190,6 +191,20 @@ function HomeStack() {
           },
           title: "Upload News",
         })}
+      />
+      <HomeNav.Screen
+        name="SubmitNews"
+        component={SubmitNews}
+        options={{
+          headerStyle: {
+            backgroundColor: "#f4511e",
+          },
+          headerTintColor: "#fff",
+          headerTitleStyle: {
+            fontWeight: "bold",
+          },
+          title: "News Submitted",
+        }}
       />
     </HomeNav.Navigator>
   );
