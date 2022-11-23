@@ -11,6 +11,7 @@ import java.io.Serializable;
 public class Infected implements Serializable {
     @Id
     private String _id;
+    private String studentId;
     private String firstname;
     private String lastname;
     private String imgStudentCard;

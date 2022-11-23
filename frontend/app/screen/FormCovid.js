@@ -15,7 +15,9 @@ import { useState } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import * as ImagePicker from 'expo-image-picker';
+import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
+import path from "../../path";
 
 function Form() {
   const router = useNavigation();
@@ -32,11 +34,15 @@ function Form() {
   const [studentId, setStudentId] = useState('');
   const [studentName, setStudentName] = useState('');
   const [imageStudentId, setImageStudentId] = useState(null);
-  const [imageCovid, setImageCovid]= useState(null);
+  const [imageCovid, setImageCovid] = useState(null);
   const [date, setDate] = useState('');
   const [quarantine, setQuarantine] = useState('');
   const [photo, setPhoto] = useState(null);
   const [image, setImage] = useState(null);
+  const [fileNameImageCard, setFileNameImageCard] = useState('');
+  const [fileNameVerified, setFileNameVerified] = useState('');
+  const [fileStudentId, setFileStudentId] = useState(null);
+  const [fileVerified, setFileVerified] = useState(null);
 
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
@@ -49,8 +55,16 @@ function Form() {
     console.log(result);
 
     if (!result.canceled) {
+      let formData = new FormData();
+      let localUri = result.uri;
+      let filename = localUri.split('/').pop();
+      setFileNameImageCard(filename);
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
       setImageStudentId(result.uri);
-      console.log(image);
+      formData.append('file', { uri: localUri, name: filename, type });
+      setFileStudentId(formData)
+      console.log(filename)
     } else {
       setImageStudentId('');
     }
@@ -67,9 +81,17 @@ function Form() {
     console.log(result);
 
     if (!result.canceled) {
-      setImageCovid('');
+      let formData = new FormData();
+      let localUri = result.uri;
+      let filename = localUri.split('/').pop();
+      setFileNameVerified(filename);
+      let match = /\.(\w+)$/.exec(filename);
+      let type = match ? `image/${match[1]}` : `image`;
       setImageCovid(result.uri);
-      // console.log(image);
+      formData.append('file', { uri: localUri, name: filename, type });
+      setFileVerified(formData)
+    } else {
+      setImageCovid('');
     }
   };
 
@@ -77,11 +99,11 @@ function Form() {
     setShowDatePicker(true);
   };
 
-  
 
-    const onCancel = () => {
-        setShowDatePicker(false);
-    };
+
+  const onCancel = () => {
+    setShowDatePicker(false);
+  };
 
   const onConfirm = (output) => {
     setDate(output.dateString);
@@ -90,7 +112,63 @@ function Form() {
     console.log(output.dateString);
   };
 
-  const SubmitFormHandler = () => {
+  const SubmitFormHandler = async () => {
+    let formData = new FormData();
+    let fullname = studentName.split(" ")
+    let firstname = fullname[0];
+    let surname = fullname[1];
+    let realreason = "";
+    if (check1 === true) {
+      realreason += reason[0].txt + " "
+    }
+    if (check2 === true) {
+      realreason += reason[1].txt + " "
+    }
+    if (check3 === true) {
+      realreason += reason[2].txt + " "
+    }
+    // formData.append('studentId', studentId);
+    // formData.append('firstname', firstname);
+    // formData.append('lastname', surname);
+    // formData.append('imgStudentCard', "");
+    // formData.append('imgForVertified', "");
+    // formData.append('reasonForAbsent', realreason);
+    // formData.append('reasonForQuarantine', quarantine);
+    // formData.append('dateInfected', date);
+    // console.log(studentId, firstname, surname ,quarantine,date)
+    // console.log(studentId, realreason)
+    await axios.post(`${path}/addInfected`, {
+      'studentId': studentId,
+      'firstname': firstname,
+      'lastname': surname,
+      'imgStudentCard': "/image/Infected/" + fileNameImageCard,
+      'imgForVertified': "/image/Infected/" + fileNameVerified,
+      'reasonForAbsent': realreason,
+      'reasonForQuarantine': quarantine,
+      'dataInfected': date
+    }).then(res => {
+    }).catch(err => {
+      console.log(err.response);
+    });
+    console.log(fileVerified)
+    console.log(fileStudentId)
+    await axios.post(`${path}/uploadImageInfected`, fileStudentId, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(res => {
+      // if(res.data == true){
+        
+      }
+    ).catch(err => {
+      console.log(err.response);
+    });
+    await axios.post(`${path}/uploadImageInfected`, fileVerified, {
+      headers: { 'Content-Type': 'multipart/form-data' },
+    }).then(res => {
+    }).catch(err => {
+      console.log(err.response);
+    });
+    // console.log(formData);
+
     router.navigate('SubmitForm');
   }
 
@@ -110,10 +188,10 @@ function Form() {
         {imageStudentId && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
-            <Image source={{ uri: imageStudentId }} resizeMode='cover' style={styles.uploadImage}/>
+            <Image source={{ uri: imageStudentId }} resizeMode='cover' style={styles.uploadImage} />
           </View>
         </View>}
-        <TouchableOpacity style={styles.upload} onPress={() => {pickImage()}}>
+        <TouchableOpacity style={styles.upload} onPress={() => { pickImage() }}>
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -156,10 +234,10 @@ function Form() {
         {imageCovid && <View style={styles.card}>
           <View style={styles.cardContent}>
             <Text style={styles.imageHeader}>รูปของคุณ</Text>
-            <Image source={{ uri: imageCovid }} resizeMode='cover' style={styles.uploadImage}/>
+            <Image source={{ uri: imageCovid }} resizeMode='cover' style={styles.uploadImage} />
           </View>
         </View>}
-        <TouchableOpacity style={styles.upload} onPress={() => {pickImageCovid()}}>
+        <TouchableOpacity style={styles.upload} onPress={() => { pickImageCovid() }}>
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -178,7 +256,7 @@ function Form() {
           ></Ionicons>
           <Text>เลือกวันที่</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submit} onPress={() => {SubmitFormHandler}}>
+        <TouchableOpacity style={styles.submit} onPress={SubmitFormHandler}>
           <Ionicons
             name="send-outline"
             size={20}
@@ -260,9 +338,9 @@ const styles = StyleSheet.create({
   text: {
     fontSize: 15,
   },
-  uploadImage : {
-    width : '100%',
-    height : 200
+  uploadImage: {
+    width: '100%',
+    height: 200
   },
   checkbox: {
     marginRight: 10,
@@ -280,19 +358,19 @@ const styles = StyleSheet.create({
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
-    height : 200,
-    overflow : 'hidden',
-    marginTop : 25
+    height: 200,
+    overflow: 'hidden',
+    marginTop: 25
   },
   cardContent: {
 
   },
-  imageHeader : {
+  imageHeader: {
     fontSize: 20,
     fontWeight: 'bold',
-     textAlign: 'center',
-     marginBottom : 5
-    },
+    textAlign: 'center',
+    marginBottom: 5
+  },
 });
 
 export default Form;

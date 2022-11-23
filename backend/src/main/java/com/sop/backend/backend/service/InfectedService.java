@@ -25,7 +25,8 @@ public class InfectedService {
 
     @RabbitListener(queues = "AddInfected")
     public void createInfected(Infected infected){
-        infectedRepository.insert(infected);
+        infectedRepository.save(infected);
 //        return infected;
     }
+
 }

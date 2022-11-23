@@ -1,0 +1,20 @@
+[
+    {
+        "courseId": "06016323",
+        "courseName": "Mobile device programming",
+        "professor": "ดร. พัฒนพงษ์ ฉันทมิตรโอภาส",
+        "studentRegistred": "['63070065','63070068','63070138']"
+    },
+    {
+        "courseId": "06016304",
+        "courseName": "Probability and Statistics",
+        "professor": "ศ.ดร. สุขสันต์ พาณิชพาพิบูล",
+        "studentRegistred": "['63070065','63070077','63070138']"
+    },
+    {
+        "courseId": "06016310",
+        "courseName": "Human interface design",
+        "professor": "รศ.ดร. นพพร โชติกกำธร",
+        "studentRegistred": "['63070065','63070068','63070156']"
+    }
+]

@@ -21,10 +21,11 @@ public class CovidFormController {
         System.out.println(file.getName());
         System.out.println(file.getContentType());
         System.out.println(file.getSize());
-        String Path_Directory = new ClassPathResource("static/image").getFile().getAbsolutePath();
+        String Path_Directory = new ClassPathResource("static/image/Infected").getFile().getAbsolutePath();
 //        String Path_Directory = "/Users/tathus/Downloads/backend/src/main/resources/static/image";
         System.out.println(Path_Directory);
         Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
+
         return "Success";
     }
 }
