@@ -124,7 +124,7 @@ function Notification() {
       }}
     >
       {/* nothing here */}
-      {/* <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Image
           style={{ width: 130, height: 130 }}
           source={require("../assets/notification.png")}
@@ -132,7 +132,7 @@ function Notification() {
         <Text style={{ fontSize: 22, fontWeight: "500", marginTop: 35, color: '#B2B2B2' }}>
           Nothing here!!!
         </Text>
-      </View> */}
+      </View>
 
       {/* have notification */}
       <View

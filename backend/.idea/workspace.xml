@@ -4,32 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-<<<<<<< HEAD
     <list default="true" id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Infected.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Infected.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/CourseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/CourseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/InfectedRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/InfectedRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CourseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/InfectedController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/InfectedController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/CourseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/CourseService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/InfectedService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/InfectedService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Contact.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Contact.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" afterDir="false" />
-=======
-    <list default="true" id="8ae16f51-0f53-4c8e-a6fd-c781a0a94fb3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
->>>>>>> 25878c28379a3b45f2ef891eb5b2a7de21b64afb
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/0048922B-3B69-4314-88EE-095C523640ED.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/7DE3A807-06E0-456E-A090-61ABB2AE4747.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/8BB0DE9A-E750-498A-8F2D-7D2CEB298301.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/AC01733B-42CB-4AF8-815C-3EB4B070F1C8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Simulator_Screen_Shot_-_iPhone_14_Pro_Max_-_2022-11-21_at_21.30.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_aj/B10CBA51-140C-4C4C-BF13-355AE127FA71.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/112D8E38-8D2B-4800-830B-3CF4C136F742.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/KMCH.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/covidit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +39,6 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-<<<<<<< HEAD
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -51,28 +50,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/jeantiwat/Documents/Developer/VsCode/React/co-with&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/jeantiwat/Documents/Developer/VsCode/React/co-with",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Problems",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="backend" />
@@ -94,19 +93,24 @@
     </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-=======
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75"
-  }
-}]]></component>
->>>>>>> 25878c28379a3b45f2ef891eb5b2a7de21b64afb
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="" />
+      <created>1669116290332</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1669116290332</updated>
+      <workItem from="1669116292012" duration="761000" />
+      <workItem from="1669120285643" duration="72000" />
+      <workItem from="1669120365787" duration="181000" />
+      <workItem from="1669120641068" duration="284000" />
+      <workItem from="1669120936905" duration="1095000" />
+      <workItem from="1669122578857" duration="317000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -118,5 +122,8 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
 </project>
