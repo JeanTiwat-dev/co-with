@@ -88,4 +88,21 @@ public class NewsController {
 //        return "Success";
         return true;
     }
+
+    @RequestMapping(value = "/deleteNews", method = RequestMethod.POST)
+    public boolean deleteNews (@RequestBody News news) throws IOException{
+//        System.out.println(news);
+        try{
+            rabbitTemplate.convertAndSend("News", "deletenews", news);
+            return true;
+        }
+        catch(Exception e){
+            return false;
+        }
+//        System.out.println(news);
+//        return ResponseEntity.ok(news);
+
+    }
+
+
 }
