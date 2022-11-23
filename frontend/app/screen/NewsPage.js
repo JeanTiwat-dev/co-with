@@ -71,7 +71,7 @@ const NewsPage = ({ navigation }) => {
       duration: 2000,
       // offsetTop: 300,
     });
-  }
+  };
   return (
     <ScrollView style={styles.scrollview}>
       <View style={styles.topiccontainer}>
