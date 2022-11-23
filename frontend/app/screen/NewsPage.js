@@ -78,8 +78,11 @@ const NewsPage = ({ route }) => {
   useEffect(() => {
     Getuser();
     getNews();
-    console.log(user.role)
-  }, [route]);
+    const willFocusSubscription = router.addListener("focus", () => {
+      getNews();
+    });
+    return willFocusSubscription;
+  }, []);
   const functionCombined = () => {
     Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
     toast.show("Copied to clipboard", {
@@ -88,7 +91,7 @@ const NewsPage = ({ route }) => {
       duration: 2000,
       // offsetTop: 300,
     });
-  }
+  };
   return (
     <ScrollView style={styles.scrollview}>
       <View style={styles.topiccontainer}>
