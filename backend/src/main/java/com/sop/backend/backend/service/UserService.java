@@ -33,4 +33,18 @@ public class UserService {
     public List<user> retrieveUserId(user User) {
         return userRepository.findByid(User.get_id()) ;
     }
+
+    @RabbitListener(queues = "GetUserById")
+    public user retrieveUserById(user User) {
+        return userRepository.findByUserid(User.get_id()) ;
+    }
+
+    @RabbitListener(queues = "UpdateProfile")
+    public void retrieveUpdateProfile(user User) {
+        userRepository.save(User) ;
+    }
+    @RabbitListener(queues = "UpdateImageProfile")
+    public void retrieveUpdateImageProfile(user User) {
+        userRepository.save(User) ;
+    }
 }
