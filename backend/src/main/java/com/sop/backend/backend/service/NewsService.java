@@ -1,5 +1,6 @@
 package com.sop.backend.backend.service;
 
+import com.sop.backend.backend.pojo.Infected;
 import com.sop.backend.backend.pojo.News;
 import com.sop.backend.backend.repository.NewsRepository;
 import org.springframework.amqp.rabbit.annotation.RabbitListener;
@@ -21,5 +22,11 @@ public class NewsService {
     @RabbitListener(queues = "GetNews")
     public List<News> retrieveNews() {
         return newsRepository.findAll();
+    }
+
+    @RabbitListener(queues = "AddNews")
+    public void createNews(News news){
+        newsRepository.save(news);
+//        return infected;
     }
 }

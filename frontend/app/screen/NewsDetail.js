@@ -16,6 +16,7 @@ const NewsDetail = ({route}) => {
             <View style={styles.container}>
                 <Text style={styles.title}>{news.title}</Text>
                 <Text style={styles.content}>{news.content}</Text>
+                <Text style={styles.date}>อัพโหลดเมื่อ : {news.release}</Text>
             </View>
         </ScrollView>
     );
@@ -34,6 +35,12 @@ const styles = StyleSheet.create({
         marginTop : 20,
         fontSize : 18
 
+    },
+    date : {
+        fontSize : 15,
+        color : 'grey',
+        marginTop: 20,
+        marginBottom : 20
     }
 })
 export default NewsDetail;

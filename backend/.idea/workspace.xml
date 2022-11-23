@@ -5,11 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Course.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Course.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/CourseRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/CourseRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CourseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CourseController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/CourseService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/CourseService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,7 +48,8 @@
     "project.structure.last.edited": "Problems",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.lookFeel"
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
   }
 }]]></component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -66,6 +66,7 @@
       <workItem from="1669120641068" duration="284000" />
       <workItem from="1669120936905" duration="1095000" />
       <workItem from="1669122578857" duration="317000" />
+      <workItem from="1669191831516" duration="3145000" />
     </task>
     <servers />
   </component>
