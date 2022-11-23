@@ -75,7 +75,9 @@ const EditNewsDetails = ({ route }) => {
             console.log(err)
           })
         }
-        // console.log(1)
+        else{
+          router.goBack();
+        }
       }
     })
     .catch((err) =>{
