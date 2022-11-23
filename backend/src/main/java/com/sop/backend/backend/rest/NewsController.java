@@ -2,6 +2,7 @@ package com.sop.backend.backend.rest;
 
 import com.sop.backend.backend.pojo.Infected;
 import com.sop.backend.backend.pojo.News;
+import com.sop.backend.backend.pojo.user;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.ClassPathResource;

@@ -6,9 +6,30 @@
   <component name="ChangeListManager">
     <list default="true" id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/pojo/Infected.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/0048922B-3B69-4314-88EE-095C523640ED.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/7DE3A807-06E0-456E-A090-61ABB2AE4747.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/8BB0DE9A-E750-498A-8F2D-7D2CEB298301.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/AC01733B-42CB-4AF8-815C-3EB4B070F1C8.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Simulator_Screen_Shot_-_iPhone_14_Pro_Max_-_2022-11-21_at_21.30.30.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/img_aj/B10CBA51-140C-4C4C-BF13-355AE127FA71.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/112D8E38-8D2B-4800-830B-3CF4C136F742.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/KMCH.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/covidit.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Notification.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,6 +73,26 @@
     "spring.configuration.checksum": "b43fdd98b1fd705ae4c3a10cf25aad8a"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="BackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
+      <module name="backend" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.sop.backend.backend.BackendApplication" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.sop.backend.backend.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Spring Boot.BackendApplication" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
