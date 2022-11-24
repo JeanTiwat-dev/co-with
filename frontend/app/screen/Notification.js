@@ -20,6 +20,7 @@ import { useNavigation } from "@react-navigation/native";
 function Notification() {
   const { width } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
+  const [numberNoti, setNumberNoti] = useState(0);
   const [course, setCourse] = useState([]);
   const [allCourse, setAllCourse] = useState([]);
   const [infected, setInfected] = useState([]);
@@ -124,7 +125,7 @@ function Notification() {
       }}
     >
       {/* nothing here */}
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      {(user.role === 'student' || user.role === 'PR') && (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Image
           style={{ width: 130, height: 130 }}
           source={require("../assets/notification.png")}
@@ -132,10 +133,10 @@ function Notification() {
         <Text style={{ fontSize: 22, fontWeight: "500", marginTop: 35, color: '#B2B2B2' }}>
           Nothing here!!!
         </Text>
-      </View>
+      </View>)}
 
       {/* have notification */}
-      <View
+      {(user.role === 'professor' || user.role === 'admin') && (<View
         style={{ alignItems: "center", justifyContent: "center", width: width }}
       >
         {allInfected && (
@@ -145,7 +146,7 @@ function Notification() {
             }
           })
         )}
-      </View>
+      </View>)}
       <View>
         {/* model */}
         <Modal

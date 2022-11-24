@@ -6,6 +6,8 @@ import {
   TextInput,
   Image,
   ScrollView,
+  Modal,
+  Pressable
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import EditNews from "./EditNews";
@@ -14,6 +16,7 @@ import path from "../../path";
 import axios from "axios";
 import * as ImagePicker from "expo-image-picker";
 import {useNavigation} from "@react-navigation/native";
+import { Feather, AntDesign } from "@expo/vector-icons";
 
 const EditNewsDetails = ({ route }) => {
   console.log(route);
@@ -26,6 +29,19 @@ const EditNewsDetails = ({ route }) => {
   const [title, setTitie] = useState();
   const [contentNew, setContentNew] = useState();
   const [objectImage, setObjectImage] = useState(null);
+  const [modalVisible, setModalVisible] = useState(false);
+  const deleteHandler = async () => {
+    await axios.post(`${path}/deleteNews`, {
+      _id : data._id
+    }).then(res => {
+      if(res.data == true){
+        router.goBack();
+      }
+      console.log('delete')
+    }).catch(err => {
+      console.log(err.response);
+    });
+  }
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -138,6 +154,14 @@ const EditNewsDetails = ({ route }) => {
           ></Ionicons>
           <Text>อัพโหลดรูปภาพ</Text>
         </TouchableOpacity>
+        <TouchableOpacity style={styles.delete} onPress={() => {setModalVisible(!modalVisible);}}>
+          <Ionicons
+            name="trash-outline"
+            size={20}
+            style={{ marginRight: 10 }}
+          ></Ionicons>
+          <Text>ลบข่าว</Text>
+        </TouchableOpacity>
         <TouchableOpacity style={styles.submit} onPress={()=>{
           Editnews();
         }}>
@@ -148,6 +172,68 @@ const EditNewsDetails = ({ route }) => {
           ></Ionicons>
           <Text>แก้ไขข่าว</Text>
         </TouchableOpacity>
+        {/* modal */}
+        <View>
+          <Modal
+            animationType="fade"
+            transparent={true}
+            visible={modalVisible}
+            onRequestClose={() => {
+              Alert.alert("Modal has been closed.");
+              setModalVisible(!modalVisible);
+            }}
+          >
+            <View style={styles.centeredView}>
+              <View style={styles.modalView}>
+                <AntDesign name="delete" size={60} color="tomato" />
+                <Text style={{ fontSize: 18, marginTop: 25 }}>
+                  คุณยืนยันที่จะลบข่าวนี้ใช่หรือไม่ ?
+                </Text>
+                {/* button */}
+                <View
+                  style={{
+                    flexDirection: "row",
+                    width: "100%",
+                    justifyContent: "center",
+                  }}
+                >
+                  {/* back */}
+                  <Pressable
+                    style={[
+                      styles.button,
+                      // styles.buttonClose,
+                      {
+                        backgroundColor: "#EDEDED",
+                        marginRight: 15,
+                        borderWidth: 1,
+                        borderColor: "tomato",
+                      },
+                    ]}
+                    onPress={() => setModalVisible(!modalVisible)}
+                  >
+                    <Text style={[styles.textStyle, { color: "tomato" }]}>
+                      กลับ
+                    </Text>
+                  </Pressable>
+                  {/* logout */}
+                  <Pressable
+                    style={[
+                      styles.button,
+                      // styles.buttonClose,
+                      { backgroundColor: "tomato" },
+                    ]}
+                    onPress={async () => {
+                      setModalVisible(false);
+                      deleteHandler();
+                    }}
+                  >
+                    <Text style={styles.textStyle}>ลบ</Text>
+                  </Pressable>
+                </View>
+              </View>
+            </View>
+          </Modal>
+        </View>
       </View>
     </ScrollView>
   );
@@ -177,6 +263,17 @@ const styles = StyleSheet.create({
   upload: {
     padding: 10,
     backgroundColor: "#rgb(119,203,229)",
+    alignItems: "center",
+    marginTop: 40,
+    flexDirection: "row",
+    justifyContent: "center",
+    borderRadius: 10,
+    width: 300,
+    alignSelf: "center",
+  },
+  delete: {
+    padding: 10,
+    backgroundColor: "#EC5656",
     alignItems: "center",
     marginTop: 40,
     flexDirection: "row",
@@ -232,6 +329,50 @@ const styles = StyleSheet.create({
     marginTop: 25,
   },
   cardContent: {},
+  centeredView: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "rgba(52, 52, 52, 0.8)",
+  },
+  modalView: {
+    margin: 20,
+    backgroundColor: "white",
+    borderRadius: 20,
+    paddingVertical: 35,
+    paddingHorizontal: 10,
+    width: "75%",
+    alignItems: "center",
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.25,
+    shadowRadius: 4,
+    elevation: 5,
+  },
+  button: {
+    width: 100,
+    height: 50,
+    justifyContent: "center",
+    alignItems: "center",
+    borderRadius: 10,
+    // shadowColor: "#000",
+    // shadowOffset: {
+    //   width: -2,
+    //   height: 2,
+    // },
+    // shadowOpacity: 0.2,
+    // shadowRadius: 3,
+    // elevation: 5,
+    marginTop: 25,
+  },
+  textStyle: {
+    fontSize: 15,
+    fontWeight: "bold",
+    color: "white",
+  },
 });
 
 export default EditNewsDetails;

@@ -39,4 +39,9 @@ public class NewsService {
     public void retrieveEditImageNews(News news) {
         newsRepository.save(news) ;
     }
+
+    @RabbitListener(queues = "DeleteNews")
+    public void deleteNews(News news){
+            newsRepository.delete(news);
+    }
 }
