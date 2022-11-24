@@ -44,6 +44,14 @@ function DashBoard() {
     getInfectedThai();
     getInfected();
   }, []);
+
+  function convertprice(price) {
+    let price2 = new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "THB"
+    }).format(price);
+    return price2.slice(4, price2.length - 3) + " ราย";
+  };
   return (
     <ScrollView style={{ width: width, paddingHorizontal: 25 }}>
       {/* content 1 */}
@@ -61,7 +69,7 @@ function DashBoard() {
         <View style={{padding: 20, flexDirection: 'row', justifyContent: 'space-between'}}>
           <Image source={require('../assets/coronavirus.png')} style={{ height: 100, width: 100 }} />
           <View style={{width: '70%', height: '90%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 28, fontWeight: 'bold', color: 'white'}}>{allInfected} ราย</Text>
+            <Text style={{fontSize: 28, fontWeight: 'bold', color: 'white'}}>{convertprice(allInfected)}</Text>
           </View>
         </View>
       </View>
@@ -76,7 +84,7 @@ function DashBoard() {
             ยอดผู้ติดเชื้อสะสม
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{allInfectedThai.total_case} ราย</Text>
+            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{convertprice(allInfectedThai.total_case)}</Text>
           </View>
         </View>
         {/* box 2 */}
@@ -87,7 +95,7 @@ function DashBoard() {
             ยอดผู้ติดเชื้อวันนี้
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{allInfectedThai.new_case} ราย</Text>
+            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{convertprice(allInfectedThai.new_case)}</Text>
           </View>
         </View>
         {/* box 3 */}
@@ -98,7 +106,7 @@ function DashBoard() {
           ยอดหายป่วยสะสม
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{allInfectedThai.total_recovered} ราย</Text>
+            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{convertprice(allInfectedThai.total_recovered)}</Text>
           </View>
         </View>
         {/* box 4 */}
@@ -109,7 +117,7 @@ function DashBoard() {
             ยอดหายป่วยวันนี้
           </Text>
           <View style={{width: '100%', height: '85%', justifyContent: 'center', alignItems: 'center'}}>
-            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{allInfectedThai.new_recovered} ราย</Text>
+            <Text style={{fontSize: 18, fontWeight: 'bold'}}>{convertprice(allInfectedThai.new_recovered)}</Text>
           </View>
         </View>
       </View>

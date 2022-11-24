@@ -35,19 +35,19 @@ function Notification() {
         .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
         .then((res) => {
           setUser(res.data[0]);
-          getCourse();
+          getCourse(res.data[0]);
         })
         .catch((er) => {
           console.log(er);
         });
     }
   }
-  const getCourse = async () => {
+  const getCourse = async (users) => {
     await axios
       .get(`${path}/getCourse`)
       .then((res) => {
         res.data.filter((value) =>{
-          if(value.professor == `${user.firstname} ${user.lastname}`){
+          if(value.professor == `${users.firstname} ${users.lastname}`){
             setCourse(value);
             setStuCourses(JSON.parse(value.studentRegistered));
           }
