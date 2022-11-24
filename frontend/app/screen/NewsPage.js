@@ -63,6 +63,7 @@ const NewsPage = ({ navigation }) => {
 
     return willFocusSubscription;
   }, []);
+  
   const functionCombined = () => {
     Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
     toast.show("Copied to clipboard", {

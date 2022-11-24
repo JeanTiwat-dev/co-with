@@ -6,11 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8ae16f51-0f53-4c8e-a6fd-c781a0a94fb3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/CovidFormController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
