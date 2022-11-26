@@ -6,37 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="3b7157a7-7abb-4901-8e99-6d02aef51aef" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/rest/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/sop/backend/backend/service/NewsService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/BackendApplication.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/ContactsAJ.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/News.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/user.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/ContactsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/InfectedRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/InfectedRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/NewsRepository.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/ContactsController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Infected.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/pojo/Infected.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/repository/UserRepository.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/NewsController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UploadImageController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/ContactsService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/rest/UserController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/NewsService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/89DFEACF-C8F6-4D33-96F9-37D551ACB9D9.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/Infected/96BEFBC5-1293-40AE-A7C8-4308DD9327D2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/0F2286E2-E155-4C20-98F4-0C6FC9FB4BFC.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/385E416E-2063-4C98-A14B-69C5CF71A9D3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/44FB95AD-5381-4338-81FB-99C1FF2B31D2.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/7AA31D5A-436A-49C6-B7B8-E47F559A64E3.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/AB206010-DC9E-414C-B76B-8F38F86DAFB5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/C844A6B1-6B22-446B-8334-1EA0F1F0CA21.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/D59B5ED6-2393-4134-B7E2-36A89FC0A045.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/E1C23995-F766-4BA7-BC90-B0D87673C307.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/static/image/news/E9584A9C-DF4F-48DC-AF2C-2422CEDCFCA5.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/sop/backend/backend/BackendApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/sop/backend/backend/BackendApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/sop/backend/backend/service/UserService.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
@@ -112,6 +99,8 @@
       <workItem from="1669191831516" duration="3145000" />
       <workItem from="1669213881859" duration="5163000" />
       <workItem from="1669224887866" duration="1068000" />
+      <workItem from="1669227488267" duration="13000" />
+      <workItem from="1669227521938" duration="2698000" />
     </task>
     <servers />
   </component>
