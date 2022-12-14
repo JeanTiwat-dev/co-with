@@ -447,10 +447,10 @@ const styles = StyleSheet.create({
   inputprofile: {
     backgroundColor: "#EAEAEA",
     width: "75%",
-    height: 50,
     marginBottom: 10,
     borderRadius: 10,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical : 10
   },
   upload: {
     padding: 10,
