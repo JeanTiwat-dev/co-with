@@ -19,7 +19,6 @@ public class UserServiceCommand {
     }
 
 
-
     @RabbitListener(queues = "UpdateProfile")
     public String addUsers(UpdateUserRestModel updateUserRestModel) {
         UpdateUserCommand command = UpdateUserCommand.builder()
@@ -29,6 +28,7 @@ public class UserServiceCommand {
                 .email(updateUserRestModel.getEmail())
                 .password(updateUserRestModel.getPassword())
                 .img(updateUserRestModel.getImg())
+                .role(updateUserRestModel.getRole())
                 .tel(updateUserRestModel.getTel())
                 .facebook(updateUserRestModel.getFacebook())
                 .build();

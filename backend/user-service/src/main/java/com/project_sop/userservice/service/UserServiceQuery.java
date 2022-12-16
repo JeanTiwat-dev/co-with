@@ -1,8 +1,11 @@
 package com.project_sop.userservice.service;
 
+import com.project_sop.userservice.command.rest.LoginModel;
 import com.project_sop.userservice.command.rest.UpdateUserRestModel;
 import com.project_sop.userservice.core.UserEntity;
 import com.project_sop.userservice.core.data.UserRepository;
+import com.project_sop.userservice.query.FindLoginQuery;
+import com.project_sop.userservice.query.FindUserById;
 import com.project_sop.userservice.query.FindUserQuery;
 import com.project_sop.userservice.query.rest.UserRestModel;
 import org.axonframework.messaging.responsetypes.ResponseTypes;
@@ -29,11 +32,10 @@ public class UserServiceQuery {
 
     @RabbitListener(queues = "GetUserById")
     public UpdateUserRestModel getUserById(UpdateUserRestModel updateUserRestModel){
-        System.out.println(updateUserRestModel);
-        UserEntity userEntity = userRepository.findByUserid(updateUserRestModel.get_id());
-        UpdateUserRestModel user = new UpdateUserRestModel();
-        BeanUtils.copyProperties(userEntity, user);
-        return user;
+        FindUserById findUserById = new FindUserById(updateUserRestModel.get_id());
+        List<UpdateUserRestModel> user = queryGateway
+                .query(findUserById, ResponseTypes.multipleInstancesOf(UpdateUserRestModel.class)).join();
+        return user.get(0);
     }
 
     @RabbitListener(queues = "GetUser")
@@ -43,9 +45,18 @@ public class UserServiceQuery {
                 .query(findUserQuery, ResponseTypes.multipleInstancesOf(UserRestModel.class)).join();
         return users;
     }
-//    @RabbitListener(queues = "GetUserById")
-//    public UserRestModel retrieveUserById(UserRestModel User) {
-//        return userRepository.findByUserid(User.get_id()) ;
-//    }
+    @RabbitListener(queues = "LoginKey")
+    public UserRestModel userLogin(LoginModel loginModel) {
+        FindLoginQuery findLoginQuery = new FindLoginQuery(loginModel.getEmail(), loginModel.getPassword());
+        List<UserRestModel> users = queryGateway
+                .query(findLoginQuery, ResponseTypes.multipleInstancesOf(UserRestModel.class)).join();
+        return users.get(0);
+    }
 
+    @RabbitListener(queues = "UpdateImageProfile")
+    public void retrieveUpdateImageProfile(UpdateUserRestModel User) {
+        UserEntity user = new UserEntity();
+        BeanUtils.copyProperties(User, user);
+        userRepository.save(user) ;
+    }
 }

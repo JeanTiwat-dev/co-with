@@ -65,13 +65,13 @@ function HomePage({ route }) {
   // console.log(user);
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
-    // console.log(JSON.parse(datauser)._id);
+    console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           // console.log(res.data[0].img);
-          setUser(res.data[0]);
+          setUser(res.data);
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }
@@ -85,6 +85,10 @@ function HomePage({ route }) {
   useEffect(() => {
     Getuser();
     getNews();
+    const willFocusSubscription = router.addListener("focus", () => {
+      Getuser();
+    });
+    return willFocusSubscription;
   }, []);
 
   // console.log(annouce);

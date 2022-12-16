@@ -21,7 +21,6 @@ public class UserEventsHandler {
 
     @EventHandler
     public void on(UserUpdateEvent event){
-        System.out.println(event);
         UserEntity user = new UserEntity();
         BeanUtils.copyProperties(event, user);
         userRepository.save(user);

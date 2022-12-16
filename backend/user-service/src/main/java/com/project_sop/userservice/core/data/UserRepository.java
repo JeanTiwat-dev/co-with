@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface UserRepository extends MongoRepository<UserEntity, String > {
     @Query(value = "{email: '?0', password :  '?1'}")
-    public List<UserEntity> findByEmail(String email, String password);
+    public UserEntity findByEmail(String email, String password);
 
     @Query( "{_id: '?0'}")
     public List<UserEntity> findByid(String id);

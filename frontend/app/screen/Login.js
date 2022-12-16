@@ -23,11 +23,12 @@ const Login = () => {
   const handleLogin = async () => {
     // console.log(email, password);
     await axios
-      .post(`${path}/login`, {
+      .post(`${path}/users/login`, {
         email: email,
         password: password,
       })
       .then((res) => {
+        console.log(res.data)
         if (res.data.length != 0) {
           AsyncStorage.setItem("@user", JSON.stringify(res.data));
           router.replace("TabHome");

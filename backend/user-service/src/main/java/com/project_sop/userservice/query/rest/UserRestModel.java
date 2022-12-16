@@ -15,4 +15,5 @@ public class UserRestModel implements Serializable {
     private String role;
     private String tel;
     private String facebook;
+
 }
