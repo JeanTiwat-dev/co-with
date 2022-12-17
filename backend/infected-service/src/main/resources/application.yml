@@ -1,0 +1,19 @@
+
+server:
+  port: 9003
+  tomcat:
+    max-swallow-size: 100MB
+    max-http-form-post-size: 100MB
+spring:
+  application:
+    name: user-service
+  data:
+    mongodb:
+      uri: mongodb+srv://cowithBackend:cowithserver@cluster0.k9edeeo.mongodb.net/test
+      database: cowithdb
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 100MB
+      max-file-size: 100MB
+      max-request-size: 100MB
