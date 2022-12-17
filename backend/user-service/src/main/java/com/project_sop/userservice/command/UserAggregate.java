@@ -34,6 +34,9 @@ public class UserAggregate {
         if(command.getEmail().indexOf("@it.kmitl.ac.th") < 0){
             throw new IllegalArgumentException("Email is not Used");
         }
+        if(command.getPassword().length() < 8){
+            throw new IllegalArgumentException("you have to enter at least 8 digit!");
+        }
 
         UserUpdateEvent userUpdateEvent = new UserUpdateEvent();
         BeanUtils.copyProperties(command, userUpdateEvent);

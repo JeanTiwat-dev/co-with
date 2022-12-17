@@ -31,14 +31,14 @@ function Chat(props) {
   const [backUp, setBackUp] = useState([]);
   const Role = ["All", "Student", "Professor", "PR", "Admin"];
   const [text, setText] = useState("");
-  const [role, setRole] = useState("All");
+  const [role, setRole] = useState("Professor");
 
   function Search(text) {
     const filteredData = backUp.filter(
       (data) => {
         if(data.role != null){
           if(data.firstname.toUpperCase().indexOf(text.toUpperCase()) + 1 || data.lastname.toUpperCase().indexOf(text.toUpperCase()) + 1){
-            if(data.role.toUpperCase() == role.toUpperCase() || role == "All"){
+            if(data.role.toUpperCase() == role.toUpperCase() || role == "ALL"){
               return data;
             }
           }
@@ -75,12 +75,18 @@ function Chat(props) {
           .get(`${Path}/users`)
           .then((response) => {
             let filteruser = [];
+            let filterprofessor = [];
             response.data.forEach(user => {
               if(user._id != JSON.parse(users)._id){
                 filteruser.push(user)
               }
             });
-            setAllUser(filteruser);
+            filteruser.forEach(users =>{
+              if(users.role.toUpperCase() == "PROFESSOR"){
+                filterprofessor.push(users)
+              }
+            })
+            setAllUser(filterprofessor);
             setBackUp(filteruser);
           })
           .catch((err) => {

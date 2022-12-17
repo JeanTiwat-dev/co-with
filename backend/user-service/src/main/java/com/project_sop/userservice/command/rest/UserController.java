@@ -32,13 +32,14 @@ public class UserController {
     }
 
     @PostMapping
-    public String addUser(@RequestBody UpdateUserRestModel updateUserRestModel){
+    public String UpdateUsers(@RequestBody UpdateUserRestModel updateUserRestModel){
         try{
             Object getUser = rabbitTemplate.convertSendAndReceive("User","getuserbyid", updateUserRestModel);
             UpdateUserRestModel OldValue = (UpdateUserRestModel) getUser;
             OldValue.setFirstname(updateUserRestModel.getFirstname());
             OldValue.setLastname(updateUserRestModel.getLastname());
             OldValue.setEmail(updateUserRestModel.getEmail());
+            OldValue.setPassword(updateUserRestModel.getPassword());
             OldValue.setTel(updateUserRestModel.getTel());
             OldValue.setFacebook(updateUserRestModel.getFacebook());
             Object message = rabbitTemplate.convertSendAndReceive("User","updateprofile", OldValue);
@@ -62,10 +63,6 @@ public class UserController {
         Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
         rabbitTemplate.convertAndSend("User","updateimageprofile", OldValue);
         return true;
-    }
-    @RequestMapping(value = "/test")
-    public String test(@RequestParam("imageProfile") MultipartFile file){
-        return file.getOriginalFilename()+"";
     }
 
     @RequestMapping("/login")

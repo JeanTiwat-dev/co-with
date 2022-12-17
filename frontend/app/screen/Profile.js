@@ -33,6 +33,7 @@ function Profile() {
   const [email, setEmail] = useState();
   const [tel, setTel] = useState();
   const [facebook, setFacebook] = useState();
+  const [password, setPassword] = useState();
   //   const [imageUser, setUserImage] = useState(imguser);
   //   const imguser = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
@@ -65,6 +66,7 @@ function Profile() {
           setEmail(res.data.email);
           setTel(res.data.tel);
           setFacebook(res.data.facebook);
+          setPassword(res.data.password);
         })
         .catch((er) => {
           console.log(er);
@@ -82,6 +84,7 @@ function Profile() {
         firstname: firstname,
         lastname: lastname,
         email: email,
+        password : password,
         tel: tel,
         facebook: facebook,
       })
@@ -191,6 +194,13 @@ function Profile() {
                 onChangeText={(value) => setEmail(value)}
               />
               <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
+              />
+              <TextInput
                 defaultValue={tel}
                 editable={editVisible}
                 style={styles.inputprofile}
@@ -232,6 +242,13 @@ function Profile() {
                 style={styles.inputprofile}
                 onChangeText={(value) => setEmail(value)}
               />
+              <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
+              />
             </View>
           )}
           {/* user info admin and Pr*/}
@@ -260,6 +277,13 @@ function Profile() {
                 editable={editVisible}
                 style={styles.inputprofile}
                 onChangeText={(value) => setEmail(value)}
+              />
+              <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
               />
               <TextInput
                 defaultValue={tel}
