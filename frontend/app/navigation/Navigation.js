@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View } from "react-native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import { NavigationContainer } from "@react-navigation/native";
+import { NavigationContainer , getFocusedRouteNameFromRoute} from "@react-navigation/native";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
 import HomePage from "../screen/HomePage";
 import Notification from "../screen/Notification";
@@ -17,13 +17,34 @@ import FormCovid from "../screen/FormCovid";
 import PreLogin from "../screen/PreLogin";
 import SubmitForm from "../screen/SubmitForm";
 import EditNews from "../screen/EditNews";
+import Chat from "../screen/Chat";
+import ChatPeople from "../screen/ChatPeople";
 import EditNewsDetails from "../screen/EditNewsDetails";
 import UploadNews from "../screen/UploadNews";
 import SubmitNews from "../screen/SubmitNews";
-
+import { LogBox } from "react-native";
+LogBox.ignoreAllLogs();
 const HomeNav = createNativeStackNavigator();
 const TabBar = createBottomTabNavigator();
 const PageLogin = createNativeStackNavigator();
+const ChatNavigator = createNativeStackNavigator();
+
+
+function ChatStack() {
+  return (
+    <ChatNavigator.Navigator initialRouteName="Messages">
+      <ChatNavigator.Screen name="Messages" component={Chat} />
+      <ChatNavigator.Screen
+        name="chatinfo"
+        component={ChatPeople}
+        options={({ route }) => ({
+          title: route.params.data.item.email,
+          headerBackTitleVisible: false,
+        })}
+      />
+    </ChatNavigator.Navigator>
+  );
+}
 
 function HomeStack() {
   return (
@@ -275,6 +296,32 @@ function TabNavigation() {
         }}
       />
       <TabBar.Screen
+        name="Chat"
+        component={ChatStack}
+        options={({ route }) => {
+          const routeName = getFocusedRouteNameFromRoute(route);
+          let hide = false
+          if(routeName == "chatinfo"){
+            hide = true;
+          }
+          return (
+            ({
+              tabBarStyle: { display: hide ? "none" : "flex"},
+              headerShown: false,
+              tabBarIcon: ({ color, size }) => {
+                return (
+                  <Ionicons
+                    name="chatbubble-ellipses-outline"
+                    size={size}
+                    color="black"
+                  />
+                );
+              },
+            })
+          )
+        }}
+      />
+      <TabBar.Screen
         name="Profile"
         component={Profile}
         options={{
@@ -290,6 +337,7 @@ function TabNavigation() {
           },
         }}
       />
+
     </TabBar.Navigator>
   );
 }

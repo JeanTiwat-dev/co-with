@@ -5,21 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/rest/LoginModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/FindLoginQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/FindUserById.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/rest/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/core/data/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/core/data/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserEventsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserQueryHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/rest/UserRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/rest/UserRestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/service/UserServiceCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/service/UserServiceCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/service/UserServiceQuery.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/service/UserServiceQuery.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Login.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/Profile.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,7 +148,8 @@
       <workItem from="1671035318053" duration="52000" />
       <workItem from="1671104207862" duration="683000" />
       <workItem from="1671165636084" duration="13644000" />
-      <workItem from="1671187068917" duration="3040000" />
+      <workItem from="1671187068917" duration="4576000" />
+      <workItem from="1671207310245" duration="3003000" />
     </task>
     <servers />
   </component>
@@ -175,5 +166,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/FindUserQuery.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
