@@ -94,7 +94,7 @@ function HomePage({ route }) {
   // console.log(annouce);
   const getNews = async () => {
     await axios
-      .get(`${path}/getNews`)
+      .get(`${path}/news`)
       .then((res) => {
         // setData(res.data);
         // setBackup(res.data);

@@ -14,6 +14,9 @@ public class GatewayConfig {
         return builder.routes()
                 .route("user-service", r-> r.path("/users/**").uri("lb://user-service"))
                 .route("user-service", r-> r.path("/image/**").uri("lb://user-service"))
+                .route("contacts-service", r-> r.path("/contacts/**").uri("lb://contacts-service"))
+                .route("news-service", r-> r.path("/news/**").uri("lb://news-service"))
+                .route("news-service", r-> r.path("/img_news/**").uri("lb://news-service"))
                 .build();
     }
 
