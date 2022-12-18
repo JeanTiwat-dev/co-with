@@ -21,7 +21,7 @@ const EditNews = () => {
     const [data, setData] = useState([]);
     const getNews = async () => {
       await axios
-        .get(`${path}/getNews`)
+        .get(`${path}/news`)
         .then((res) => {
           setData(res.data);
           // setBackup(res.data);

@@ -47,7 +47,7 @@ const NewsPage = ({ route }) => {
   };
   const getNews = async () => {
     await axios
-      .get(`${path}/getNews`)
+      .get(`${path}/news`)
       .then((res) => {
         setData(res.data);
         setBackup(res.data);
@@ -61,10 +61,11 @@ const NewsPage = ({ route }) => {
     // console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           // console.log(res.data[0].img);
-          setUser(res.data[0]);
+          console.log(res.data)
+          setUser(res.data);
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }

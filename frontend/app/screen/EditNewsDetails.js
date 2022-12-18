@@ -7,7 +7,7 @@ import {
   Image,
   ScrollView,
   Modal,
-  Pressable
+  Pressable,
 } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import EditNews from "./EditNews";
@@ -15,11 +15,11 @@ import { useState } from "react";
 import path from "../../path";
 import axios from "axios";
 import * as ImagePicker from "expo-image-picker";
-import {useNavigation} from "@react-navigation/native";
+import { useNavigation } from "@react-navigation/native";
 import { Feather, AntDesign } from "@expo/vector-icons";
 
 const EditNewsDetails = ({ route }) => {
-  console.log(route);
+  // console.log(route);
   const router = useNavigation();
   const [data, setData] = useState(route.params.data);
   const [topic, setTopic] = useState(route.params.data.title);
@@ -31,17 +31,20 @@ const EditNewsDetails = ({ route }) => {
   const [objectImage, setObjectImage] = useState(null);
   const [modalVisible, setModalVisible] = useState(false);
   const deleteHandler = async () => {
-    await axios.post(`${path}/deleteNews`, {
-      _id : data._id
-    }).then(res => {
-      if(res.data == true){
-        router.goBack();
-      }
-      console.log('delete')
-    }).catch(err => {
-      console.log(err.response);
-    });
-  }
+    await axios
+      .post(`${path}/news/deleteNews`, {
+        _id: data._id,
+      })
+      .then((res) => {
+        if (res.data == true) {
+          router.goBack();
+        }
+        console.log("delete");
+      })
+      .catch((err) => {
+        console.log(err.response);
+      });
+  };
   const pickImage = async () => {
     let result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.All,
@@ -53,7 +56,7 @@ const EditNewsDetails = ({ route }) => {
 
     if (!result.canceled) {
       setImage(result.uri);
-      setObjectImage(result)
+      setObjectImage(result);
       console.log(image);
     }
   };
@@ -62,43 +65,49 @@ const EditNewsDetails = ({ route }) => {
     // if (user.role == "admin") {
     //   console.log(firstname, lastname, email, tel);
     // }
-    await axios.post(`${path}/editnews`, {
-      _id : data._id,
-      title : topic,
-      content : content,
-      release : new Date(),
-      image : data.image
-    })
-    .then((response) =>{
-      if(response.data == true){
-        if(image != null){
-          const data1 = new FormData();
-          const newImageUri = "file:///" + objectImage.uri.split("file:/").join("");
-          data1.append("imageNews", {
-            uri : newImageUri,
-            type : "image",
-            name : newImageUri.split("/").pop()
-          })
-          console.log(data)
-          data1.append("_id", data._id);
-          axios.post(`${path}/EditImageNews`, data1, {headers : {'Content-Type' : 'multipart/form-data'}})
-          .then((response) =>{
-            if(response.data == true){
-              router.goBack();
-            }
-          })
-          .catch((err) =>{
-            console.log(err)
-          })
+    await axios
+      .post(`${path}/news`, {
+        _id: data._id,
+        title: topic,
+        content: content,
+        release: new Date(),
+        image: data.image,
+      })
+      .then((response) => {
+        if (response.data != "Error") {
+          if (image != null) {
+            let localUri = objectImage.uri;
+            let filename = localUri.split("/").pop();
+            let match = /\.(\w+)$/.exec(filename);
+            let type = match ? `image/${match[1]}` : `image`;
+            const data1 = new FormData();
+            data1.append("file", {
+              uri: localUri,
+              type: type,
+              name: filename,
+            });
+            // console.log(data)
+            data1.append("_id", data._id);
+            axios
+              .post(`${path}/news/updateImageNews`, data1, {
+                headers: { "Content-Type": "multipart/form-data" },
+              })
+              .then((response) => {
+                if (response.data == true) {
+                  router.goBack();
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+          } else {
+            router.goBack();
+          }
         }
-        else{
-          router.goBack();
-        }
-      }
-    })
-    .catch((err) =>{
-      console.log(err)
-    })
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   }
 
   return (
@@ -154,7 +163,12 @@ const EditNewsDetails = ({ route }) => {
           ></Ionicons>
           <Text>อัพโหลดรูปภาพ</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.delete} onPress={() => {setModalVisible(!modalVisible);}}>
+        <TouchableOpacity
+          style={styles.delete}
+          onPress={() => {
+            setModalVisible(!modalVisible);
+          }}
+        >
           <Ionicons
             name="trash-outline"
             size={20}
@@ -162,9 +176,12 @@ const EditNewsDetails = ({ route }) => {
           ></Ionicons>
           <Text>ลบข่าว</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.submit} onPress={()=>{
-          Editnews();
-        }}>
+        <TouchableOpacity
+          style={styles.submit}
+          onPress={() => {
+            Editnews();
+          }}
+        >
           <Ionicons
             name="hammer-outline"
             size={20}

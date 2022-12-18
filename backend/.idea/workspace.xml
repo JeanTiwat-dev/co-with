@@ -5,7 +5,31 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/NewAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/NewsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/UpdateAndCreateNewsRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/NewsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/data/NewsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/event/NewsEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/DeleteQueryNews.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/FindNewsById.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/FindNewsQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsEventsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsQueryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsCommandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/UploadNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/UploadNews.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,7 +74,9 @@
     </option>
   </component>
   <component name="ProjectId" id="2IteFYBbv3m07D2NGBBLm6ILL0R" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -64,6 +90,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tathus/Documents/SOP/co-with/backend/news-service/target/classes&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -77,11 +104,23 @@
   }
 }</component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/news-service/target/classes" />
+      <recent name="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/news-service/target/classes/static" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.project_sop.userservice.query" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project_sop.newsservice.query" />
+      <recent name="com.project_sop.newsservice.service" />
+      <recent name="com.project_sop.newsservice.core.event" />
+    </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
+  <component name="RunManager" selected="Spring Boot.NewsServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.apigateway.ApiGatewayApplication" />
@@ -145,7 +184,8 @@
       <workItem from="1671104207862" duration="683000" />
       <workItem from="1671165636084" duration="13644000" />
       <workItem from="1671187068917" duration="4576000" />
-      <workItem from="1671207310245" duration="5605000" />
+      <workItem from="1671207310245" duration="16610000" />
+      <workItem from="1671345786323" duration="2624000" />
     </task>
     <servers />
   </component>
