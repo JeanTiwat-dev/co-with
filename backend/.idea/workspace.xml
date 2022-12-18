@@ -4,28 +4,196 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8ae16f51-0f53-4c8e-a6fd-c781a0a94fb3" name="Changes" comment="">
+    <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/NewAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/NewsCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/UpdateAndCreateNewsRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/NewsEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/data/NewsRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/core/event/NewsEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/DeleteQueryNews.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/FindNewsById.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/FindNewsQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsEventsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsQueryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsCommandService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+<<<<<<< HEAD
+=======
+      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/navigation/Navigation.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNews.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/EditNewsDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/UploadNews.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/UploadNews.js" afterDir="false" />
+>>>>>>> jean
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75"
+  <component name="JpbToolWindowState">
+    <option name="myId2FirstActivated">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="true" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="true" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="true" />
+      </map>
+    </option>
+    <option name="myId2Visible">
+      <map>
+        <entry key="com.haulmont.jpb.jpaInspector" value="false" />
+        <entry key="com.haulmont.jpb.jpaPalette" value="false" />
+        <entry key="com.haulmont.jpb.jpaStructure" value="false" />
+      </map>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2IteFYBbv3m07D2NGBBLm6ILL0R" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tathus/Documents/SOP/co-with/backend/news-service/target/classes&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;show.run.dashboard.notification&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3359043b21b006d3d1044fafda7a63d7&quot;
   }
-}]]></component>
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/news-service/target/classes" />
+      <recent name="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/news-service/target/classes/static" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.project_sop.userservice.query" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project_sop.newsservice.query" />
+      <recent name="com.project_sop.newsservice.service" />
+      <recent name="com.project_sop.newsservice.core.event" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.NewsServiceApplication">
+    <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="api-gateway" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.apigateway.ApiGatewayApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ContactsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="contacts-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.contactsservice.ContactsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="course-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.courseservice.CourseServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DiscoveryServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="discovery-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.discoveryservice.DiscoveryServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="InfectedServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="infected-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.infectedservice.InfectedServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="NewsServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="news-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.newsservice.NewsServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UserServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="user-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.userservice.UserServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="" />
+      <created>1671005204509</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1671005204509</updated>
+      <workItem from="1671005205644" duration="16974000" />
+      <workItem from="1671035318053" duration="52000" />
+      <workItem from="1671104207862" duration="683000" />
+      <workItem from="1671165636084" duration="13644000" />
+      <workItem from="1671187068917" duration="4576000" />
+      <workItem from="1671207310245" duration="16610000" />
+      <workItem from="1671345786323" duration="2624000" />
+    </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -37,5 +205,16 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/FindUserQuery.java</url>
+          <line>2</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

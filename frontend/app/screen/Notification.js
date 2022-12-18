@@ -20,12 +20,69 @@ import { useNavigation } from "@react-navigation/native";
 function Notification() {
   const { width } = useWindowDimensions();
   const [modalVisible, setModalVisible] = useState(false);
+  const [numberNoti, setNumberNoti] = useState(0);
+  const [course, setCourse] = useState([]);
+  const [allCourse, setAllCourse] = useState([]);
+  const [infected, setInfected] = useState([]);
+  const [allInfected, setAllInfected] = useState([]);
+  const [user, setUser] = useState([]);
+  const [stuCourses, setStuCourses] = useState([]);
+  async function Getuser() {
+    const datauser = await AsyncStorage.getItem("@user");
+    // console.log(JSON.parse(datauser)._id);
+    if (datauser) {
+      await axios
+        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .then((res) => {
+          setUser(res.data[0]);
+          getCourse();
+        })
+        .catch((er) => {
+          console.log(er);
+        });
+    }
+  }
+  const getCourse = async () => {
+    await axios
+      .get(`${path}/getCourse`)
+      .then((res) => {
+        res.data.filter((value) =>{
+          if(value.professor == `${user.firstname} ${user.lastname}`){
+            setCourse(value);
+            setStuCourses(JSON.parse(value.studentRegistered));
+          }
+        })
+        
+
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  // console.log(course)
+  const getInfected = async () => {
+    await axios
+      .get(`${path}/getInfected`)
+      .then((res) => {
+        setAllInfected(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+  useEffect(() => {
+    Getuser();
+    // getCourse();
+    getInfected();
+  }, []);
+  console.log(allInfected);
 
   function Boxnotification(props) {
     return (
       <TouchableOpacity
         style={styles.boxnoti}
         onPress={() => {
+          setInfected(props.value);
           setModalVisible(!modalVisible);
         }}
       >
@@ -68,7 +125,7 @@ function Notification() {
       }}
     >
       {/* nothing here */}
-      {/* <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+      {(user.role === 'student' || user.role === 'PR') && (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
         <Image
           style={{ width: 130, height: 130 }}
           source={require("../assets/notification.png")}
@@ -76,15 +133,20 @@ function Notification() {
         <Text style={{ fontSize: 22, fontWeight: "500", marginTop: 35, color: '#B2B2B2' }}>
           Nothing here!!!
         </Text>
-      </View> */}
+      </View>)}
 
       {/* have notification */}
-      <View
+      {(user.role === 'professor' || user.role === 'admin') && (<View
         style={{ alignItems: "center", justifyContent: "center", width: width }}
       >
-        <Boxnotification />
-        <Boxnotification />
-      </View>
+        {allInfected && (
+          allInfected.map((value, index)=>{
+            if(stuCourses.indexOf(value.studentId) > -1){
+              return <Boxnotification key={index} value={value}/>
+            }
+          })
+        )}
+      </View>)}
       <View>
         {/* model */}
         <Modal
@@ -105,14 +167,14 @@ function Notification() {
               <View>
                 <Text style={{ fontSize: 22, marginTop: 25, fontWeight: '500' }}>นักศึกษาติดเชื้อ Covid-19</Text>
                 <Text style={{ fontSize: 18, marginTop: 10 }}>
-                  ชื่อ: นายคัมภีร์ ไบเบิล 
+                  ชื่อ: {infected.firstname + " " + infected.lastname}
                 </Text>
-                <Text style={{ fontSize: 18 }}>รหัสนักศึกษา: 63070111</Text>
+                <Text style={{ fontSize: 18 }}>รหัสนักศึกษา: {infected.studentId}</Text>
                 <Text style={{ fontSize: 18,  }}>
                   ลงทะเบียนเรียนรายวิชา:
                 </Text>
-                <Text style={{ fontSize: 18 }}>mobile app</Text>
-                <Text style={{ fontSize: 18 }}>รหัสวิชา: 090675</Text>
+                <Text style={{ fontSize: 18 }}>{course.courseName}</Text>
+                <Text style={{ fontSize: 18 }}>รหัสวิชา: {course.courseId}</Text>
               </View>
               {/* button */}
               <View

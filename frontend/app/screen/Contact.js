@@ -29,7 +29,7 @@ function Contact() {
   const [backup, setBackup] = useState([]);
   const getContacts = async () => {
     await axios
-      .get(`${path}/getUser`)
+      .get(`${path}/contacts`)
       .then((res) => {
         setAllContact(res.data);
         setBackup(res.data);
@@ -48,7 +48,6 @@ function Contact() {
       type: "success",
       placement: "bottom",
       duration: 2000,
-      // offsetTop: 300,
     });
   }
 
@@ -142,8 +141,6 @@ function Contact() {
         {/* card */}
         {allContact &&
           allContact.map((item, index) => {
-            // console.log(`${path}${item.img}`);
-            if(item.role == "professor"){
               return (
                 <CardContact
                   key={index}
@@ -153,7 +150,6 @@ function Contact() {
                   value={item}
                 />
               );
-            }
           })}
       </View>
       {/* modal */}
