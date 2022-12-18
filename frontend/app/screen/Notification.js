@@ -32,28 +32,27 @@ function Notification() {
     // console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
-          setUser(res.data[0]);
-          getCourse();
+          setUser(res.data);
+          getCourse(res.data);
         })
         .catch((er) => {
           console.log(er);
         });
     }
   }
-  const getCourse = async () => {
+  const getCourse = async (users) => {
     await axios
-      .get(`${path}/getCourse`)
+      .get(`${path}/course`)
       .then((res) => {
+        console.log(res.data);
         res.data.filter((value) =>{
-          if(value.professor == `${user.firstname} ${user.lastname}`){
+          if(value.professor == `${users.firstname} ${users.lastname}`){
             setCourse(value);
             setStuCourses(JSON.parse(value.studentRegistered));
           }
         })
-        
-
       })
       .catch((err) => {
         console.log(err);
@@ -62,7 +61,7 @@ function Notification() {
   // console.log(course)
   const getInfected = async () => {
     await axios
-      .get(`${path}/getInfected`)
+      .get(`${path}/infected`)
       .then((res) => {
         setAllInfected(res.data);
       })
@@ -75,7 +74,8 @@ function Notification() {
     // getCourse();
     getInfected();
   }, []);
-  console.log(allInfected);
+  // console.log(allInfected);
+  // console.log(stuCourses);
 
   function Boxnotification(props) {
     return (

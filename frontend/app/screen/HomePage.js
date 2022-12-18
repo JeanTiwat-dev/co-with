@@ -115,7 +115,7 @@ function HomePage({ route }) {
     console.log(`${path}${item.image}`)
     return (
       <TouchableOpacity
-      style={{padding: 10}}
+      style={{padding: 5}}
         onPress={() => {
           router.navigate("NewsDetail", { data: item });
         }}
@@ -250,7 +250,7 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: "white",
-    height: 210,
+    height: 215,
     borderRadius: 8,
     paddingBottom: 40,
     shadowColor: "#000",
@@ -274,7 +274,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
     paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingVertical: 10
   },
   body: {
     color: "#222",
