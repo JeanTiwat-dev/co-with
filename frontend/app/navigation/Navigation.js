@@ -311,7 +311,7 @@ function TabNavigation() {
               tabBarIcon: ({ color, size }) => {
                 return (
                   <Ionicons
-                    name="chatbubble-ellipses-outline"
+                    name="chatbubble-ellipses"
                     size={size}
                     color="black"
                   />

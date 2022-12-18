@@ -6,7 +6,7 @@ server:
     max-http-form-post-size: 100MB
 spring:
   application:
-    name: user-service
+    name: contacts-service
   data:
     mongodb:
       uri: mongodb+srv://cowithBackend:cowithserver@cluster0.k9edeeo.mongodb.net/test
