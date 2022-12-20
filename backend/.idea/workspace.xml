@@ -5,28 +5,18 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/core/CourseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/core/data/CourseRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/query/CourseQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/query/FindCourse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/query/rest/CourseQueryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/query/rest/CourseRestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/course-service/src/main/java/com/project_sop/courseservice/service/CourseServiceQuery.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/InfectedEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/data/InfectedRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/FindInfected.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/InfectedQueryHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedQueryController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedRestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/service/InfectedServiceQuery.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedAggregate.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/rest/CreateInfectedRestModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/rest/InfectedController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/event/InfectedEvent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/InfectedEventsHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/service/InfectedServiceCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/api-gateway/src/main/java/com/project_sop/apigateway/config/GatewayConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/course-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/course-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infected-service/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/component/Card.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/component/Card.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/NewsPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/InfectedEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/InfectedEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedRestModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/FormCovid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/FormCovid.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,28 +68,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/fahfiily/Documents/code/co-with/backend/infected-service/src/main/java/com/project_sop/infectedservice",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
-    "settings.editor.selected.configurable": "Errors",
-    "show.run.dashboard.notification": "false",
-    "spring.configuration.checksum": "3359043b21b006d3d1044fafda7a63d7"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tathus/Documents/SOP/co-with/backend/infected-service/src/main/java/com/project_sop/infectedservice&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Errors&quot;,
+    &quot;show.run.dashboard.notification&quot;: &quot;false&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;3359043b21b006d3d1044fafda7a63d7&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice" />
@@ -114,11 +104,11 @@
       <recent name="com.project_sop.userservice.query" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.project_sop.infectedservice.query" />
+      <recent name="com.project_sop.infectedservice.core.event" />
+      <recent name="com.project_sop.infectedservice.service" />
       <recent name="com.project_sop.infectedservice" />
       <recent name="com.project_sop.courseservice" />
-      <recent name="com.project_sop.newsservice.query" />
-      <recent name="com.project_sop.newsservice.service" />
-      <recent name="com.project_sop.newsservice.core.event" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.InfectedServiceApplication">
@@ -187,6 +177,7 @@
       <workItem from="1671187068917" duration="4576000" />
       <workItem from="1671207310245" duration="16610000" />
       <workItem from="1671345786323" duration="2624000" />
+      <workItem from="1671470066486" duration="11000" />
     </task>
     <servers />
   </component>

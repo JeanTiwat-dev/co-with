@@ -1,11 +1,13 @@
-package com.project_sop.infectedservice.query.rest;
+package com.project_sop.infectedservice.command;
 
+import lombok.Builder;
 import lombok.Data;
+import org.axonframework.modelling.command.TargetAggregateIdentifier;
 
-import java.io.Serializable;
-
+@Builder
 @Data
-public class InfectedRestModel implements Serializable {
+public class InfectedCommand {
+    @TargetAggregateIdentifier
     private String _id;
     private String studentId;
     private String firstname;

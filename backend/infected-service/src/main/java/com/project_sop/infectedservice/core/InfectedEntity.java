@@ -17,4 +17,5 @@ public class InfectedEntity {
     private String imgForVertified;
     private String reasonForAbsent;
     private String reasonForQuarantine;
+    private String dataInfected;
 }

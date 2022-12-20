@@ -1,11 +1,11 @@
-package com.project_sop.infectedservice.query.rest;
+package com.project_sop.infectedservice.command.rest;
 
 import lombok.Data;
 
 import java.io.Serializable;
 
 @Data
-public class InfectedRestModel implements Serializable {
+public class CreateInfectedRestModel implements Serializable {
     private String _id;
     private String studentId;
     private String firstname;

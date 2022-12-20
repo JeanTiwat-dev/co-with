@@ -1,11 +1,9 @@
-package com.project_sop.infectedservice.query.rest;
+package com.project_sop.infectedservice.core.event;
 
 import lombok.Data;
 
-import java.io.Serializable;
-
 @Data
-public class InfectedRestModel implements Serializable {
+public class InfectedEvent {
     private String _id;
     private String studentId;
     private String firstname;
