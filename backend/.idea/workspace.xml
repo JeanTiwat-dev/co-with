@@ -4,15 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedAggregate.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsCommandService.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsCommandService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/rest/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/rest/UserController.java" afterDir="false" />
-    </list>
+    <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -106,7 +98,7 @@
       <recent name="com.project_sop.courseservice" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.NewsServiceApplication">
+  <component name="RunManager" selected="Spring Boot.UserServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.apigateway.ApiGatewayApplication" />
@@ -174,7 +166,7 @@
       <workItem from="1671345786323" duration="2624000" />
       <workItem from="1671470066486" duration="11000" />
       <workItem from="1671606492981" duration="2434000" />
-      <workItem from="1671644398129" duration="7834000" />
+      <workItem from="1671644398129" duration="8145000" />
     </task>
     <servers />
   </component>

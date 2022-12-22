@@ -47,12 +47,12 @@ function Notification() {
       .get(`${path}/course`)
       .then((res) => {
         console.log(res.data);
-        res.data.filter((value) =>{
-          if(value.professor == `${users.firstname} ${users.lastname}`){
+        res.data.filter((value) => {
+          if (value.professor == `${users.firstname} ${users.lastname}`) {
             setCourse(value);
             setStuCourses(JSON.parse(value.studentRegistered));
           }
-        })
+        });
       })
       .catch((err) => {
         console.log(err);
@@ -103,7 +103,7 @@ function Notification() {
               Student infection!!
             </Text>
             <Text style={{ fontSize: 16, marginTop: 5 }}>
-              The subject that you teach has a student infected{" "}
+              The subject that you teach has a student infected
             </Text>
           </View>
         </View>
@@ -125,28 +125,58 @@ function Notification() {
       }}
     >
       {/* nothing here */}
-      {(user.role === 'student' || user.role === 'PR') && (<View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Image
-          style={{ width: 130, height: 130 }}
-          source={require("../assets/notification.png")}
-        />
-        <Text style={{ fontSize: 22, fontWeight: "500", marginTop: 35, color: '#B2B2B2' }}>
-          Nothing here!!!
-        </Text>
-      </View>)}
+      {(user.role === "student" || user.role === "PR") && (
+        <View
+          style={{ flex: 1, alignItems: "center", justifyContent: "center" }}
+        >
+          <Image
+            style={{ width: 130, height: 130 }}
+            source={require("../assets/notification.png")}
+          />
+          <Text
+            style={{
+              fontSize: 22,
+              fontWeight: "500",
+              marginTop: 35,
+              color: "#B2B2B2",
+            }}
+          >
+            Nothing here!!!
+          </Text>
+        </View>
+      )}
 
       {/* have notification */}
-      {(user.role === 'professor' || user.role === 'admin') && (<View
-        style={{ alignItems: "center", justifyContent: "center", width: width }}
-      >
-        {allInfected && (
-          allInfected.map((value, index)=>{
-            if(stuCourses.indexOf(value.studentId) > -1){
-              return <Boxnotification key={index} value={value}/>
-            }
-          })
-        )}
-      </View>)}
+      {user.role === "professor" && (
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            width: width,
+          }}
+        >
+          {allInfected &&
+            allInfected.map((value, index) => {
+              if (stuCourses.indexOf(value.studentId) > -1) {
+                return <Boxnotification key={index} value={value} />;
+              }
+            })}
+        </View>
+      )}
+      {user.role === "admin" && (
+        <View
+          style={{
+            alignItems: "center",
+            justifyContent: "center",
+            width: width,
+          }}
+        >
+          {allInfected &&
+            allInfected.map((value, index) => {
+              return <Boxnotification key={index} value={value} />;
+            })}
+        </View>
+      )}
       <View>
         {/* model */}
         <Modal
@@ -165,16 +195,26 @@ function Notification() {
                 source={require("../assets/mask.png")}
               />
               <View>
-                <Text style={{ fontSize: 22, marginTop: 25, fontWeight: '500' }}>นักศึกษาติดเชื้อ Covid-19</Text>
+                <Text
+                  style={{ fontSize: 22, marginTop: 25, fontWeight: "500" }}
+                >
+                  นักศึกษาติดเชื้อ Covid-19
+                </Text>
                 <Text style={{ fontSize: 18, marginTop: 10 }}>
                   ชื่อ: {infected.firstname + " " + infected.lastname}
                 </Text>
-                <Text style={{ fontSize: 18 }}>รหัสนักศึกษา: {infected.studentId}</Text>
-                <Text style={{ fontSize: 18,  }}>
-                  ลงทะเบียนเรียนรายวิชา:
+                <Text style={{ fontSize: 18 }}>
+                  รหัสนักศึกษา: {infected.studentId}
                 </Text>
-                <Text style={{ fontSize: 18 }}>{course.courseName}</Text>
-                <Text style={{ fontSize: 18 }}>รหัสวิชา: {course.courseId}</Text>
+                {user.role != "admin" && (
+                  <View>
+                    <Text style={{ fontSize: 18 }}>ลงทะเบียนเรียนรายวิชา:</Text>
+                    <Text style={{ fontSize: 18 }}>{course.courseName}</Text>
+                    <Text style={{ fontSize: 18 }}>
+                      รหัสวิชา: {course.courseId}
+                    </Text>
+                  </View>
+                )}
               </View>
               {/* button */}
               <View
