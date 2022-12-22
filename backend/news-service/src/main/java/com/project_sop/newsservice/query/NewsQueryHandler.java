@@ -22,7 +22,7 @@ public class NewsQueryHandler {
         this.newsRepository = newsRepository;
     }
     @QueryHandler
-    public List<NewsRestModel> findUser(FindNewsQuery findUserQuery){
+    public List<NewsRestModel> findNews(FindNewsQuery findUserQuery){
         List<NewsRestModel> news = new ArrayList<>();
         List<NewsEntity> entity = newsRepository.findAll();
         for (NewsEntity e: entity

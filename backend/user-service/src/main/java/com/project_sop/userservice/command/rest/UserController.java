@@ -58,8 +58,6 @@ public class UserController {
         UpdateUserRestModel OldValue = (UpdateUserRestModel) getUser;
         OldValue.setImg("/image/img_aj/" + file.getOriginalFilename());
         String Path_Directory = new ClassPathResource("static/image/img_aj").getFile().getAbsolutePath();
-//        Files.delete(Path.of(Path_Directory+(OldValue.getImg()).split("image/img_aj")[1]));
-////        /Users/tathus/Documents/SOP/co-with/backend/user-service/target/classes/static/image/img_aj/ca67a929-dc99-4215-ba05-e12f3e115ec8.jpg
         Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
         rabbitTemplate.convertAndSend("User","updateimageprofile", OldValue);
         return true;

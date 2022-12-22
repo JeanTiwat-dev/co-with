@@ -31,15 +31,15 @@ public class InfectedAggregate {
 
     @CommandHandler
     public InfectedAggregate(InfectedCommand command){
-//        if(command.getTitle().isBlank() || command.getTitle() == null){
-//            throw new IllegalArgumentException("Title is not null");
-//        }
-//        if(command.getContent().isBlank() || command.getContent() == null){
-//            throw new IllegalArgumentException("Content is not null");
-//        }
-//        if(command.getRelease().isBlank() || command.getRelease() == null){
-//            throw new IllegalArgumentException("Release is not null");
-//        }
+        if(command.getFirstname().isBlank() || command.getFirstname() == null){
+            throw new IllegalArgumentException("Firstname is not null");
+        }
+        if(command.getLastname().isBlank() || command.getLastname() == null){
+            throw new IllegalArgumentException("Lastname is not null");
+        }
+        if(command.getStudentId().length() != 8){
+            throw new IllegalArgumentException("Please input StudentID");
+        }
 
         InfectedEvent infectedEvent = new InfectedEvent();
         BeanUtils.copyProperties(command, infectedEvent);

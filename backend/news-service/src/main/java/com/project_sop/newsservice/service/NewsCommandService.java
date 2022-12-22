@@ -19,7 +19,7 @@ public class NewsCommandService {
 
 
     @RabbitListener(queues = "AddNews")
-    public String addUsers(UpdateAndCreateNewsRestModel updateAndCreateNewsRestModel) {
+    public String addNews(UpdateAndCreateNewsRestModel updateAndCreateNewsRestModel) {
         NewsCommand command = NewsCommand.builder()
                 ._id(updateAndCreateNewsRestModel.get_id())
                 .title(updateAndCreateNewsRestModel.getTitle())

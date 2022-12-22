@@ -31,7 +31,7 @@ public class NewsController {
     }
 
     @PostMapping
-    public String UpdateUsers(@RequestBody UpdateAndCreateNewsRestModel updateAndCreateNewsRestModel){
+    public String UpdateAndAddNews(@RequestBody UpdateAndCreateNewsRestModel updateAndCreateNewsRestModel){
         try{
             Object message = rabbitTemplate.convertSendAndReceive("News","addnews", updateAndCreateNewsRestModel);
             return (String)message;
@@ -54,7 +54,7 @@ public class NewsController {
     }
 
     @RequestMapping(value = "/uploadImageNews", method = RequestMethod.POST)
-    public boolean uploadStudentCard(@RequestParam("file") MultipartFile file) throws IOException {
+    public boolean uploadImage(@RequestParam("file") MultipartFile file) throws IOException {
         try{
             String Path_Directory = new ClassPathResource("static/img_news").getFile().getAbsolutePath();
             Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);

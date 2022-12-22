@@ -36,7 +36,7 @@ public class NewsQueryService {
     }
 
     @RabbitListener(queues = "GetNewId")
-    public UpdateAndCreateNewsRestModel getUserById(UpdateAndCreateNewsRestModel updateUserRestModel){
+    public UpdateAndCreateNewsRestModel getNewById(UpdateAndCreateNewsRestModel updateUserRestModel){
         FindNewsById findUserById = new FindNewsById(updateUserRestModel.get_id());
         List<UpdateAndCreateNewsRestModel> user = queryGateway
                 .query(findUserById, ResponseTypes.multipleInstancesOf(UpdateAndCreateNewsRestModel.class)).join();
