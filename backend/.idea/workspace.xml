@@ -5,18 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="34b9ca73-33df-4c13-a0eb-5636cfda7929" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedAggregate.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/InfectedCommand.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/rest/CreateInfectedRestModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/command/rest/InfectedController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/event/InfectedEvent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/InfectedEventsHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/service/InfectedServiceCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/InfectedEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/core/InfectedEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedRestModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/infected-service/src/main/java/com/project_sop/infectedservice/query/rest/InfectedRestModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/app/screen/FormCovid.js" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/app/screen/FormCovid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/command/rest/NewsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/NewsQueryHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsQueryController.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/query/rest/NewsQueryController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/news-service/src/main/java/com/project_sop/newsservice/service/NewsQueryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/UserAggregate.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/command/UserAggregate.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/core/event/UserUpdateEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/core/data/event/UserUpdateEvent.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserEventsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/user-service/src/main/java/com/project_sop/userservice/query/UserEventsHandler.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -77,7 +73,7 @@
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/tathus/Documents/SOP/co-with/backend/infected-service/src/main/java/com/project_sop/infectedservice&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/tathus/Documents/SOP/co-with/backend&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -111,7 +107,7 @@
       <recent name="com.project_sop.courseservice" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.InfectedServiceApplication">
+  <component name="RunManager" selected="Spring Boot.NewsServiceApplication">
     <configuration name="ApiGatewayApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
       <module name="api-gateway" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.project_sop.apigateway.ApiGatewayApplication" />
@@ -178,6 +174,8 @@
       <workItem from="1671207310245" duration="16610000" />
       <workItem from="1671345786323" duration="2624000" />
       <workItem from="1671470066486" duration="11000" />
+      <workItem from="1671606492981" duration="2434000" />
+      <workItem from="1671644398129" duration="5809000" />
     </task>
     <servers />
   </component>

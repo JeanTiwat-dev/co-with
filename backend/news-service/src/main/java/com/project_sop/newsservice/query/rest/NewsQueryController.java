@@ -18,7 +18,6 @@ public class NewsQueryController {
     @GetMapping
     public List<NewsRestModel> getNews(){
         try{
-            System.out.println(1);
             Object allNews = rabbitTemplate.convertSendAndReceive("News","getnews", "");
             return ((List<NewsRestModel>) allNews);
         }

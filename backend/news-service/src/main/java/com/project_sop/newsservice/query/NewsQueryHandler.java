@@ -35,12 +35,24 @@ public class NewsQueryHandler {
     }
 
     @QueryHandler
-    public UpdateAndCreateNewsRestModel UpdateProfile(FindNewsById findNewsById){
+    public UpdateAndCreateNewsRestModel UpdateNews(FindNewsById findNewsById){
         NewsEntity newsEntity = newsRepository.findByNewid(findNewsById.get_id());
         UpdateAndCreateNewsRestModel user = new UpdateAndCreateNewsRestModel();
         if(newsEntity != null){
             BeanUtils.copyProperties(newsEntity, user);
         }
         return user;
+    }
+    @QueryHandler
+    public boolean DeleteNews(DeleteQueryNews deleteQueryNews){
+        try{
+            NewsEntity newsEntity = new NewsEntity();
+            newsEntity.set_id(deleteQueryNews.get_id());
+            newsRepository.delete(newsEntity);
+            return true;
+        }
+        catch (Exception e){
+            return false;
+        }
     }
 }

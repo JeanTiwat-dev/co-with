@@ -48,8 +48,6 @@ public class NewsController {
         UpdateAndCreateNewsRestModel OldValue = (UpdateAndCreateNewsRestModel) getUser;
         OldValue.setImage("/img_news/" + file.getOriginalFilename());
         String Path_Directory = new ClassPathResource("static/img_news").getFile().getAbsolutePath();
-//        Files.delete(Path.of(Path_Directory+(OldValue.getImg()).split("image/img_aj")[1]));
-////        /Users/tathus/Documents/SOP/co-with/backend/user-service/target/classes/static/image/img_aj/ca67a929-dc99-4215-ba05-e12f3e115ec8.jpg
         Files.copy(file.getInputStream(), Paths.get(Path_Directory+ File.separator+file.getOriginalFilename()), StandardCopyOption.REPLACE_EXISTING);
         rabbitTemplate.convertAndSend("News","editimagenews", OldValue);
         return true;
@@ -68,7 +66,6 @@ public class NewsController {
 
     @RequestMapping(value = "/deleteNews", method = RequestMethod.POST)
     public boolean deleteNews (@RequestBody NewsRestModel newsRestModel) throws IOException{
-//        System.out.println(news);
         try{
             rabbitTemplate.convertAndSend("News", "deletenews", newsRestModel);
             return true;
@@ -76,8 +73,5 @@ public class NewsController {
         catch(Exception e){
             return false;
         }
-//        System.out.println(news);
-//        return ResponseEntity.ok(news);
-
     }
 }

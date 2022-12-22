@@ -1,4 +1,4 @@
-package com.project_sop.userservice.core.event;
+package com.project_sop.userservice.core.data.event;
 
 import lombok.Data;
 

@@ -3,7 +3,7 @@ package com.project_sop.userservice.query;
 
 import com.project_sop.userservice.core.UserEntity;
 import com.project_sop.userservice.core.data.UserRepository;
-import com.project_sop.userservice.core.event.UserUpdateEvent;
+import com.project_sop.userservice.core.data.event.UserUpdateEvent;
 import org.axonframework.eventhandling.EventHandler;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

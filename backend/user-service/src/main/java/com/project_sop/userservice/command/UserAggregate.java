@@ -1,7 +1,7 @@
 package com.project_sop.userservice.command;
 
 
-import com.project_sop.userservice.core.event.UserUpdateEvent;
+import com.project_sop.userservice.core.data.event.UserUpdateEvent;
 import org.axonframework.commandhandling.CommandHandler;
 import org.axonframework.eventsourcing.EventSourcingHandler;
 import org.axonframework.modelling.command.AggregateIdentifier;

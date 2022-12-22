@@ -3,6 +3,7 @@ package com.project_sop.newsservice.service;
 import com.project_sop.newsservice.command.rest.UpdateAndCreateNewsRestModel;
 import com.project_sop.newsservice.core.NewsEntity;
 import com.project_sop.newsservice.core.data.NewsRepository;
+import com.project_sop.newsservice.query.DeleteQueryNews;
 import com.project_sop.newsservice.query.FindNewsById;
 import com.project_sop.newsservice.query.FindNewsQuery;
 import com.project_sop.newsservice.query.rest.NewsRestModel;
@@ -51,8 +52,8 @@ public class NewsQueryService {
 
     @RabbitListener(queues = "DeleteNews")
     public void deleteNews(NewsRestModel news){
-        NewsEntity newsEntity = new NewsEntity();
-        BeanUtils.copyProperties(news, newsEntity);
-        newsRepository.delete(newsEntity);
+        DeleteQueryNews deleteQueryNews = new DeleteQueryNews(news.get_id());
+        queryGateway
+                .query(deleteQueryNews, ResponseTypes.multipleInstancesOf(boolean.class)).join();
     }
 }
