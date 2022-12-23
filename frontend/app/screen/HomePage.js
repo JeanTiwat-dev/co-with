@@ -65,13 +65,13 @@ function HomePage({ route }) {
   // console.log(user);
   async function Getuser() {
     const datauser = await AsyncStorage.getItem("@user");
-    // console.log(JSON.parse(datauser)._id);
+    console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           // console.log(res.data[0].img);
-          setUser(res.data[0]);
+          setUser(res.data);
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }
@@ -85,12 +85,16 @@ function HomePage({ route }) {
   useEffect(() => {
     Getuser();
     getNews();
+    const willFocusSubscription = router.addListener("focus", () => {
+      Getuser();
+    });
+    return willFocusSubscription;
   }, []);
 
   // console.log(annouce);
   const getNews = async () => {
     await axios
-      .get(`${path}/getNews`)
+      .get(`${path}/news`)
       .then((res) => {
         // setData(res.data);
         // setBackup(res.data);
@@ -111,7 +115,7 @@ function HomePage({ route }) {
     console.log(`${path}${item.image}`)
     return (
       <TouchableOpacity
-      style={{padding: 10}}
+      style={{padding: 5}}
         onPress={() => {
           router.navigate("NewsDetail", { data: item });
         }}
@@ -246,7 +250,7 @@ const styles = StyleSheet.create({
   },
   container: {
     backgroundColor: "white",
-    height: 210,
+    height: 215,
     borderRadius: 8,
     paddingBottom: 40,
     shadowColor: "#000",
@@ -270,7 +274,7 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "bold",
     paddingHorizontal: 20,
-    paddingTop: 20,
+    paddingVertical: 10
   },
   body: {
     color: "#222",

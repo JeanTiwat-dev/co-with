@@ -30,6 +30,8 @@ const NewsPage = ({ route }) => {
   const [index, setIndex] = useState(0);
   const [backup, setBackup] = useState([]);
   const [user, setUser] = useState([]);
+
+  // carouse
   const CarouselCardItem = ({ item, index }) => {
     return (
       <TouchableOpacity style={{padding : 10}} key={index} onPress={()=>{
@@ -37,17 +39,19 @@ const NewsPage = ({ route }) => {
       }}>
         <View style={styles.container}>
         <Image source={{uri : `${path}${item.image}`}} style={styles.imageCarousel} />
+        <View style={{paddingHorizontal: 20, paddingVertical:10}}>
         <Text style={styles.header} numberOfLines={2}>{item.title}</Text>
         <Text numberOfLines={3} style={styles.body}>
           {item.content}
         </Text>
+        </View>
         </View>
       </TouchableOpacity>
     );
   };
   const getNews = async () => {
     await axios
-      .get(`${path}/getNews`)
+      .get(`${path}/news`)
       .then((res) => {
         setData(res.data);
         setBackup(res.data);
@@ -61,10 +65,11 @@ const NewsPage = ({ route }) => {
     // console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           // console.log(res.data[0].img);
-          setUser(res.data[0]);
+          console.log(res.data)
+          setUser(res.data);
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }
@@ -83,6 +88,7 @@ const NewsPage = ({ route }) => {
     });
     return willFocusSubscription;
   }, []);
+  
   const functionCombined = () => {
     Clipboard.setStringAsync(`${contact.firstname + " " + contact.lastname}`);
     toast.show("Copied to clipboard", {
@@ -205,13 +211,13 @@ const styles = StyleSheet.create({
     // paddingHorizontal : 40,
   },
   topiccontainer : {
-    flex : 1,
+    // flex : 1,
     flexDirection : 'row',
     flexWrap : 'wrap',
     justifyContent : 'space-between',
     paddingHorizontal : 40,
     alignContent: 'center',
-    marginTop: 20
+    marginTop: 10
   },
   buttoncreate: {
     backgroundColor: "#16A34A",
@@ -277,14 +283,15 @@ const styles = StyleSheet.create({
     color: "#222",
     fontSize: 20,
     fontWeight: "bold",
-    paddingLeft: 20,
-    paddingTop: 20,
+    // paddingLeft: 20,
+    // paddingTop: 20,
   },
   body: {
     color: "#222",
     fontSize: 10,
-    paddingLeft: 20,
-    paddingRight: 20,
+    paddingTop: 5
+    // paddingLeft: 20,
+    // paddingRight: 20,
   },
   imageCarousel: {
     width: "100%",
@@ -308,7 +315,7 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.29,
     shadowRadius: 4.65,
     elevation: 7,
-    paddingBottom: 20
+    paddingBottom: 10,
   }
 });
 

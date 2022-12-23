@@ -7,14 +7,14 @@ import {
   TouchableOpacity,
   ScrollView,
   Platform,
-  Image
+  Image,
 } from "react-native";
 import CheckBox from "expo-checkbox";
 import DateTimePicker from "@react-native-community/datetimepicker";
 import { useState, useEffect } from "react";
 import DatePicker from "react-native-neat-date-picker";
 import { Ionicons, FontAwesome } from "@expo/vector-icons";
-import * as ImagePicker from 'expo-image-picker';
+import * as ImagePicker from "expo-image-picker";
 import axios from "axios";
 import { useNavigation } from "@react-navigation/native";
 import path from "../../path";
@@ -24,7 +24,9 @@ function Form() {
   const router = useNavigation();
   const [user, setUser] = useState([]);
   const [showDatePicker, setShowDatePicker] = useState(false);
-  const [imageUri, setImageUri] = useState('https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png');
+  const [imageUri, setImageUri] = useState(
+    "https://static.files.bbci.co.uk/ws/simorgh-assets/public/news/images/metadata/poster-1024x576.png"
+  );
   const [reason, setReason] = useState([
     { id: 1, txt: "ติดโควิด", isChecked: false },
     { id: 2, txt: "ฉีดวัคซีน", isChecked: false },
@@ -33,16 +35,16 @@ function Form() {
   const [check1, setCheck1] = useState(false);
   const [check2, setCheck2] = useState(false);
   const [check3, setCheck3] = useState(false);
-  const [studentId, setStudentId] = useState('');
-  const [studentName, setStudentName] = useState('');
+  const [studentId, setStudentId] = useState("");
+  const [studentName, setStudentName] = useState("");
   const [imageStudentId, setImageStudentId] = useState(null);
   const [imageCovid, setImageCovid] = useState(null);
-  const [date, setDate] = useState('');
-  const [quarantine, setQuarantine] = useState('');
+  const [date, setDate] = useState("");
+  const [quarantine, setQuarantine] = useState("");
   const [photo, setPhoto] = useState(null);
   const [image, setImage] = useState(null);
-  const [fileNameImageCard, setFileNameImageCard] = useState('');
-  const [fileNameVerified, setFileNameVerified] = useState('');
+  const [fileNameImageCard, setFileNameImageCard] = useState("");
+  const [fileNameVerified, setFileNameVerified] = useState("");
   const [fileStudentId, setFileStudentId] = useState(null);
   const [fileVerified, setFileVerified] = useState(null);
 
@@ -51,10 +53,10 @@ function Form() {
     // console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           // console.log(res.data[0].img);
-          setUser(res.data[0]);
+          setUser(res.data);
           // if (res.data[0].img != null) {
           //   setImage(res.data[0].img);
           // }
@@ -81,16 +83,15 @@ function Form() {
     if (!result.canceled) {
       let formData = new FormData();
       let localUri = result.uri;
-      let filename = localUri.split('/').pop();
+      let filename = localUri.split("/").pop();
       setFileNameImageCard(filename);
       let match = /\.(\w+)$/.exec(filename);
       let type = match ? `image/${match[1]}` : `image`;
       setImageStudentId(result.uri);
-      formData.append('file', { uri: localUri, name: filename, type });
-      setFileStudentId(formData)
-      console.log(filename)
+      formData.append("file", { uri: localUri, name: filename, type });
+      setFileStudentId(formData);
     } else {
-      setImageStudentId('');
+      setImageStudentId("");
     }
   };
 
@@ -107,23 +108,21 @@ function Form() {
     if (!result.canceled) {
       let formData = new FormData();
       let localUri = result.uri;
-      let filename = localUri.split('/').pop();
+      let filename = localUri.split("/").pop();
       setFileNameVerified(filename);
       let match = /\.(\w+)$/.exec(filename);
       let type = match ? `image/${match[1]}` : `image`;
       setImageCovid(result.uri);
-      formData.append('file', { uri: localUri, name: filename, type });
-      setFileVerified(formData)
+      formData.append("file", { uri: localUri, name: filename, type });
+      setFileVerified(formData);
     } else {
-      setImageCovid('');
+      setImageCovid("");
     }
   };
 
   const openDatePicker = () => {
     setShowDatePicker(true);
   };
-
-
 
   const onCancel = () => {
     setShowDatePicker(false);
@@ -138,63 +137,61 @@ function Form() {
 
   const SubmitFormHandler = async () => {
     let formData = new FormData();
-    let fullname = studentName.split(" ")
+    let fullname = studentName.split(" ");
     let firstname = fullname[0];
     let surname = fullname[1];
     let realreason = "";
     if (check1 === true) {
-      realreason += reason[0].txt + " "
+      realreason += reason[0].txt + " ";
     }
     if (check2 === true) {
-      realreason += reason[1].txt + " "
+      realreason += reason[1].txt + " ";
     }
     if (check3 === true) {
-      realreason += reason[2].txt + " "
+      realreason += reason[2].txt + " ";
     }
-    // formData.append('studentId', studentId);
-    // formData.append('firstname', firstname);
-    // formData.append('lastname', surname);
-    // formData.append('imgStudentCard', "");
-    // formData.append('imgForVertified', "");
-    // formData.append('reasonForAbsent', realreason);
-    // formData.append('reasonForQuarantine', quarantine);
-    // formData.append('dateInfected', date);
-    // console.log(studentId, firstname, surname ,quarantine,date)
-    // console.log(studentId, realreason)
-    await axios.post(`${path}/addInfected`, {
-      'studentId': studentId,
-      'firstname': firstname,
-      'lastname': surname,
-      'imgStudentCard': "/image/Infected/" + fileNameImageCard,
-      'imgForVertified': "/image/Infected/" + fileNameVerified,
-      'reasonForAbsent': realreason,
-      'reasonForQuarantine': quarantine,
-      'dataInfected': date
-    }).then(res => {
-    }).catch(err => {
-      console.log(err.response);
-    });
-    console.log(fileVerified)
-    console.log(fileStudentId)
-    await axios.post(`${path}/uploadImageInfected`, fileStudentId, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }).then(res => {
-      // if(res.data == true){
-        
-      }
-    ).catch(err => {
-      console.log(err.response);
-    });
-    await axios.post(`${path}/uploadImageInfected`, fileVerified, {
-      headers: { 'Content-Type': 'multipart/form-data' },
-    }).then(res => {
-    }).catch(err => {
-      console.log(err.response);
-    });
-    // console.log(formData);
-
-    router.navigate('SubmitForm');
-  }
+    await axios
+      .post(`${path}/infected`, {
+        studentId: studentId,
+        firstname: firstname,
+        lastname: surname,
+        imgStudentCard: "/img_infected/" + fileNameImageCard,
+        imgForVertified: "/img_infected/" + fileNameVerified,
+        reasonForAbsent: realreason,
+        reasonForQuarantine: quarantine,
+        dataInfected: date,
+      })
+      .then((res) => {
+        if(res.data != "Error"){
+          axios
+          .post(`${path}/infected/uploadImageInfected`, fileStudentId, {
+            headers: { "Content-Type": "multipart/form-data" },
+          })
+          .then((res) => {
+            if(res.data == true){
+              axios
+              .post(`${path}/infected/uploadImageInfected`, fileVerified, {
+                headers: { "Content-Type": "multipart/form-data" },
+              })
+              .then((res) => {
+                if(res.data == true){
+                  router.navigate("SubmitForm");
+                }
+              })
+              .catch((err) => {
+                console.log(err);
+              });
+            }
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+        }
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
 
   return (
     <View>
@@ -203,19 +200,38 @@ function Form() {
           ฟอร์มสำหรับนักศึกษาที่ติดเชื้อ Covid-19
         </Text>
         <Text style={styles.header}>รหัสนักศึกษา</Text>
-        <TextInput style={styles.input} value={studentId} onChangeText={setStudentId}></TextInput>
+        <TextInput
+          style={styles.input}
+          value={studentId}
+          onChangeText={setStudentId}
+        ></TextInput>
         <Text style={styles.header}>ชื่อจริง-นามสกุล</Text>
-        <TextInput style={styles.input} value={studentName} onChangeText={setStudentName}></TextInput>
+        <TextInput
+          style={styles.input}
+          value={studentName}
+          onChangeText={setStudentName}
+        ></TextInput>
         <Text style={styles.header}>
           หลักฐานยืนยันตัวตน เช่น บัตรประจำตัวนักศึกษา บัตรประชาชน
         </Text>
-        {imageStudentId && <View style={styles.card}>
-          <View style={styles.cardContent}>
-            <Text style={styles.imageHeader}>รูปของคุณ</Text>
-            <Image source={{ uri: imageStudentId }} resizeMode='cover' style={styles.uploadImage} />
+        {imageStudentId && (
+          <View style={styles.card}>
+            <View style={styles.cardContent}>
+              <Text style={styles.imageHeader}>รูปของคุณ</Text>
+              <Image
+                source={{ uri: imageStudentId }}
+                resizeMode="cover"
+                style={styles.uploadImage}
+              />
+            </View>
           </View>
-        </View>}
-        <TouchableOpacity style={styles.upload} onPress={() => { pickImage() }}>
+        )}
+        <TouchableOpacity
+          style={styles.upload}
+          onPress={() => {
+            pickImage();
+          }}
+        >
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -251,17 +267,32 @@ function Form() {
           </Text>
         </View>
         <Text style={styles.header}>กักตัวเนื่องจาก (ทำเฉพาะกรณีกักตัว)</Text>
-        <TextInput style={styles.input} value={quarantine} onChangeText={setQuarantine}></TextInput>
+        <TextInput
+          style={styles.input}
+          value={quarantine}
+          onChangeText={setQuarantine}
+        ></TextInput>
         <Text style={styles.header}>
           ภาพหลักฐานแสดงการติดโควิดหรือการกักตัว
         </Text>
-        {imageCovid && <View style={styles.card}>
-          <View style={styles.cardContent}>
-            <Text style={styles.imageHeader}>รูปของคุณ</Text>
-            <Image source={{ uri: imageCovid }} resizeMode='cover' style={styles.uploadImage} />
+        {imageCovid && (
+          <View style={styles.card}>
+            <View style={styles.cardContent}>
+              <Text style={styles.imageHeader}>รูปของคุณ</Text>
+              <Image
+                source={{ uri: imageCovid }}
+                resizeMode="cover"
+                style={styles.uploadImage}
+              />
+            </View>
           </View>
-        </View>}
-        <TouchableOpacity style={styles.upload} onPress={() => { pickImageCovid() }}>
+        )}
+        <TouchableOpacity
+          style={styles.upload}
+          onPress={() => {
+            pickImageCovid();
+          }}
+        >
           <Ionicons
             name="cloud-upload-outline"
             size={20}
@@ -315,7 +346,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "center",
     borderRadius: 10,
-    marginBottom: 30
+    marginBottom: 30,
   },
   header: {
     fontSize: 16,
@@ -363,8 +394,8 @@ const styles = StyleSheet.create({
     fontSize: 15,
   },
   uploadImage: {
-    width: '100%',
-    height: 200
+    width: "100%",
+    height: 200,
   },
   checkbox: {
     marginRight: 10,
@@ -375,25 +406,23 @@ const styles = StyleSheet.create({
   card: {
     borderRadius: 6,
     elevation: 3,
-    backgroundColor: '#fff',
+    backgroundColor: "#fff",
     shadowOffset: { width: 1, height: 1 },
-    shadowColor: '#333',
+    shadowColor: "#333",
     shadowOpacity: 0.3,
     shadowRadius: 2,
     marginHorizontal: 4,
     marginVertical: 6,
     height: 200,
-    overflow: 'hidden',
-    marginTop: 25
+    overflow: "hidden",
+    marginTop: 25,
   },
-  cardContent: {
-
-  },
+  cardContent: {},
   imageHeader: {
     fontSize: 20,
-    fontWeight: 'bold',
-    textAlign: 'center',
-    marginBottom: 5
+    fontWeight: "bold",
+    textAlign: "center",
+    marginBottom: 5,
   },
 });
 

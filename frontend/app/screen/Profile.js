@@ -33,6 +33,7 @@ function Profile() {
   const [email, setEmail] = useState();
   const [tel, setTel] = useState();
   const [facebook, setFacebook] = useState();
+  const [password, setPassword] = useState();
   //   const [imageUser, setUserImage] = useState(imguser);
   //   const imguser = "https://cdn-icons-png.flaticon.com/512/149/149071.png";
 
@@ -48,7 +49,7 @@ function Profile() {
 
     if (!result.canceled) {
       setImage(result.uri);
-      setObjectImage(result)
+      setObjectImage(result);
     }
   };
   async function Getuser() {
@@ -56,15 +57,16 @@ function Profile() {
     // console.log(JSON.parse(datauser)._id);
     if (datauser) {
       await axios
-        .post(`${path}/getUserbyId`, { _id: JSON.parse(datauser)[0]._id })
+        .post(`${path}/users/getUserId`, { _id: JSON.parse(datauser)._id })
         .then((res) => {
           console.log(res.data);
-          setUser(res.data[0]);
-          setFirstname(res.data[0].firstname);
-          setLastname(res.data[0].lastname);
-          setEmail(res.data[0].email);
-          setTel(res.data[0].tel);
-          setFacebook(res.data[0].facebook);
+          setUser(res.data);
+          setFirstname(res.data.firstname);
+          setLastname(res.data.lastname);
+          setEmail(res.data.email);
+          setTel(res.data.tel);
+          setFacebook(res.data.facebook);
+          setPassword(res.data.password);
         })
         .catch((er) => {
           console.log(er);
@@ -76,41 +78,50 @@ function Profile() {
   }, []);
 
   async function Updateprofile() {
-    await axios.post(`${path}/updateprofile`, {
-      _id: user._id,
-      firstname: firstname,
-      lastname: lastname,
-      email: email,
-      tel: tel,
-      facebook: facebook
-    })
+    await axios
+      .post(`${path}/users`, {
+        _id: user._id,
+        firstname: firstname,
+        lastname: lastname,
+        email: email,
+        password : password,
+        tel: tel,
+        facebook: facebook,
+      })
       .then((response) => {
-        if (response.data == true) {
+        if (response.data != "Error") {
           if (image != null) {
+            let localUri = objectImage.uri;
+            let filename = localUri.split("/").pop();
+            let match = /\.(\w+)$/.exec(filename);
+            let type = match ? `image/${match[1]}` : `image`;
             const data = new FormData();
-            const newImageUri = "file:///" + objectImage.uri.split("file:/").join("");
             data.append("imageProfile", {
-              uri: newImageUri,
-              type: "image",
-              name: newImageUri.split("/").pop()
-            })
+              uri: localUri,
+              type,
+              name: filename,
+            });
             data.append("_id", user._id);
-            axios.post(`${path}/updateImageProfile`, data, { headers: { 'Content-Type': 'multipart/form-data' } })
+            axios
+              .post(`${path}/users/updateImageProfile`, data, {
+                headers: { "Content-Type": "multipart/form-data" },
+              })
               .then((response) => {
                 if (response.data == true) {
                   Getuser();
                 }
               })
               .catch((err) => {
-                console.log(err)
-              })
+                // alert("Update Fail")
+                console.log(err);
+              });
           }
           // console.log(1)
         }
       })
       .catch((err) => {
-        console.log(err)
-      })
+        console.log(err);
+      });
   }
   return (
     <ScrollView
@@ -183,6 +194,13 @@ function Profile() {
                 onChangeText={(value) => setEmail(value)}
               />
               <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
+              />
+              <TextInput
                 defaultValue={tel}
                 editable={editVisible}
                 style={styles.inputprofile}
@@ -224,7 +242,13 @@ function Profile() {
                 style={styles.inputprofile}
                 onChangeText={(value) => setEmail(value)}
               />
-
+              <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
+              />
             </View>
           )}
           {/* user info admin and Pr*/}
@@ -253,6 +277,13 @@ function Profile() {
                 editable={editVisible}
                 style={styles.inputprofile}
                 onChangeText={(value) => setEmail(value)}
+              />
+              <TextInput
+                defaultValue={password}
+                editable={editVisible}
+                secureTextEntry={true}
+                style={styles.inputprofile}
+                onChangeText={(value) => setPassword(value)}
               />
               <TextInput
                 defaultValue={tel}
@@ -447,10 +478,10 @@ const styles = StyleSheet.create({
   inputprofile: {
     backgroundColor: "#EAEAEA",
     width: "75%",
-    height: 50,
     marginBottom: 10,
     borderRadius: 10,
-    padding: 20,
+    paddingHorizontal: 20,
+    paddingVertical: 10,
   },
   upload: {
     padding: 10,
